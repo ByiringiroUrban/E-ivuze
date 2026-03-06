@@ -9,7 +9,7 @@ const AnnouncementTicker = ({ backendUrl }) => {
 
   useEffect(() => {
     if (!backendUrl) return;
-    
+
     const fetchAnnouncements = async () => {
       try {
         const { data } = await axios.get(`${backendUrl}/api/public/announcements`);
@@ -36,7 +36,7 @@ const AnnouncementTicker = ({ backendUrl }) => {
   const duplicatedAnnouncements = [...announcements, ...announcements];
 
   return (
-    <div className="bg-primary text-white py-2 overflow-hidden relative z-50">
+    <div className="bg-primary text-white py-2 overflow-hidden relative z-30 shadow-sm">
       <div className="announcement-ticker-container">
         <div className="announcement-ticker-content">
           {duplicatedAnnouncements.map((announcement, index) => (

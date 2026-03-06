@@ -7,7 +7,7 @@ import { AppContext } from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import DoctorSkeletonLoaders from '../../components/DoctorSkeletonLoaders';
 import EmptyState from '../../components/EmptyState';
-import { FaPhone, FaDna, FaShieldAlt, FaExclamationTriangle, FaAddressCard, FaBriefcase, FaUserFriends, FaFlask, FaExchangeAlt, FaSyringe, FaFileMedical, FaHistory } from 'react-icons/fa';
+import { FaPhone, FaDna, FaShieldAlt, FaExclamationTriangle, FaAddressCard, FaBriefcase, FaUserFriends, FaFlask, FaExchangeAlt, FaSyringe, FaFileMedical, FaHistory, FaUser } from 'react-icons/fa';
 
 const Patients = () => {
   const { backendUrl, dToken } = useContext(DoctorContext);

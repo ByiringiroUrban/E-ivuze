@@ -24,7 +24,7 @@ const AIModelSelector = ({ className = "" }) => {
             {isOpen && (
                 <div className="absolute bottom-full left-0 mb-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 p-2 z-[1000002] animate-in fade-in slide-in-from-bottom-2">
                     <div className="p-2 border-b border-gray-50 mb-1">
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+                        <h4 className="text-xs font-bold text-gray-400   tracking-widest flex items-center gap-2">
                             Select AI Engine
                         </h4>
                     </div>

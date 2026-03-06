@@ -155,37 +155,43 @@ const App = () => {
     }
 
     if (pToken) return (
-      <div className='bg-gray-50 flex min-h-screen'>
-        <PharmacySideBar />
-        <div className='flex-1 overflow-y-auto h-[calc(100vh-65px)]'>
-          <PharmacyNavBar />
-          <Watermark />
-          <Routes>
-            <Route path='/pharmacy-dashboard' element={<PharmacyDashboard />} />
-            <Route path='/' element={<PharmacyDashboard />} />
-            <Route path='/pharmacy-inventory' element={<PharmacyInventory />} />
-            <Route path='/pharmacy-orders' element={<PharmacyOrders />} />
-            <Route path='/pharmacy-reports' element={<PharmacyReports />} />
-            <Route path='/pharmacy-impersonate' element={<PharmacyImpersonate />} />
-            <Route path='/pharmacy-settings' element={<PharmacySettings />} />
-          </Routes>
+      <div className='flex flex-col h-screen overflow-hidden'>
+        <AnnouncementTicker backendUrl={backendUrl} />
+        <div className='flex flex-1 overflow-hidden bg-gray-50'>
+          <PharmacySideBar />
+          <div className='flex-1 overflow-y-auto flex flex-col'>
+            <PharmacyNavBar />
+            <Watermark />
+            <Routes>
+              <Route path='/pharmacy-dashboard' element={<PharmacyDashboard />} />
+              <Route path='/' element={<PharmacyDashboard />} />
+              <Route path='/pharmacy-inventory' element={<PharmacyInventory />} />
+              <Route path='/pharmacy-orders' element={<PharmacyOrders />} />
+              <Route path='/pharmacy-reports' element={<PharmacyReports />} />
+              <Route path='/pharmacy-impersonate' element={<PharmacyImpersonate />} />
+              <Route path='/pharmacy-settings' element={<PharmacySettings />} />
+            </Routes>
+          </div>
         </div>
       </div>
     );
 
     if (lToken) return (
-      <div className='bg-gray-50 flex min-h-screen'>
-        <LabSideBar />
-        <div className='flex-1 overflow-y-auto h-[calc(100vh-65px)]'>
-          <LabNavBar />
-          <Watermark />
-          <Routes>
-            <Route path='/lab-dashboard' element={<LabDashboard />} />
-            <Route path='/' element={<LabDashboard />} />
-            <Route path='/lab-orders' element={<LabOrders />} />
-            <Route path='/lab-profile' element={<LabProfile />} />
-            <Route path='/lab-settings' element={<LabSettings />} />
-          </Routes>
+      <div className='flex flex-col h-screen overflow-hidden'>
+        <AnnouncementTicker backendUrl={backendUrl} />
+        <div className='flex flex-1 overflow-hidden bg-gray-50'>
+          <LabSideBar />
+          <div className='flex-1 overflow-y-auto flex flex-col'>
+            <LabNavBar />
+            <Watermark />
+            <Routes>
+              <Route path='/lab-dashboard' element={<LabDashboard />} />
+              <Route path='/' element={<LabDashboard />} />
+              <Route path='/lab-orders' element={<LabOrders />} />
+              <Route path='/lab-profile' element={<LabProfile />} />
+              <Route path='/lab-settings' element={<LabSettings />} />
+            </Routes>
+          </div>
         </div>
       </div>
     );
@@ -193,15 +199,18 @@ const App = () => {
     if (hToken) {
       if (!hospital || hospital.status !== 'APPROVED') return <HospitalPending />;
       return (
-        <div className='bg-gray-50 flex min-h-screen'>
-          <HospitalSideBar />
-          <div className='flex-1 overflow-y-auto h-[calc(100vh-65px)]'>
-            <HospitalNavBar />
-            <Watermark />
-            <Routes>
-              <Route path='/hospital-dashboard/*' element={<HospitalDashboard />} />
-              <Route path='*' element={<HospitalDashboard />} />
-            </Routes>
+        <div className='flex flex-col h-screen overflow-hidden'>
+          <AnnouncementTicker backendUrl={backendUrl} />
+          <div className='flex flex-1 overflow-hidden bg-gray-50'>
+            <HospitalSideBar />
+            <div className='flex-1 overflow-y-auto flex flex-col'>
+              <HospitalNavBar />
+              <Watermark />
+              <Routes>
+                <Route path='/hospital-dashboard/*' element={<HospitalDashboard />} />
+                <Route path='*' element={<HospitalDashboard />} />
+              </Routes>
+            </div>
           </div>
         </div>
       );
@@ -210,46 +219,49 @@ const App = () => {
     if (aToken || dToken) {
       const IsDoctor = !!dToken;
       const MainView = (
-        <div className='bg-gray-50 flex min-h-screen'>
-          <AdminSideBar />
-          <div className='flex-1 overflow-y-auto h-[calc(100vh-65px)]'>
-            <AdminNavBar />
-            <Watermark />
-            <Routes>
-              {IsDoctor ? (
-                <>
-                  <Route path='/' element={<DoctorDashboard />} />
-                  <Route path='/doctor-dashboard' element={<DoctorDashboard />} />
-                  <Route path='/doctor-calendar' element={<DoctorCalendar />} />
-                  <Route path='/doctor-appointments' element={<DoctorAppointment />} />
-                  <Route path='/doctor-profile' element={<DoctorProfile />} />
-                  <Route path='/prescriptions' element={<Prescriptions />} />
-                  <Route path='/records' element={<Records />} />
-                  <Route path='/patients' element={<Patients />} />
-                  <Route path='/doctor-reports' element={<DoctorReports />} />
-                </>
-              ) : (
-                <>
-                  <Route path='/admin-dashboard' element={<Dashboard />} />
-                  <Route path='/all-appointments' element={<AllAppointments />} />
-                  <Route path='/add-doctor' element={<AddDoctor />} />
-                  <Route path='/doctor-list' element={<DoctorsList />} />
-                  <Route path='/manage-users' element={<ManageUsers />} />
-                  <Route path='/payment-approvals' element={<PaymentApprovals />} />
-                  <Route path='/hospital-approvals' element={<HospitalApprovals />} />
-                  <Route path='/doctor-approvals' element={<DoctorApprovals />} />
-                  <Route path='/announcements' element={<Announcements />} />
-                  <Route path='/settings' element={<Settings />} />
-                  <Route path='/admin-ai-knowledge' element={<AIKnowledgeIngest />} />
-                  <Route path='/hospital-register' element={<HospitalRegisterAdmin />} />
-                  <Route path='/hospital-trials' element={<HospitalTrials />} />
-                  <Route path='/pharmacy-management' element={<PharmacyManagement />} />
-                  <Route path='/lab-management' element={<LabManagement />} />
-                  <Route path='/email-management' element={<EmailManagement />} />
-                </>
-              )}
-              <Route path='*' element={IsDoctor ? <DoctorDashboard /> : <Dashboard />} />
-            </Routes>
+        <div className='flex flex-col h-screen overflow-hidden'>
+          <AnnouncementTicker backendUrl={backendUrl} />
+          <div className='flex flex-1 overflow-hidden bg-gray-50'>
+            <AdminSideBar />
+            <div className='flex-1 overflow-y-auto flex flex-col'>
+              <AdminNavBar />
+              <Watermark />
+              <Routes>
+                {IsDoctor ? (
+                  <>
+                    <Route path='/' element={<DoctorDashboard />} />
+                    <Route path='/doctor-dashboard' element={<DoctorDashboard />} />
+                    <Route path='/doctor-calendar' element={<DoctorCalendar />} />
+                    <Route path='/doctor-appointments' element={<DoctorAppointment />} />
+                    <Route path='/doctor-profile' element={<DoctorProfile />} />
+                    <Route path='/prescriptions' element={<Prescriptions />} />
+                    <Route path='/records' element={<Records />} />
+                    <Route path='/patients' element={<Patients />} />
+                    <Route path='/doctor-reports' element={<DoctorReports />} />
+                  </>
+                ) : (
+                  <>
+                    <Route path='/admin-dashboard' element={<Dashboard />} />
+                    <Route path='/all-appointments' element={<AllAppointments />} />
+                    <Route path='/add-doctor' element={<AddDoctor />} />
+                    <Route path='/doctor-list' element={<DoctorsList />} />
+                    <Route path='/manage-users' element={<ManageUsers />} />
+                    <Route path='/payment-approvals' element={<PaymentApprovals />} />
+                    <Route path='/hospital-approvals' element={<HospitalApprovals />} />
+                    <Route path='/doctor-approvals' element={<DoctorApprovals />} />
+                    <Route path='/announcements' element={<Announcements />} />
+                    <Route path='/settings' element={<Settings />} />
+                    <Route path='/admin-ai-knowledge' element={<AIKnowledgeIngest />} />
+                    <Route path='/hospital-register' element={<HospitalRegisterAdmin />} />
+                    <Route path='/hospital-trials' element={<HospitalTrials />} />
+                    <Route path='/pharmacy-management' element={<PharmacyManagement />} />
+                    <Route path='/lab-management' element={<LabManagement />} />
+                    <Route path='/email-management' element={<EmailManagement />} />
+                  </>
+                )}
+                <Route path='*' element={IsDoctor ? <DoctorDashboard /> : <Dashboard />} />
+              </Routes>
+            </div>
           </div>
         </div>
       );
@@ -258,34 +270,37 @@ const App = () => {
 
     return (
       <PasswordChangeGuard>
-        <div className='bg-light-bg min-h-screen'>
-          <IconTexture opacity={0.08} size={18} className="text-primary fixed inset-0 pointer-events-none z-0" />
-          <ChristmasAnimations />
-          {location.pathname !== '/onboarding' && !location.pathname.startsWith('/meeting') && <Navbar />}
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/doctors' element={<Doctors />} />
-            <Route path='/doctors/:speciality' element={<Doctors />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/404' element={<Error404 />} />
-            <Route path='/my-profile' element={<MyProfile />} />
-            <Route path='/my-appointments' element={<MyAppointments />} />
-            <Route path='/lab-results' element={<LabResults />} />
-            <Route path='/my-prescriptions' element={<MyPrescriptions />} />
-            <Route path='/medications' element={<Medications />} />
-            <Route path='/pharmacy' element={<PharmacySelection />} />
-            <Route path='/appointment/:docId' element={<Appointment />} />
-            <Route path='/medical-record' element={<MedicalRecord />} />
-            <Route path='/history' element={<PatientHistory />} />
-            <Route path='/onboarding' element={<Onboarding />} />
-            <Route path='/terms' element={<TermsOfService />} />
-            <Route path='/privacy' element={<PrivacyPolicy />} />
-            <Route path='*' element={<Error404 />} />
-          </Routes>
-          {location.pathname !== '/onboarding' && !location.pathname.startsWith('/meeting') && <Footer />}
+        <div className='bg-light-bg min-h-screen flex flex-col'>
+          <AnnouncementTicker backendUrl={backendUrl} />
+          <div className='flex-1'>
+            <IconTexture opacity={0.08} size={18} className="text-primary fixed inset-0 pointer-events-none z-0" />
+            <ChristmasAnimations />
+            {location.pathname !== '/onboarding' && !location.pathname.startsWith('/meeting') && <Navbar />}
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/doctors' element={<Doctors />} />
+              <Route path='/doctors/:speciality' element={<Doctors />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/404' element={<Error404 />} />
+              <Route path='/my-profile' element={<MyProfile />} />
+              <Route path='/my-appointments' element={<MyAppointments />} />
+              <Route path='/lab-results' element={<LabResults />} />
+              <Route path='/my-prescriptions' element={<MyPrescriptions />} />
+              <Route path='/medications' element={<Medications />} />
+              <Route path='/pharmacy' element={<PharmacySelection />} />
+              <Route path='/appointment/:docId' element={<Appointment />} />
+              <Route path='/medical-record' element={<MedicalRecord />} />
+              <Route path='/history' element={<PatientHistory />} />
+              <Route path='/onboarding' element={<Onboarding />} />
+              <Route path='/terms' element={<TermsOfService />} />
+              <Route path='/privacy' element={<PrivacyPolicy />} />
+              <Route path='*' element={<Error404 />} />
+            </Routes>
+            {location.pathname !== '/onboarding' && !location.pathname.startsWith('/meeting') && <Footer />}
+          </div>
         </div>
       </PasswordChangeGuard>
     );
@@ -294,7 +309,6 @@ const App = () => {
   return (
     <ChatContextProvider tokens={chatTokens} role={chatRole}>
       <div className="relative z-10 transition-all duration-500 min-h-screen">
-        <AnnouncementTicker backendUrl={backendUrl} />
         <ToastContainer {...toastConfig} />
         {pageLoading && <GlobalLoader />}
         {renderContent()}

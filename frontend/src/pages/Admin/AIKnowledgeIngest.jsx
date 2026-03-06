@@ -67,11 +67,11 @@ const AIKnowledgeIngest = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
-        <div className="max-w-5xl space-y-3">
-          <p className="text-xs   tracking-widest text-white/70">{t('ai.header.title') || 'AI'} / Knowledge</p>
-          <h1 className="text-3xl sm:text-4xl font-semibold">AI Knowledge Ingest</h1>
-          <p className="text-sm sm:text-base text-white/80 max-w-3xl">
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
+        <div className="max-w-5xl space-y-1">
+          <p className="text-xs tracking-widest text-[#064e3b] font-semibold">{t('ai.header.title') || 'AI'} / Knowledge</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">AI Knowledge Ingest</h1>
+          <p className="text-sm text-gray-500 max-w-3xl pt-1">
             Add curated sources to power semantic search and grounded answers.
           </p>
         </div>
@@ -174,7 +174,7 @@ const AIKnowledgeIngest = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full sm:w-auto bg-primary text-white px-6 py-3 text-xs   tracking-[0.4em] rounded disabled:opacity-60"
+                  className="w-full sm:w-auto bg-[#006838] text-white px-8 py-3 text-xs   tracking-[0.4em] rounded font-semibold hover:opacity-90 transition-all shadow-md disabled:opacity-60"
                 >
                   {loading ? 'Ingesting...' : 'Ingest'}
                 </button>

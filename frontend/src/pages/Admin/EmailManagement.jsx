@@ -137,13 +137,13 @@ const EmailManagement = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
-        <div className="max-w-5xl space-y-3">
-          <p className="text-xs   tracking-widest text-white/70">Email Management</p>
-          <h1 className="text-3xl sm:text-4xl font-semibold">
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
+        <div className="max-w-5xl space-y-1">
+          <p className="text-xs tracking-widest text-[#064e3b] font-semibold">Email Management</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
             Send Promotional Emails
           </h1>
-          <p className="text-sm sm:text-base text-white/80 max-w-3xl">
+          <p className="text-sm text-gray-500 max-w-3xl pt-1">
             Manage and send promotional emails to users and newsletter subscribers
           </p>
         </div>
@@ -221,7 +221,7 @@ const EmailManagement = () => {
                 <button
                   type="submit"
                   disabled={sending || selectedEmails.length === 0}
-                  className="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-2 bg-[#006838] text-white rounded-lg font-semibold hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition shadow-md"
                 >
                   {sending ? 'Sending...' : `Send to ${selectedEmails.length} Recipients`}
                 </button>
@@ -275,8 +275,8 @@ const EmailManagement = () => {
                       <td className="px-4 py-3 text-sm text-gray-600">{item.name || '-'}</td>
                       <td className="px-4 py-3">
                         <span className={`px-2 py-1 text-xs rounded ${item.type === 'user'
-                            ? 'bg-blue-100 text-blue-800'
-                            : 'bg-green-100 text-green-800'
+                          ? 'bg-blue-100 text-blue-800'
+                          : 'bg-green-100 text-green-800'
                           }`}>
                           {item.type === 'user' ? 'User' : 'Subscriber'}
                         </span>

@@ -45,23 +45,23 @@ const LabManagement = () => {
     return (
         <div className="bg-white min-h-screen">
             {/* Header Section */}
-            <section className="bg-primary text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
+            <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <div className="space-y-3">
-                            <p className="text-xs   tracking-[0.45em] text-white/70">
+                        <div className="space-y-1">
+                            <p className="text-xs tracking-widest text-[#064e3b] font-semibold">
                                 Diagnostic Centers
                             </p>
-                            <h1 className="text-3xl sm:text-4xl font-semibold">
+                            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
                                 Lab Management
                             </h1>
-                            <p className="text-sm sm:text-base text-white/80 max-w-3xl">
+                            <p className="text-sm text-gray-500 max-w-3xl pt-1">
                                 Register and manage diagnostic centers across the network
                             </p>
                         </div>
                         <button
                             onClick={() => setShowAddModal(true)}
-                            className="flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg hover:bg-white/90 transition-colors font-medium"
+                            className="flex items-center gap-2 bg-[#006838] text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all font-semibold shadow-md"
                         >
                             <FaPlus />
                             <span>Register New Lab</span>

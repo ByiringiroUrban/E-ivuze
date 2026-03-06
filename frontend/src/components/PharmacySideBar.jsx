@@ -1,25 +1,23 @@
 import React, { useContext } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useSidebar } from "../hooks/useSidebar";
 import { PharmacyContext } from "../context/PharmacyContext";
+import { assets } from '../assets/assets';
 import {
     FaHome,
     FaBox,
     FaShoppingCart,
     FaChartLine,
     FaCog,
-    FaUserMd,
-    FaHospital,
     FaUsers,
     FaSignOutAlt
 } from "react-icons/fa";
 
 const PharmacySideBar = () => {
     const { t } = useTranslation();
-    const location = useLocation();
     const { isOpen } = useSidebar();
-    const { logoutPharmacy } = useContext(PharmacyContext);
+    const { logoutPharmacy, pToken } = useContext(PharmacyContext);
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -28,84 +26,89 @@ const PharmacySideBar = () => {
     };
 
     const menuItems = [
-        {
-            path: '/pharmacy-dashboard',
-            icon: FaHome,
-            label: t('pharmacy.sidebar.dashboard') || 'Dashboard'
-        },
-        {
-            path: '/pharmacy-inventory',
-            icon: FaBox,
-            label: t('pharmacy.sidebar.inventory') || 'Inventory'
-        },
-        {
-            path: '/pharmacy-orders',
-            icon: FaShoppingCart,
-            label: t('pharmacy.sidebar.orders') || 'Orders'
-        },
-        {
-            path: '/pharmacy-reports',
-            icon: FaChartLine,
-            label: t('pharmacy.sidebar.reports') || 'Reports'
-        },
-        {
-            path: '/pharmacy-impersonate',
-            icon: FaUsers,
-            label: t('pharmacy.sidebar.impersonate') || 'Impersonate User',
-            divider: true
-        },
-        {
-            path: '/pharmacy-settings',
-            icon: FaCog,
-            label: t('pharmacy.sidebar.settings') || 'Settings',
-            divider: true
-        }
+        { to: '/pharmacy-dashboard', icon: <FaHome />, label: t('pharmacy.sidebar.dashboard') || 'Dashboard', end: true },
+        { to: '/pharmacy-inventory', icon: <FaBox />, label: t('pharmacy.sidebar.inventory') || 'Inventory' },
+        { to: '/pharmacy-orders', icon: <FaShoppingCart />, label: t('pharmacy.sidebar.orders') || 'Orders' },
+        { to: '/pharmacy-reports', icon: <FaChartLine />, label: t('pharmacy.sidebar.reports') || 'Reports' },
+        { to: '/pharmacy-impersonate', icon: <FaUsers />, label: t('pharmacy.sidebar.impersonate') || 'Impersonate User' },
+        { to: '/pharmacy-settings', icon: <FaCog />, label: t('pharmacy.sidebar.settings') || 'Settings' }
     ];
 
-    return (
-        <div className={`bg-[#064e3b] text-white sticky top-[65px] min-h-[calc(100vh-65px)] h-full overflow-y-auto transition-all duration-300 ${isOpen
-            ? 'w-64 border-r border-white/5'
-            : 'w-0 overflow-hidden border-r-0'
-            }`}>
-            {isOpen && (
-                <div className="p-4 space-y-6">
-                    <nav className="space-y-2">
-                        {menuItems.map((item, index) => {
-                            const Icon = item.icon;
-                            const isActive = location.pathname === item.path ||
-                                (item.path !== '/pharmacy-dashboard' && location.pathname.startsWith(item.path));
+    if (!pToken) return null;
 
-                            return (
-                                <React.Fragment key={item.path}>
-                                    {item.divider && index > 0 && (
-                                        <div className="my-4 border-t border-white/10"></div>
-                                    )}
-                                    <NavLink
-                                        to={item.path}
-                                        className={`
-                    flex items-center gap-3 px-4 py-3 rounded-lg   text-[11px] tracking-[0.25em] transition-colors
-                    ${isActive
-                                                ? 'bg-white/10 text-white font-medium border border-white/30'
-                                                : 'text-white/70 hover:bg-white/5'
-                                            }
-                  `}
-                                    >
-                                        <Icon className="text-lg" />
-                                        <span>{item.label}</span>
-                                    </NavLink>
-                                </React.Fragment>
-                            );
-                        })}
-                        <button
-                            onClick={handleLogout}
-                            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg   text-[11px] tracking-[0.25em] transition-colors text-white/70 hover:bg-red-500/20 hover:text-white border border-transparent hover:border-red-500/30"
-                        >
-                            <FaSignOutAlt className="text-lg" />
-                            <span>{t('nav.logout')}</span>
-                        </button>
-                    </nav>
-                </div>
-            )}
+    return (
+        <div
+            className={`relative h-full bg-[#064e3b] text-white flex flex-col transition-all duration-300 ease-in-out border-r border-[#ffffff10] z-[40] ${isOpen ? 'w-64' : 'w-20'
+                }`}
+        >
+            {/* Sidebar Header / Logo Section */}
+            <div className={`flex items-center h-16 px-4 border-b border-[#ffffff10] ${!isOpen && 'justify-center'}`}>
+                {isOpen ? (
+                    <div className="flex items-center gap-3">
+                        <img src={assets.logo} alt="Logo" className="w-8 h-8 object-contain" />
+                        <span className="font-bold text-lg tracking-tight uppercase whitespace-nowrap overflow-hidden">PHARMACY</span>
+                    </div>
+                ) : (
+                    <img src={assets.logo} alt="Logo" className="w-8 h-8 object-contain" />
+                )}
+            </div>
+
+            {/* Navigation Links */}
+            <div className="flex-1 overflow-y-auto py-4 scrollbar-hide">
+                <ul className="space-y-1 px-3">
+                    {menuItems.map((item) => (
+                        <li key={item.to}>
+                            <NavLink
+                                to={item.to}
+                                end={item.end}
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group relative ${isActive
+                                        ? 'bg-white text-[#064e3b] shadow-lg'
+                                        : 'text-white/70 hover:bg-white/10 hover:text-white'
+                                    }`
+                                }
+                            >
+                                <div className={`text-xl flex-shrink-0 ${!isOpen && 'w-full flex justify-center'}`}>
+                                    {item.icon}
+                                </div>
+                                {isOpen && (
+                                    <span className="text-sm font-medium whitespace-nowrap overflow-hidden">
+                                        {item.label}
+                                    </span>
+                                )}
+                                {/* Tooltip for collapsed state */}
+                                {!isOpen && (
+                                    <div className="absolute left-full ml-4 px-3 py-2 bg-[#064e3b] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 shadow-xl border border-white/10">
+                                        {item.label}
+                                    </div>
+                                )}
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            {/* Bottom Actions / Logout */}
+            <div className="p-3 border-t border-[#ffffff10]">
+                <button
+                    onClick={handleLogout}
+                    className={`flex items-center gap-3 w-full px-3 py-3 rounded-xl transition-all duration-200 text-white/70 hover:bg-red-500/10 hover:text-red-400 group relative ${!isOpen && 'justify-center'}`}
+                >
+                    <div className="text-xl flex-shrink-0">
+                        <FaSignOutAlt />
+                    </div>
+                    {isOpen && (
+                        <span className="text-sm font-medium whitespace-nowrap overflow-hidden">
+                            {t('nav.logout')}
+                        </span>
+                    )}
+                    {!isOpen && (
+                        <div className="absolute left-full ml-4 px-3 py-2 bg-red-600 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 shadow-xl">
+                            {t('nav.logout')}
+                        </div>
+                    )}
+                </button>
+            </div>
         </div>
     );
 };

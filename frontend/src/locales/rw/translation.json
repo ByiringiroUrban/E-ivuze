@@ -1059,6 +1059,17 @@
       "doctor_approvals": "Doctor Approvals"
     },
     "doctorApprovals": {
+      "tabs": {
+        "pending": "Bitegereje",
+        "approved": "Byemejwe",
+        "rejected": "Byanze",
+        "all": "Byose"
+      },
+      "statuses": {
+        "pending": "Bitegereje",
+        "approved": "Byemejwe",
+        "rejected": "Byanze"
+      },
       "title": "Doctor Approvals",
       "fetchError": "Fetch Error",
       "confirmApprove": "Confirm Approve",
@@ -1157,6 +1168,7 @@
     "support": "Support",
     "doctorsListSubtitle": "Doctors List Subtitle",
     "manageUsers": {
+      "title": "Cunga abakoresha",
       "deleteUser": "Siba umukoresha",
       "importCsv": "Injiza CSV",
       "noData": "Nta data",

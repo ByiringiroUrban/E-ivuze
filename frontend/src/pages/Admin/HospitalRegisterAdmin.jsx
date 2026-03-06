@@ -119,11 +119,11 @@ const HospitalRegisterAdmin = () => {
         description="Admins can provision new hospitals for E-ivuzeConnect."
       />
 
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-16 py-12 sm:py-16 roun-b-2xl shadow-inner">
-        <div className="max-w-4xl space-y-4">
-          <p className="text-xs   tracking-[0.5em] text-white/70">{t('hospital.register.title')}</p>
-          <h1 className="text-3xl sm:text-4xl font-semibold">{t('hospital.register.subtitle')}</h1>
-          <p className="text-sm sm:text-base text-white/80 leading-relaxed">
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
+        <div className="max-w-4xl space-y-1">
+          <p className="text-xs tracking-widest text-[#064e3b] font-semibold">{t('hospital.register.title')}</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">{t('hospital.register.subtitle')}</h1>
+          <p className="text-sm text-gray-500 max-w-3xl pt-1">
             {t('hospital.register.adminNote') || 'Provision trusted hospital accounts so facilities can manage approvals, referrals and pharmacy coordination directly inside E-ivuze.'}
           </p>
         </div>
@@ -269,7 +269,7 @@ const HospitalRegisterAdmin = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex-1 bg-primary text-white py-3 text-xs   tracking-[0.35em] hover:bg-primary-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 bg-[#006838] text-white py-3 text-xs   tracking-[0.35em] hover:opacity-90 transition shadow-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitting ? t('hospital.register.submitting') : t('hospital.register.submitApplication')}
               </button>

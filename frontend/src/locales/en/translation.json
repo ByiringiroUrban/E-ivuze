@@ -1620,6 +1620,7 @@
     "doctorsListSubtitle": "Manage healthcare professionals",
     "doctorsListTitle": "Doctors List",
     "manageUsers": {
+      "title": "Manage Users",
       "deleteUser": "Delete user",
       "importCsv": "Import CSV",
       "noData": "No data",
@@ -1868,6 +1869,17 @@
       "doctor_approvals": "Doctor Approvals"
     },
     "doctorApprovals": {
+      "tabs": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "all": "All"
+      },
+      "statuses": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
       "title": "Doctor Approvals",
       "fetchError": "Fetch Error",
       "confirmApprove": "Confirm Approve",

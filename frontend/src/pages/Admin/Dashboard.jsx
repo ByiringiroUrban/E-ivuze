@@ -32,7 +32,7 @@ const Dashboard = () => {
     <div className="bg-white min-h-screen">
       <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
         <div className="max-w-5xl space-y-1">
-          <p className="text-xs tracking-widest text-[#064e3b] font-semibold uppercase">{t('admin.dashboardTitle') || 'Admin Dashboard'}</p>
+          <p className="text-xs tracking-widest text-[#064e3b] font-semibold  ">{t('admin.dashboardTitle') || 'Admin Dashboard'}</p>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
             {t('admin.dashboardHero') || 'Manage your healthcare platform'}
           </h1>

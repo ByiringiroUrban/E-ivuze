@@ -166,12 +166,12 @@ const HospitalTrials = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="space-y-3">
-            <p className="text-xs   tracking-[0.45em] text-white/70">{t('admin.hospitalTrials.title')}</p>
-            <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.hospitalTrials.hero')}</h1>
-            <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.hospitalTrials.subtitle')}</p>
+          <div className="space-y-1">
+            <p className="text-xs tracking-widest text-[#064e3b] font-semibold">{t('admin.hospitalTrials.title')}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">{t('admin.hospitalTrials.hero')}</h1>
+            <p className="text-sm text-gray-500 max-w-3xl pt-1">{t('admin.hospitalTrials.subtitle')}</p>
           </div>
           <LanguageSwitch />
         </div>
@@ -217,8 +217,8 @@ const HospitalTrials = () => {
               <button
                 onClick={() => setFilter('all')}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'all'
-                    ? 'bg-white text-primary shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white text-primary shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
                   }`}
               >
                 {t('admin.hospitalTrials.filterAll')} ({hospitals.length})
@@ -226,8 +226,8 @@ const HospitalTrials = () => {
               <button
                 onClick={() => setFilter('active')}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'active'
-                    ? 'bg-white text-primary shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white text-primary shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
                   }`}
               >
                 {t('admin.hospitalTrials.filterActive')} ({hospitals.filter(h => h.trialStatus === 'active').length})
@@ -235,8 +235,8 @@ const HospitalTrials = () => {
               <button
                 onClick={() => setFilter('expired')}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'expired'
-                    ? 'bg-white text-primary shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white text-primary shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
                   }`}
               >
                 {t('admin.hospitalTrials.filterExpired')} ({hospitals.filter(h => h.trialStatus === 'expired').length})
@@ -244,8 +244,8 @@ const HospitalTrials = () => {
               <button
                 onClick={() => setFilter('subscribed')}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'subscribed'
-                    ? 'bg-white text-primary shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white text-primary shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
                   }`}
               >
                 {t('admin.hospitalTrials.filterSubscribed')} ({hospitals.filter(h => h.trialStatus === 'subscribed').length})
@@ -334,8 +334,8 @@ const HospitalTrials = () => {
                         <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm">
                           {hospital.daysRemaining !== null ? (
                             <span className={`font-medium ${hospital.daysRemaining < 0 ? 'text-red-600' :
-                                hospital.daysRemaining < 7 ? 'text-yellow-600' :
-                                  'text-green-600'
+                              hospital.daysRemaining < 7 ? 'text-yellow-600' :
+                                'text-green-600'
                               }`}>
                               {hospital.daysRemaining < 0
                                 ? `${t('admin.hospitalTrials.expired')} ${Math.abs(hospital.daysRemaining)} ${t('admin.hospitalTrials.daysAgo')}`
@@ -481,8 +481,8 @@ const HospitalTrials = () => {
                   onClick={handleTrialAction}
                   disabled={loading}
                   className={`flex-1 py-2 rounded-lg font-medium transition-colors ${trialAction === 'remove'
-                      ? 'bg-red-600 hover:bg-red-700 text-white'
-                      : 'bg-primary hover:bg-primary-dark text-white'
+                    ? 'bg-red-600 hover:bg-red-700 text-white'
+                    : 'bg-primary hover:bg-primary-dark text-white'
                     } disabled:opacity-50`}
                 >
                   {loading ? t('admin.hospitalTrials.processing') : t('admin.hospitalTrials.apply')}

@@ -328,12 +328,12 @@ const PaymentApprovals = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="space-y-3">
-            <p className="text-xs   tracking-[0.45em] text-white/70">{t('admin.paymentApprovals.title') || t('admin.paymentApprovalsTitle') || 'Payment Approvals'}</p>
-            <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.paymentApprovalsTitle')}</h1>
-            <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.paymentApprovalsSubtitle')}</p>
+          <div className="space-y-1">
+            <p className="text-xs tracking-widest text-[#064e3b] font-semibold">{t('admin.paymentApprovals.title') || t('admin.paymentApprovalsTitle') || 'Payment Approvals'}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">{t('admin.paymentApprovalsTitle')}</h1>
+            <p className="text-sm text-gray-500 max-w-3xl pt-1">{t('admin.paymentApprovalsSubtitle')}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
             <LanguageSwitch />
@@ -362,7 +362,7 @@ const PaymentApprovals = () => {
               </button>
               <button
                 onClick={handleOpenCreateModal}
-                className="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
+                className="px-6 py-2 bg-[#006838] text-white rounded-lg font-semibold hover:opacity-90 transition-all shadow-md flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />

@@ -3,6 +3,7 @@ import userModel from '../models/userModel.js';
 import doctorModel from '../models/doctorModel.js';
 import labModel from '../models/labModel.js';
 import { sendEmail, getCommonEmailTemplate } from '../utils/emailService.js';
+import { emitNotification } from './socketService.js';
 
 // Dynamic import for pharmacyModel to avoid circular deps if any, or just import it.
 // Assuming simple import works.
@@ -65,6 +66,9 @@ const sendNotification = async (userId, type, title, message, appointmentId = nu
     await notification.save();
     console.log(`✅ [NOTIFICATION] Notification created with ID: ${notification._id}`);
 
+    // Real-time emission
+    emitNotification('patient', userId, notification);
+
     // Get user email
     const user = await userModel.findById(userId).select('email name');
     if (!user || !user.email) {
@@ -99,6 +103,9 @@ const sendNotificationToDoctor = async (docId, type, title, message, appointment
     });
     await notification.save();
     console.log(`✅ [NOTIFICATION] Notification created with ID: ${notification._id}`);
+
+    // Real-time emission
+    emitNotification('doctor', docId, notification);
 
     // Get doctor email
     const doctor = await doctorModel.findById(docId).select('email name');
@@ -149,6 +156,9 @@ const sendNotificationToLab = async (labId, type, title, message, appointmentId 
     await notification.save();
     console.log(`✅ [NOTIFICATION] Lab Notification created: ${notification._id}`);
 
+    // Real-time emission
+    emitNotification('lab', labId, notification);
+
     // Get Lab email
     const lab = await labModel.findById(labId).select('email name');
     if (!lab || !lab.email) {
@@ -179,6 +189,9 @@ const sendNotificationToPharmacy = async (pharmacyId, type, title, message, appo
       appointmentId
     });
     await notification.save();
+
+    // Real-time emission
+    emitNotification('pharmacy', pharmacyId, notification);
 
     // Import pharmacy model dynamically
     const pharmacyModel = (await import('../models/pharmacyModel.js')).default;

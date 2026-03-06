@@ -18,7 +18,7 @@ import {
 // Brand Colors from tailwind.config.js
 export const COLORS = {
     primary: '#064e3b',      // Dark Green
-    secondary: '#1e3a8a',    // Deep Blue
+    secondary: '#10b981',    // Emerald Green (was blue)
     accent: '#334155',       // Slate
     white: '#FFFFFF'
 };
@@ -90,12 +90,12 @@ export const LoadingComponents = {
     DashboardLoader: ({ text = "" } = {}) => (
         <div className="bg-white min-h-[500px] w-full">
             <div className="animate-pulse">
-                <section className="bg-[#14324f] px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
-                    <div className="max-w-5xl space-y-4">
-                        <div className="h-3 w-40 bg-white/20 rounded" />
-                        <div className="h-9 w-3/4 bg-white/20 rounded" />
-                        <div className="h-4 w-2/3 bg-white/20 rounded" />
-                        {text ? <div className="h-3 w-56 bg-white/20 rounded" /> : null}
+                <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
+                    <div className="max-w-7xl mx-auto space-y-1">
+                        <div className="h-3 w-40 bg-[#064e3b]/10 rounded" />
+                        <div className="h-8 w-1/2 bg-gray-100 rounded" />
+                        <div className="h-4 w-2/3 bg-gray-100 rounded pt-1" />
+                        {text ? <div className="h-3 w-56 bg-gray-100 rounded" /> : null}
                     </div>
                 </section>
 
@@ -105,10 +105,10 @@ export const LoadingComponents = {
                             {Array.from({ length: 4 }).map((_, idx) => (
                                 <div key={idx} className="border border-border bg-white shadow-sm rounded-xl p-6">
                                     <div className="flex items-center gap-4">
-                                        <div className="h-12 w-12 rounded-full bg-gray-200" />
+                                        <div className="h-12 w-12 rounded-full bg-[#064e3b]/5" />
                                         <div className="flex-1 space-y-3">
-                                            <div className="h-6 w-24 bg-gray-200 rounded" />
-                                            <div className="h-3 w-32 bg-gray-200 rounded" />
+                                            <div className="h-6 w-24 bg-[#064e3b]/5 rounded" />
+                                            <div className="h-3 w-32 bg-[#064e3b]/5 rounded" />
                                         </div>
                                     </div>
                                 </div>
@@ -117,20 +117,20 @@ export const LoadingComponents = {
 
                         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-6">
                             <div className="border border-border bg-white shadow-sm rounded-xl p-6">
-                                <div className="h-4 w-40 bg-gray-200 rounded mb-6" />
-                                <div className="h-56 w-full bg-gray-200 rounded" />
+                                <div className="h-4 w-40 bg-[#064e3b]/5 rounded mb-6" />
+                                <div className="h-56 w-full bg-[#064e3b]/5 rounded" />
                             </div>
                             <div className="border border-border bg-white shadow-sm rounded-xl p-6">
-                                <div className="h-4 w-32 bg-gray-200 rounded mb-6" />
-                                <div className="h-56 w-full bg-gray-200 rounded" />
+                                <div className="h-4 w-32 bg-[#064e3b]/5 rounded mb-6" />
+                                <div className="h-56 w-full bg-[#064e3b]/5 rounded" />
                             </div>
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                             {Array.from({ length: 3 }).map((_, idx) => (
                                 <div key={idx} className="border border-border bg-white shadow-sm rounded-xl p-6">
-                                    <div className="h-4 w-36 bg-gray-200 rounded mb-6" />
-                                    <div className="h-44 w-full bg-gray-200 rounded" />
+                                    <div className="h-4 w-36 bg-[#064e3b]/5 rounded mb-6" />
+                                    <div className="h-44 w-full bg-[#064e3b]/5 rounded" />
                                 </div>
                             ))}
                         </div>
@@ -138,30 +138,30 @@ export const LoadingComponents = {
                         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
                             <div className="border border-border bg-white shadow-sm rounded-xl">
                                 <div className="px-5 py-4 border-b border-border">
-                                    <div className="h-3 w-56 bg-gray-200 rounded mb-3" />
-                                    <div className="h-3 w-72 bg-gray-200 rounded" />
+                                    <div className="h-3 w-56 bg-[#064e3b]/5 rounded mb-3" />
+                                    <div className="h-3 w-72 bg-[#064e3b]/5 rounded" />
                                 </div>
                                 <div className="p-5 space-y-4">
                                     {Array.from({ length: 5 }).map((_, idx) => (
-                                        <div key={idx} className="h-10 w-full bg-gray-200 rounded" />
+                                        <div key={idx} className="h-10 w-full bg-[#064e3b]/5 rounded" />
                                     ))}
                                 </div>
                             </div>
 
                             <div className="border border-border bg-white shadow-sm rounded-xl p-5 space-y-6">
                                 <div>
-                                    <div className="h-3 w-36 bg-gray-200 rounded mb-3" />
-                                    <div className="h-3 w-60 bg-gray-200 rounded" />
+                                    <div className="h-3 w-36 bg-[#064e3b]/5 rounded mb-3" />
+                                    <div className="h-3 w-60 bg-[#064e3b]/5 rounded" />
                                 </div>
                                 <div className="space-y-3">
                                     {Array.from({ length: 3 }).map((_, idx) => (
-                                        <div key={idx} className="h-10 w-full bg-gray-200 rounded" />
+                                        <div key={idx} className="h-10 w-full bg-[#064e3b]/5 rounded" />
                                     ))}
                                 </div>
                                 <div className="border-t border-border pt-5 space-y-2">
-                                    <div className="h-3 w-24 bg-gray-200 rounded" />
-                                    <div className="h-3 w-48 bg-gray-200 rounded" />
-                                    <div className="h-3 w-40 bg-gray-200 rounded" />
+                                    <div className="h-3 w-24 bg-[#064e3b]/5 rounded" />
+                                    <div className="h-3 w-48 bg-[#064e3b]/5 rounded" />
+                                    <div className="h-3 w-40 bg-[#064e3b]/5 rounded" />
                                 </div>
                             </div>
                         </div>

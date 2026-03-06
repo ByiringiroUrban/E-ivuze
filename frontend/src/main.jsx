@@ -12,6 +12,7 @@ import HospitalContextProvider from './context/HospitalContext.jsx'
 import PharmacyContextProvider from './context/PharmacyContext.jsx'
 import LabContextProvider from './context/LabContext.jsx'
 import AppContextProvider from './context/AppContext.jsx'
+import { SidebarProvider } from './context/SidebarContext.jsx'
 import './i18n'
 import LanguageSwitch from './components/LanguageSwitch.jsx'
 import { runLanguageTest } from './utils/runLanguageTest.js'
@@ -50,8 +51,10 @@ createRoot(document.getElementById('root')).render(
             <PharmacyContextProvider>
               <LabContextProvider>
                 <AppContextProvider>
-                  <App />
-                  <LanguageSwitch />
+                  <SidebarProvider>
+                    <App />
+                    <LanguageSwitch />
+                  </SidebarProvider>
                 </AppContextProvider>
               </LabContextProvider>
             </PharmacyContextProvider>

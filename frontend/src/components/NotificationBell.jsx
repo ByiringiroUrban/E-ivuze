@@ -2,9 +2,11 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AppContext } from '../context/AppContext';
+import { ChatContext } from '../context/ChatContext';
 
 const NotificationBell = () => {
   const { token, backendUrl } = useContext(AppContext);
+  const { socket } = useContext(ChatContext);
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
@@ -93,12 +95,30 @@ const NotificationBell = () => {
   useEffect(() => {
     if (token) {
       fetchNotifications();
-      // Poll for new notifications every 30 seconds
-      const interval = setInterval(fetchNotifications, 30000);
-      return () => clearInterval(interval);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
+
+  useEffect(() => {
+    if (!socket) return;
+
+    const handleNewNotification = (notification) => {
+      console.log('🚀 Real-time notification received:', notification);
+      setNotifications(prev => [notification, ...prev]);
+      setUnreadCount(prev => prev + 1);
+
+      // Optional: Show a toast for the new notification
+      toast.info(`🔔 ${notification.title}`, {
+        position: "top-right",
+        autoClose: 5000,
+      });
+    };
+
+    socket.on('new_notification', handleNewNotification);
+
+    return () => {
+      socket.off('new_notification', handleNewNotification);
+    };
+  }, [socket]);
 
   if (!token) return null;
 

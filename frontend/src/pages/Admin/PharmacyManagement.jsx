@@ -321,16 +321,16 @@ const PharmacyManagement = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="space-y-3">
-            <p className="text-xs   tracking-widest text-white/70">
+          <div className="space-y-1">
+            <p className="text-xs tracking-widest text-[#064e3b] font-semibold">
               {t('admin.pharmacyManagement.title') || 'Pharmacy management'}
             </p>
-            <h1 className="text-3xl sm:text-4xl font-semibold">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
               {t('admin.pharmacyManagement.title') || 'Pharmacy management'}
             </h1>
-            <p className="text-sm sm:text-base text-white/80 max-w-3xl">
+            <p className="text-sm text-gray-500 max-w-3xl pt-1">
               {t('admin.pharmacyManagement.subtitle') || 'Invite, verify and manage pharmacy partners across the platform.'}
             </p>
           </div>
@@ -352,7 +352,7 @@ const PharmacyManagement = () => {
                 });
                 setShowCreateForm(true);
               }}
-              className="px-4 py-2 bg-white text-[#14324f] rounded-lg font-semibold hover:bg-white/90 transition-all"
+              className="px-6 py-2 bg-[#006838] text-white rounded-lg font-semibold hover:opacity-90 transition-all shadow-md"
             >
               {t('admin.pharmacyManagement.addPharmacy') || 'Add pharmacy'}
             </button>
@@ -421,8 +421,8 @@ const PharmacyManagement = () => {
                   <div>
                     <span
                       className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${pharmacy.invitationAccepted
-                          ? 'bg-primary/10 text-primary'
-                          : 'bg-yellow-100 text-yellow-700'
+                        ? 'bg-primary/10 text-primary'
+                        : 'bg-yellow-100 text-yellow-700'
                         }`}
                     >
                       {pharmacy.invitationAccepted
@@ -668,7 +668,7 @@ const PharmacyManagement = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="px-6 py-2 bg-[#006838] text-white rounded-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md font-semibold"
                 >
                   {loading
                     ? (t('admin.pharmacyManagement.saving') || 'Saving...')

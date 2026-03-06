@@ -132,12 +132,12 @@ const AddDoctor = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="space-y-3">
-            <p className="text-xs   tracking-widest text-white/70">{t('admin.addDoctor')}</p>
-            <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.addDoctorTitle')}</h1>
-            <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.addDoctorSubtitle')}</p>
+          <div className="space-y-1">
+            <p className="text-xs tracking-widest text-[#064e3b] font-semibold">{t('admin.addDoctor')}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">{t('admin.addDoctorTitle')}</h1>
+            <p className="text-sm text-gray-500 max-w-3xl pt-1">{t('admin.addDoctorSubtitle')}</p>
           </div>
           <LanguageSwitch />
         </div>
@@ -363,7 +363,7 @@ const AddDoctor = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full sm:w-auto px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-md disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+                className="w-full sm:w-auto px-10 py-3 bg-[#006838] text-white rounded-lg hover:opacity-90 transition-all duration-300 shadow-md disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
               >
                 {loading ? <LoadingComponents.ButtonLoader /> : (t('admin.addDoctorForm.submitButton') || 'Add Doctor')}
               </button>

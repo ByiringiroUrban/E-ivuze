@@ -19,7 +19,7 @@ const visitorsData = [
 
 export const VisitorInsightsChart = ({ data }) => (
     <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-        <h3 className="text-lg font-bold text-[#14324f] mb-4">Visitor Insights</h3>
+        <h3 className="text-lg font-bold text-[#064e3b] mb-4">Visitor Insights</h3>
         <div className="h-[250px] w-full">
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data && data.length > 0 ? data : []}>
@@ -52,7 +52,7 @@ const revenueData = [
 
 export const TotalRevenueChart = ({ data }) => (
     <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-        <h3 className="text-lg font-bold text-[#14324f] mb-4">Total Revenue</h3>
+        <h3 className="text-lg font-bold text-[#064e3b] mb-4">Total Revenue</h3>
         <div className="h-[200px] w-full">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data && data.length > 0 ? data : []} barSize={12}>
@@ -61,8 +61,8 @@ export const TotalRevenueChart = ({ data }) => (
                     <YAxis tick={{ fontSize: 12, fill: '#888' }} axisLine={false} tickLine={false} />
                     <Tooltip cursor={{ fill: 'transparent' }} />
                     <Legend iconType="circle" />
-                    <Bar dataKey="online" fill="#0095FF" radius={[4, 4, 0, 0]} name="Online Sales" />
-                    <Bar dataKey="offline" fill="#00E096" radius={[4, 4, 0, 0]} name="Offline Sales" />
+                    <Bar dataKey="online" fill="#059669" radius={[4, 4, 0, 0]} name="Online Sales" />
+                    <Bar dataKey="offline" fill="#10B981" radius={[4, 4, 0, 0]} name="Offline Sales" />
                 </BarChart>
             </ResponsiveContainer>
         </div>
@@ -82,7 +82,7 @@ const satisfactionData = [
 
 export const CustomerSatisfactionChart = () => (
     <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm h-full flex flex-col">
-        <h3 className="text-lg font-bold text-[#14324f] mb-4">Customer Satisfaction</h3>
+        <h3 className="text-lg font-bold text-[#064e3b] mb-4">Customer Satisfaction</h3>
         <div className="flex-1 flex items-center justify-center text-gray-400 text-sm bg-gray-50 rounded-lg">
             Insufficient feedback data to display
         </div>
@@ -103,7 +103,7 @@ const targetData = [
 
 export const TargetRealityChart = ({ data }) => (
     <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-        <h3 className="text-lg font-bold text-[#14324f] mb-4">Target vs Reality</h3>
+        <h3 className="text-lg font-bold text-[#064e3b] mb-4">Target vs Reality</h3>
         <div className="h-[200px] w-full">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data && data.length > 0 ? data : []} barGap={4} barCategoryGap="20%">
@@ -157,7 +157,7 @@ export const StatCard = ({ icon, value, label, subtext, color }) => {
             <div>
                 <h4 className={`text-2xl font-bold ${style.text} mb-1`}>{value}</h4>
                 <p className="text-[#425166] font-medium text-sm mb-2">{label}</p>
-                <p className="text-[#4079ED] text-xs font-semibold">{subtext || "+8% from yesterday"}</p>
+                <p className="text-[#059669] text-xs font-semibold">{subtext || "+8% from yesterday"}</p>
             </div>
         </div>
     );
@@ -166,21 +166,21 @@ export const StatCard = ({ icon, value, label, subtext, color }) => {
 // --- TOP DOCTORS ---
 export const TopDoctors = ({ data }) => (
     <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm h-full">
-        <h3 className="text-lg font-bold text-[#14324f] mb-6">Top Performers</h3>
+        <h3 className="text-lg font-bold text-[#064e3b] mb-6">Top Performers</h3>
         <div className="space-y-6">
             {data && data.length > 0 ? data.map((doc, i) => (
                 <div key={i}>
                     <div className="flex justify-between text-sm mb-2">
-                        <span className="font-semibold text-[#14324f]">0{i + 1} {doc.name}</span>
+                        <span className="font-semibold text-[#064e3b]">0{i + 1} {doc.name}</span>
                         <span className="text-gray-500 text-xs">{doc.speciality}</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
-                            <div className="h-full bg-[#0095FF]" style={{ width: `${Math.min(doc.count * 10, 100)}%` }}></div>
+                            <div className="h-full bg-[#059669]" style={{ width: `${Math.min(doc.count * 10, 100)}%` }}></div>
                         </div>
                         <div className="flex flex-col items-end min-w-[70px]">
-                            <span className="text-[10px] font-bold text-[#0095FF]">{doc.count} Appts</span>
-                            <span className="text-[10px] font-bold text-[#00E096]">{doc.completionRate}% Done</span>
+                            <span className="text-[10px] font-bold text-[#059669]">{doc.count} Appts</span>
+                            <span className="text-[10px] font-bold text-[#10B981]">{doc.completionRate}% Done</span>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useMemo } from 'react';
 import { AdminContext } from '../../context/AdminContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -24,10 +24,8 @@ const DoctorApprovals = () => {
   const fetchDoctors = async () => {
     setLoading(true);
     try {
-      const status = selectedTab === 'all' ? undefined : selectedTab;
       const { data } = await axios.get(backendUrl + '/api/admin/doctor-approvals', {
-        headers: { aToken },
-        params: status ? { status } : {}
+        headers: { aToken }
       });
       if (data.success) {
         setDoctors(data.doctors);
@@ -187,15 +185,22 @@ const DoctorApprovals = () => {
     ? doctors
     : doctors.filter(d => d.status === selectedTab);
 
+  const tabCounts = useMemo(() => ({
+    all: doctors.length,
+    pending: doctors.filter(d => d.status === 'pending').length,
+    approved: doctors.filter(d => d.status === 'approved').length,
+    rejected: doctors.filter(d => d.status === 'rejected').length
+  }), [doctors]);
+
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="space-y-3">
-            <p className="text-xs   tracking-widest text-white/70">{t('admin.doctorApprovals.title')}</p>
-            <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.doctorApprovals.hero')}</h1>
-            <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.doctorApprovals.subtitle')}</p>
+          <div className="space-y-1">
+            <p className="text-xs tracking-widest text-[#064e3b] font-semibold">{t('admin.doctorApprovals.title')}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">{t('admin.doctorApprovals.hero')}</h1>
+            <p className="text-sm text-gray-500 max-w-3xl pt-1">{t('admin.doctorApprovals.subtitle')}</p>
           </div>
           <LanguageSwitch />
         </div>
@@ -216,7 +221,7 @@ const DoctorApprovals = () => {
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                     }`}
                 >
-                  {t(`admin.doctorApprovals.tabs.${tab}`)} ({filteredDoctors.length})
+                  {t(`admin.doctorApprovals.tabs.${tab}`)} ({tabCounts[tab]})
                 </button>
               ))}
             </nav>

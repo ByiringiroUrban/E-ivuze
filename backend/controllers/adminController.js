@@ -1761,7 +1761,94 @@ const deleteDoctorApproval = async (req, res) => {
   }
 };
 
+const getAllLabs = async (req, res) => {
+  try {
+    const labs = await labModel.find().select('-password').sort({ createdAt: -1 });
+    res.json({ success: true, labs });
+  } catch (error) {
+    console.error('Get labs error:', error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+const deleteLab = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await labModel.findByIdAndDelete(id);
+    if (!deleted) return res.json({ success: false, message: "Lab not found" });
+    res.json({ success: true, message: "Lab Deleted Successfully" });
+  } catch (error) {
+    console.error('Delete lab error:', error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+const deleteHospital = async (req, res) => {
+  try {
+    const { hospitalId } = req.params;
+    const hospital = await hospitalModel.findById(hospitalId);
+    if (!hospital) return res.json({ success: false, message: "Hospital not found" });
+
+    // In a real app, you might check for existing records (doctors, patients)
+    await hospitalModel.findByIdAndDelete(hospitalId);
+    res.json({ success: true, message: "Hospital Deleted Successfully" });
+  } catch (error) {
+    console.error('Delete hospital error:', error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+const deletePharmacy = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const pharmacy = await pharmacyModel.findById(id);
+    if (!pharmacy) return res.json({ success: false, message: "Pharmacy not found" });
+
+    // Clean up pharmacy user as well
+    await pharmacyUserModel.deleteMany({ pharmacyId: id });
+    await pharmacyModel.findByIdAndDelete(id);
+
+    res.json({ success: true, message: "Pharmacy and its users deleted successfully" });
+  } catch (error) {
+    console.error('Delete pharmacy error:', error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+const updateHospital = async (req, res) => {
+  try {
+    const { hospitalId } = req.params;
+    const { name, phone, website, address, status, trialEndsAt, trialPeriodActive } = req.body;
+
+    const hospital = await hospitalModel.findById(hospitalId);
+    if (!hospital) return res.json({ success: false, message: "Hospital not found" });
+
+    const updates = {};
+    if (name) updates.name = name;
+    if (phone) updates.phone = phone;
+    if (website !== undefined) updates.website = website;
+    if (status) updates.status = status;
+    if (trialEndsAt) updates.trialEndsAt = trialEndsAt;
+    if (trialPeriodActive !== undefined) updates.trialPeriodActive = trialPeriodActive;
+
+    if (address) {
+      try {
+        updates.address = typeof address === 'string' ? JSON.parse(address) : address;
+      } catch (e) {
+        updates.address = address;
+      }
+    }
+
+    await hospitalModel.findByIdAndUpdate(hospitalId, updates);
+    res.json({ success: true, message: "Hospital updated successfully" });
+  } catch (error) {
+    console.error('Update hospital error:', error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
 export {
+  updateHospital,
   updateHospitalTrialPeriod,
   addDoctor,
   updateDoctor,
@@ -1799,5 +1886,9 @@ export {
   approveDoctor,
   rejectDoctor,
   updateDoctorApproval,
-  deleteDoctorApproval
+  deleteDoctorApproval,
+  getAllLabs,
+  deleteLab,
+  deleteHospital,
+  deletePharmacy
 };

@@ -24,7 +24,7 @@ import startAppointmentReminders from './services/appointmentReminderService.js'
 import startClinicalReminders from './services/clinicalReminderService.js'
 import dotenv from 'dotenv'
 
-import { setIo } from './services/socketService.js'
+import { setIo, registerSocketMember, unregisterSocket, memberKey, emitToRoomMembers } from './services/socketService.js'
 import { installConsoleRedaction } from './utils/redactForLogs.js'
 
 dotenv.config()
@@ -228,7 +228,7 @@ app.use((req, res, next) => {
 });
 
 const RATE_LIMIT_WINDOW_MS = parsePositiveInt(process.env.RATE_LIMIT_WINDOW_MS, 15 * 60 * 1000);
-const RATE_LIMIT_MAX = parsePositiveInt(process.env.RATE_LIMIT_MAX, 600);
+const RATE_LIMIT_MAX = parsePositiveInt(process.env.RATE_LIMIT_MAX, 5000);
 const AI_RATE_LIMIT_MAX = parsePositiveInt(process.env.AI_RATE_LIMIT_MAX, 120);
 
 const generalLimiter = createInMemoryRateLimiter({
@@ -352,41 +352,6 @@ const io = new SocketIOServer(httpServer, {
 })
 
 setIo(io)
-
-const memberKey = (role, userId) => `${role}:${userId}`
-const memberSockets = new Map()
-const socketMembers = new Map()
-
-const registerSocketMember = (socket, role, id) => {
-  const key = memberKey(role, id)
-  if (!memberSockets.has(key)) memberSockets.set(key, new Set())
-  memberSockets.get(key).add(socket.id)
-  socketMembers.set(socket.id, key)
-}
-
-const unregisterSocket = (socketId) => {
-  const key = socketMembers.get(socketId)
-  if (!key) return
-  const sockets = memberSockets.get(key)
-  if (sockets) {
-    sockets.delete(socketId)
-    if (sockets.size === 0) memberSockets.delete(key)
-  }
-  socketMembers.delete(socketId)
-}
-
-const emitToRoomMembers = (room, event, payload, excludeSocketId = null) => {
-  if (!room?.members?.length) return
-  room.members.forEach(member => {
-    const key = memberKey(member.role, member.userId)
-    const sockets = memberSockets.get(key)
-    if (!sockets) return
-    sockets.forEach(socketId => {
-      if (socketId === excludeSocketId) return
-      io.to(socketId).emit(event, payload)
-    })
-  })
-}
 
 io.on('connection', (socket) => {
   const authPayload = socket.handshake?.auth || {}
