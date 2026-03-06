@@ -276,6 +276,7 @@ const App = () => {
             <Route path='/lab-results' element={<LabResults />} />
             <Route path='/my-prescriptions' element={<MyPrescriptions />} />
             <Route path='/medications' element={<Medications />} />
+            <Route path='/pharmacy' element={<PharmacySelection />} />
             <Route path='/appointment/:docId' element={<Appointment />} />
             <Route path='/medical-record' element={<MedicalRecord />} />
             <Route path='/history' element={<PatientHistory />} />
