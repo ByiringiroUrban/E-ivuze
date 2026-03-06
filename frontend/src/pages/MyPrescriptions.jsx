@@ -118,12 +118,12 @@ const MyPrescriptions = () => {
             {/* Meta Section */}
             <div className="bg-[#004d2a] p-6 flex lg:flex-col items-center justify-center lg:justify-center gap-4 text-center">
               <div className="w-16 h-16 bg-white/10 flex flex-col items-center justify-center border-b-2 border-emerald-400">
-                <span className="text-[10px] font-black text-emerald-200 uppercase leading-none">{new Date(prescription.createdAt).toLocaleString('default', { month: 'short' })}</span>
+                <span className="text-[10px] font-black text-emerald-200   leading-none">{new Date(prescription.createdAt).toLocaleString('default', { month: 'short' })}</span>
                 <span className="text-2xl font-black text-white">{new Date(prescription.createdAt).getDate()}</span>
               </div>
               <div className="text-left lg:text-center">
-                <p className="text-[9px] font-black text-emerald-400 uppercase tracking-widest leading-none mb-1">REFERENCE NO.</p>
-                <p className="text-xs font-mono font-bold text-white uppercase tracking-tighter">PR-{prescription._id.slice(-8).toUpperCase()}</p>
+                <p className="text-[9px] font-black text-emerald-400   tracking-widest leading-none mb-1">REFERENCE NO.</p>
+                <p className="text-xs font-mono font-bold text-white   tracking-tighter">PR-{prescription._id.slice(-8).toUpperCase()}</p>
               </div>
             </div>
 
@@ -131,29 +131,29 @@ const MyPrescriptions = () => {
             <div className="p-6 lg:p-8 flex flex-col justify-between">
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <span className="bg-primary/10 text-primary text-[9px] font-black px-2 py-0.5 uppercase tracking-widest border border-primary/20">Active RX Card</span>
+                  <span className="bg-primary/10 text-primary text-[9px] font-black px-2 py-0.5   tracking-widest border border-primary/20">Active RX Card</span>
                   {prescription.pharmacyOrderId && (
-                    <span className="bg-emerald-50 text-emerald-600 text-[9px] font-black px-2 py-0.5 uppercase tracking-widest border border-emerald-100 flex items-center gap-1">
+                    <span className="bg-emerald-50 text-emerald-600 text-[9px] font-black px-2 py-0.5   tracking-widest border border-emerald-100 flex items-center gap-1">
                       <FaClinicMedical /> Locked to Pharmacy
                     </span>
                   )}
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">
+                <h3 className="text-2xl font-black text-slate-900   tracking-tight">
                   {prescription.diagnosis || t('pages.myPrescriptions.prescription')}
                 </h3>
                 <div className="mt-4 flex items-center gap-6">
                   <div className="flex items-center gap-2">
                     <FaUserMd className="text-emerald-600 opacity-50" />
                     <div className="flex flex-col">
-                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Prescribing Doctor</p>
-                      <p className="text-sm font-bold text-slate-700 uppercase">{prescription.docId?.name || 'Dr. Medical Provider'}</p>
+                      <p className="text-[9px] font-black text-slate-400   tracking-widest leading-none">Prescribing Doctor</p>
+                      <p className="text-sm font-bold text-slate-700  ">{prescription.docId?.name || 'Dr. Medical Provider'}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <FaPills className="text-emerald-600 opacity-50" />
                     <div className="flex flex-col">
-                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Items count</p>
-                      <p className="text-sm font-bold text-slate-700 uppercase">{prescription.medications?.length || 0} Medications</p>
+                      <p className="text-[9px] font-black text-slate-400   tracking-widest leading-none">Items count</p>
+                      <p className="text-sm font-bold text-slate-700  ">{prescription.medications?.length || 0} Medications</p>
                     </div>
                   </div>
                 </div>
@@ -167,7 +167,7 @@ const MyPrescriptions = () => {
                     exit={{ height: 0, opacity: 0 }}
                     className="mt-8 border-t border-slate-100 pt-8"
                   >
-                    <p className="text-[10px] font-black text-[#006838] uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
+                    <p className="text-[10px] font-black text-[#006838]   tracking-[0.3em] mb-6 flex items-center gap-3">
                       <span className="w-8 h-[2px] bg-[#006838]"></span> Med Management List
                     </p>
 
@@ -175,20 +175,20 @@ const MyPrescriptions = () => {
                       {prescription.medications?.map((med, mIdx) => (
                         <div key={mIdx} className="bg-slate-50 border border-slate-100 p-6 grid grid-cols-1 md:grid-cols-4 gap-6 hover:bg-white transition-colors">
                           <div className="md:col-span-1">
-                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Medication</p>
-                            <p className="text-sm font-black text-slate-900 uppercase tracking-tight">{med.name}</p>
+                            <p className="text-[9px] font-black text-slate-400   tracking-widest mb-1">Medication</p>
+                            <p className="text-sm font-black text-slate-900   tracking-tight">{med.name}</p>
                           </div>
                           <div className="md:col-span-1">
-                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Dosage / Frequency</p>
+                            <p className="text-[9px] font-black text-slate-400   tracking-widest mb-1">Dosage / Frequency</p>
                             <p className="text-xs font-bold text-slate-700">{med.dosage} • {med.frequency}</p>
                           </div>
                           <div className="md:col-span-1">
-                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Duration</p>
+                            <p className="text-[9px] font-black text-slate-400   tracking-widest mb-1">Duration</p>
                             <p className="text-xs font-bold text-slate-700">{med.duration}</p>
                           </div>
                           {med.instructions && (
                             <div className="md:col-span-1">
-                              <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Special Instructions</p>
+                              <p className="text-[9px] font-black text-slate-400   tracking-widest mb-1">Special Instructions</p>
                               <p className="text-[11px] font-medium text-slate-600 leading-tight italic">"{med.instructions}"</p>
                             </div>
                           )}
@@ -198,7 +198,7 @@ const MyPrescriptions = () => {
 
                     {prescription.notes && (
                       <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400">
-                        <p className="text-[10px] font-black text-amber-600 uppercase tracking-widest mb-1">Doctor's Clinical Notes</p>
+                        <p className="text-[10px] font-black text-amber-600   tracking-widest mb-1">Doctor's Clinical Notes</p>
                         <p className="text-xs font-bold text-amber-900 leading-relaxed">"{prescription.notes}"</p>
                       </div>
                     )}
@@ -209,8 +209,8 @@ const MyPrescriptions = () => {
                           <FaCalendarAlt size={20} />
                         </div>
                         <div>
-                          <p className="text-[10px] font-black text-emerald-400 uppercase tracking-widest leading-none">Next Clinical Follow-up</p>
-                          <p className="text-sm font-black text-emerald-900 mt-1 uppercase">{formatDate(prescription.followUpDate)}</p>
+                          <p className="text-[10px] font-black text-emerald-400   tracking-widest leading-none">Next Clinical Follow-up</p>
+                          <p className="text-sm font-black text-emerald-900 mt-1  ">{formatDate(prescription.followUpDate)}</p>
                         </div>
                       </div>
                     )}
@@ -223,7 +223,7 @@ const MyPrescriptions = () => {
             <div className="bg-slate-50 p-6 flex flex-col justify-center gap-3 border-t lg:border-t-0 lg:border-l border-slate-100 min-w-[220px]">
               <button
                 onClick={() => setExpandedId(isExpanded ? null : prescription._id)}
-                className="w-full bg-white text-[#006838] border border-slate-200 px-4 py-4 font-black text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-emerald-50 transition shadow-sm"
+                className="w-full bg-white text-[#006838] border border-slate-200 px-4 py-4 font-black text-[10px]   tracking-widest flex items-center justify-center gap-2 hover:bg-emerald-50 transition shadow-sm"
               >
                 {isExpanded ? <><FaEyeSlash /> Hide Intelligence</> : <><FaEye /> Full Intel Report</>}
               </button>
@@ -234,14 +234,14 @@ const MyPrescriptions = () => {
                     href={prescription.fileUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#004d2a] text-white px-2 py-3 font-black text-[9px] uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-[#006838] transition shadow-lg shadow-slate-200"
+                    className="bg-[#004d2a] text-white px-2 py-3 font-black text-[9px]   tracking-widest flex items-center justify-center gap-2 hover:bg-[#006838] transition shadow-lg shadow-slate-200"
                   >
                     <FaFilePdf /> View
                   </a>
                   <a
                     href={prescription.fileUrl}
                     download
-                    className="bg-primary text-white px-2 py-3 font-black text-[9px] uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-primary-dark transition shadow-lg shadow-primary/20"
+                    className="bg-primary text-white px-2 py-3 font-black text-[9px]   tracking-widest flex items-center justify-center gap-2 hover:bg-primary-dark transition shadow-lg shadow-primary/20"
                   >
                     <FaCloudDownloadAlt /> Get
                   </a>
@@ -249,14 +249,14 @@ const MyPrescriptions = () => {
               ) : (
                 <div className="p-3 border border-slate-200 bg-white flex flex-col items-center justify-center opacity-40">
                   <FaFileCode className="text-slate-300 mb-1" />
-                  <p className="text-[8px] font-black uppercase text-slate-400">Digital ONLY RX</p>
+                  <p className="text-[8px] font-black   text-slate-400">Digital ONLY RX</p>
                 </div>
               )}
 
               {prescription.pharmacyOrderId ? (
                 <button
                   onClick={() => openOrderModal(prescription.pharmacyOrderId._id || prescription.pharmacyOrderId)}
-                  className="w-full bg-emerald-500 text-white px-4 py-4 font-black text-[10px] uppercase tracking-[0.1em] flex items-center justify-center gap-2 hover:bg-emerald-600 transition shadow-lg shadow-emerald-100"
+                  className="w-full bg-emerald-500 text-white px-4 py-4 font-black text-[10px]   tracking-[0.1em] flex items-center justify-center gap-2 hover:bg-emerald-600 transition shadow-lg shadow-emerald-100"
                 >
                   Track Fulfillment <FaChevronRight size={10} />
                 </button>
@@ -268,7 +268,7 @@ const MyPrescriptions = () => {
                         window.location.href = `/pharmacy?prescriptionId=${prescription._id}`;
                       }
                     }}
-                    className="w-full bg-amber-500 text-white px-4 py-4 font-black text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-amber-600 transition shadow-lg animate-pulse"
+                    className="w-full bg-amber-500 text-white px-4 py-4 font-black text-[10px]   tracking-widest flex items-center justify-center gap-2 hover:bg-amber-600 transition shadow-lg animate-pulse"
                   >
                     <FaClinicMedical /> Forward to Pharmacy
                   </button>
@@ -295,8 +295,8 @@ const MyPrescriptions = () => {
             className="flex flex-col md:flex-row md:items-center justify-between gap-6"
           >
             <div>
-              <p className="text-emerald-400 font-black text-[10px] uppercase tracking-[0.3em] mb-2 px-1">Prescription Intelligence</p>
-              <h1 className="text-4xl font-extrabold text-white tracking-tight uppercase">Ibyanditswe N'umuganga</h1>
+              <p className="text-emerald-400 font-black text-[10px]   tracking-[0.3em] mb-2 px-1">Prescription Intelligence</p>
+              <h1 className="text-4xl font-extrabold text-white tracking-tight  ">Ibyanditswe N'umuganga</h1>
               <p className="text-emerald-200 mt-2 font-medium flex items-center gap-2">
                 <FaPills className="opacity-60" />
                 Comprehensive log of your medicinal therapies
@@ -307,7 +307,7 @@ const MyPrescriptions = () => {
                 <FaHistory />
               </div>
               <div>
-                <p className="text-[10px] font-black uppercase text-emerald-200 leading-none tracking-widest">Archive Size</p>
+                <p className="text-[10px] font-black   text-emerald-200 leading-none tracking-widest">Archive Size</p>
                 <p className="text-2xl font-black text-white mt-1 leading-none">{prescriptions.length}</p>
               </div>
             </div>
@@ -323,7 +323,7 @@ const MyPrescriptions = () => {
             <div className="w-20 h-20 bg-slate-50 border border-slate-100 flex items-center justify-center mx-auto mb-6 text-slate-300">
               <FaPrescriptionBottle size={40} />
             </div>
-            <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight">No Active Prescriptions</h3>
+            <h3 className="text-xl font-black text-slate-900   tracking-tight">No Active Prescriptions</h3>
             <p className="text-slate-400 mt-2 font-medium">Your medicinal therapy records are currently empty. New prescriptions will appear here after consultation.</p>
           </div>
         ) : (
@@ -344,8 +344,8 @@ const MyPrescriptions = () => {
               {/* Header */}
               <div className="p-6 border-b-4 border-emerald-500 flex justify-between items-center bg-slate-50">
                 <div>
-                  <h3 className="font-black text-xl text-slate-900 uppercase tracking-tight">Pharmacy Order Insight</h3>
-                  <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Tracking Fulfillment Step • Order #{selectedOrder._id.slice(-6)}</p>
+                  <h3 className="font-black text-xl text-slate-900   tracking-tight">Pharmacy Order Insight</h3>
+                  <p className="text-[10px] font-black text-emerald-600   tracking-widest">Tracking Fulfillment Step • Order #{selectedOrder._id.slice(-6)}</p>
                 </div>
                 <button onClick={closeOrderModal} className="w-10 h-10 bg-[#004d2a] text-white flex items-center justify-center hover:bg-[#006838] transition shadow-lg"><FaTimes /></button>
               </div>
@@ -360,7 +360,7 @@ const MyPrescriptions = () => {
                     return (
                       <div key={step} className="flex flex-col items-center">
                         <div className={`w-full h-2 mb-2 ${isPast ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]' : 'bg-slate-100'}`}></div>
-                        <span className={`text-[9px] font-black uppercase tracking-widest ${isPast ? 'text-emerald-600' : 'text-slate-300'}`}>{step}</span>
+                        <span className={`text-[9px] font-black   tracking-widest ${isPast ? 'text-emerald-600' : 'text-slate-300'}`}>{step}</span>
                       </div>
                     );
                   })}
@@ -369,24 +369,24 @@ const MyPrescriptions = () => {
                 {/* Pricing/Delivery Group */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-slate-200">
                   <div className="p-6 bg-slate-50 border-b md:border-b-0 md:border-r border-slate-200">
-                    <p className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-3 flex items-center gap-2">
+                    <p className="text-[9px] font-black   text-slate-400 tracking-widest mb-3 flex items-center gap-2">
                       <span className="w-3 h-3 bg-emerald-500 rounded-full"></span> Financial Quote
                     </p>
                     <p className="text-3xl font-black text-[#006838]">{selectedOrder.total > 0 ? selectedOrder.total.toLocaleString() + ' RWF' : 'PENDING'}</p>
-                    <p className="text-[10px] font-bold text-slate-400 mt-1 uppercase">Inclusive of VAT & Delivery</p>
+                    <p className="text-[10px] font-bold text-slate-400 mt-1  ">Inclusive of VAT & Delivery</p>
                   </div>
                   <div className="p-6 bg-white">
-                    <p className="font-black text-[9px] uppercase text-slate-400 tracking-widest mb-3 flex items-center gap-2">
+                    <p className="font-black text-[9px]   text-slate-400 tracking-widest mb-3 flex items-center gap-2">
                       <FaClinicMedical className="text-emerald-600" /> Fulfilling Pharmacy
                     </p>
-                    <p className="text-sm font-black text-slate-900 uppercase leading-none">{selectedOrder.pharmacyId?.name || 'Authorized Pharmacy'}</p>
+                    <p className="text-sm font-black text-slate-900   leading-none">{selectedOrder.pharmacyId?.name || 'Authorized Pharmacy'}</p>
                     <p className="text-xs font-bold text-slate-400 mt-2 italic leading-tight">{selectedOrder.deliveryAddress?.line1}, {selectedOrder.deliveryAddress?.city}</p>
                   </div>
                 </div>
 
                 {/* Messaging Segment */}
                 <div className="flex flex-col h-80 border-2 border-[#006838] bg-slate-50">
-                  <div className="bg-[#006838] px-4 py-3 text-[10px] font-black text-white uppercase tracking-widest flex items-center gap-2">
+                  <div className="bg-[#006838] px-4 py-3 text-[10px] font-black text-white   tracking-widest flex items-center gap-2">
                     <FaPaperPlane className="text-primary-light" /> Pharmacy Communication Link
                   </div>
                   <div className="flex-1 overflow-y-auto p-6 space-y-4">
@@ -396,13 +396,13 @@ const MyPrescriptions = () => {
                           <div className={`max-w-[85%] px-5 py-3 shadow-lg text-sm font-medium ${msg.sender === 'patient' ? 'bg-[#14324f] text-white' : 'bg-white text-slate-700 border border-slate-200'}`}>
                             {msg.text}
                           </div>
-                          <span className="text-[9px] font-black text-slate-400 mt-2 uppercase tracking-widest px-1">{formatDate(msg.createdAt, true)}</span>
+                          <span className="text-[9px] font-black text-slate-400 mt-2   tracking-widest px-1">{formatDate(msg.createdAt, true)}</span>
                         </div>
                       ))
                     ) : (
                       <div className="flex flex-col items-center justify-center h-full text-slate-300 opacity-50">
                         <FaPaperPlane size={30} className="mb-2" />
-                        <p className="text-center text-xs font-black uppercase tracking-widest">No Active Thread</p>
+                        <p className="text-center text-xs font-black   tracking-widest">No Active Thread</p>
                       </div>
                     )}
                   </div>
@@ -410,7 +410,7 @@ const MyPrescriptions = () => {
                     <input
                       type="text"
                       placeholder="MESSAGE PHARMACY COMMAND..."
-                      className="flex-1 bg-slate-50 border border-slate-200 px-4 py-3 text-xs font-black uppercase tracking-widest outline-none focus:bg-white focus:border-primary transition-all"
+                      className="flex-1 bg-slate-50 border border-slate-200 px-4 py-3 text-xs font-black   tracking-widest outline-none focus:bg-white focus:border-primary transition-all"
                       id="patient-chat-input"
                       onKeyDown={(e) => e.key === 'Enter' && (handleSendMessage(e.target.value), e.target.value = '')}
                     />

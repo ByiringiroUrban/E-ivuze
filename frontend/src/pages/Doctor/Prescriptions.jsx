@@ -462,11 +462,11 @@ const Prescriptions = () => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.prescriptionsPage.appointmentId')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.prescriptionsPage.diagnosis')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.prescriptionsPage.medications')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.prescriptionsPage.followUp')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.prescriptionsPage.date')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.prescriptionsPage.appointmentId')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.prescriptionsPage.diagnosis')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.prescriptionsPage.medications')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.prescriptionsPage.followUp')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.prescriptionsPage.date')}</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">

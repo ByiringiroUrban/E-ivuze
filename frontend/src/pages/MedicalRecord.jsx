@@ -95,8 +95,8 @@ const MedicalRecord = () => {
                         className="flex flex-col md:flex-row md:items-center justify-between gap-6"
                     >
                         <div>
-                            <p className="text-emerald-400 font-black text-[10px] uppercase tracking-[0.3em] mb-2 px-1">Longitudinal Records</p>
-                            <h1 className="text-4xl font-extrabold text-white tracking-tight uppercase">Medical Dossier</h1>
+                            <p className="text-emerald-400 font-black text-[10px]   tracking-[0.3em] mb-2 px-1">Longitudinal Records</p>
+                            <h1 className="text-4xl font-extrabold text-white tracking-tight  ">Medical Dossier</h1>
                             <p className="text-emerald-100 mt-2 font-medium flex items-center gap-2">
                                 <FaHeartbeat className="opacity-60" />
                                 {t('pages.medicalRecord.description') || 'One Patient. One Record. Nationwide.'}
@@ -234,13 +234,13 @@ const MedicalRecord = () => {
                                                         </div>
                                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mt-3">
                                                             <div>
-                                                                <p className="text-xs text-gray-500 uppercase">
+                                                                <p className="text-xs text-gray-500  ">
                                                                     {t('pages.medicalRecord.labels.diagnosis') || 'Diagnosis'}
                                                                 </p>
                                                                 <p className="font-medium">{visit.diagnosis}</p>
                                                             </div>
                                                             <div>
-                                                                <p className="text-xs text-gray-500 uppercase">
+                                                                <p className="text-xs text-gray-500  ">
                                                                     {t('pages.medicalRecord.labels.outcome') || 'Outcome'}
                                                                 </p>
                                                                 <p>{visit.outcome}</p>
@@ -462,16 +462,16 @@ const MedicalRecord = () => {
                                                 <table className="min-w-full divide-y divide-gray-200 bg-white">
                                                     <thead className="bg-gray-50">
                                                         <tr>
-                                                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                                                                 {t('pages.medicalRecord.table.date') || 'Date'}
                                                             </th>
-                                                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                                                                 {t('pages.medicalRecord.table.service') || 'Service'}
                                                             </th>
-                                                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                                                                 {t('pages.medicalRecord.table.amount') || 'Amount'}
                                                             </th>
-                                                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                                                                 {t('pages.medicalRecord.table.status') || 'Status'}
                                                             </th>
                                                         </tr>
@@ -534,7 +534,7 @@ const SectionTitle = ({ title }) => (
 
 const InfoItem = ({ label, value }) => (
     <div>
-        <p className="text-xs text-gray-500 uppercase tracking-wide">{label}</p>
+        <p className="text-xs text-gray-500   tracking-wide">{label}</p>
         <p className="font-medium text-gray-900">{value}</p>
     </div>
 );

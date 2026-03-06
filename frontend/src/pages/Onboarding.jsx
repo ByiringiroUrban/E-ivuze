@@ -234,7 +234,7 @@ const Onboarding = () => {
                         <div className="pt-6">
                             <button
                                 onClick={() => navigate('/my-profile')}
-                                className="bg-[#006838] hover:bg-[#005a30] text-white px-12 py-4 text-xs font-bold uppercase tracking-widest transition-all active:scale-[0.98]"
+                                className="bg-[#006838] hover:bg-[#005a30] text-white px-12 py-4 text-xs font-bold   tracking-widest transition-all active:scale-[0.98]"
                             >
                                 Access Clinical Dashboard
                             </button>
@@ -284,27 +284,27 @@ const Onboarding = () => {
                                 {step === 1 && (
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">First Name</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">First Name</label>
                                             <input required type="text" value={formData.firstName} onChange={(e) => handleInputChange(e, 'firstName')} className={`w-full border-2 ${errors.firstName ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] transition-all bg-white text-[#006838] font-semibold`} placeholder="First Name" />
                                             <InputError msg={errors.firstName} />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Last Name</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Last Name</label>
                                             <input required type="text" value={formData.lastName} onChange={(e) => handleInputChange(e, 'lastName')} className={`w-full border-2 ${errors.lastName ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] transition-all bg-white text-[#006838] font-semibold`} placeholder="Last Name" />
                                             <InputError msg={errors.lastName} />
                                         </div>
                                         <div className="space-y-2 md:col-span-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">National ID Number (NID)</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">National ID Number (NID)</label>
                                             <input required type="text" maxLength={16} value={formData.nid} onChange={(e) => handleInputChange(e, 'nid')} className={`w-full border-2 ${errors.nid ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] transition-all font-semibold text-[#006838] placeholder:font-normal`} placeholder="16 Digit Identity Number" />
                                             <InputError msg={errors.nid} />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Date of Birth</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Date of Birth</label>
                                             <input required type="date" value={formData.dob} onChange={(e) => handleInputChange(e, 'dob')} className={`w-full border-2 ${errors.dob ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] text-[#006838] font-semibold`} />
                                             <InputError msg={errors.dob} />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Gender</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Gender</label>
                                             <select value={formData.gender} onChange={(e) => handleInputChange(e, 'gender')} className={`w-full border-2 ${errors.gender ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none bg-white focus:border-[#88C250] text-[#006838] font-semibold`}>
                                                 <option value="">Select Gender</option>
                                                 <option value="Male">Male</option>
@@ -318,7 +318,7 @@ const Onboarding = () => {
                                 {step === 2 && (
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Province</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Province</label>
                                             <select value={formData.address.province} onChange={(e) => handleInputChange(e, 'province', 'address')} className={`w-full border-2 ${errors['address.province'] ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none bg-white focus:border-[#88C250] text-[#006838] font-semibold`}>
                                                 <option value="">Select Province</option>
                                                 {Object.keys(RWANDA_ADMIN).map(p => <option key={p} value={p}>{p}</option>)}
@@ -326,7 +326,7 @@ const Onboarding = () => {
                                             <InputError msg={errors['address.province']} />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">District</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">District</label>
                                             <select value={formData.address.district} onChange={(e) => handleInputChange(e, 'district', 'address')} className={`w-full border-2 ${errors['address.district'] ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none bg-white focus:border-[#88C250] text-[#006838] font-semibold`}>
                                                 <option value="">Select District</option>
                                                 {formData.address.province && RWANDA_ADMIN[formData.address.province].map(d => <option key={d} value={d}>{d}</option>)}
@@ -334,17 +334,17 @@ const Onboarding = () => {
                                             <InputError msg={errors['address.district']} />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Sector</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Sector</label>
                                             <input required type="text" placeholder="Sector Name" value={formData.address.sector} onChange={(e) => handleInputChange(e, 'sector', 'address')} className={`w-full border-2 ${errors['address.sector'] ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] text-[#006838] font-semibold`} />
                                             <InputError msg={errors['address.sector']} />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Cell / Village</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Cell / Village</label>
                                             <input required type="text" placeholder="Village / Cell" value={formData.address.cell} onChange={(e) => handleInputChange(e, 'cell', 'address')} className={`w-full border-2 ${errors['address.cell'] ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] text-[#006838] font-semibold`} />
                                             <InputError msg={errors['address.cell']} />
                                         </div>
                                         <div className="md:col-span-2 space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Street Address / Plot Number</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Street Address / Plot Number</label>
                                             <input type="text" placeholder="e.g. KN 2 Ave, House Reference" value={formData.address.line1} onChange={(e) => handleInputChange(e, 'line1', 'address')} className={`w-full border-2 border-gray-100 px-5 py-4 text-sm outline-none focus:border-[#88C250] text-[#006838] font-semibold`} />
                                         </div>
                                     </div>
@@ -353,7 +353,7 @@ const Onboarding = () => {
                                 {step === 3 && (
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Blood Group</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Blood Group</label>
                                             <select value={formData.bloodGroup} onChange={(e) => handleInputChange(e, 'bloodGroup')} className={`w-full border-2 ${errors.bloodGroup ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none bg-white focus:border-[#88C250] text-[#006838] font-semibold`}>
                                                 <option value="">Select Type</option>
                                                 <option value="Unknown">I don't know</option>
@@ -363,7 +363,7 @@ const Onboarding = () => {
                                         </div>
                                         <div className="space-y-2">
                                             <div className="flex justify-between items-center mb-1">
-                                                <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Weight (kg)</label>
+                                                <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Weight (kg)</label>
                                                 <input type="checkbox" checked={formData.weight === '0' || formData.weight === 0} onChange={(e) => handleInputChange({ target: { value: e.target.checked ? '0' : '', type: 'text' } }, 'weight')} className="w-4 h-4 accent-[#88C250]" />
                                             </div>
                                             <input required type="number" disabled={formData.weight === '0' || formData.weight === 0} placeholder={formData.weight === '0' ? "N/A" : "kg"} value={formData.weight === '0' ? "" : formData.weight} onChange={(e) => handleInputChange(e, 'weight')} className={`w-full border-2 ${errors.weight ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] disabled:opacity-30 text-[#006838] font-semibold`} />
@@ -371,7 +371,7 @@ const Onboarding = () => {
                                         </div>
                                         <div className="space-y-2">
                                             <div className="flex justify-between items-center mb-1">
-                                                <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Height (cm)</label>
+                                                <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Height (cm)</label>
                                                 <input type="checkbox" checked={formData.height === '0' || formData.height === 0} onChange={(e) => handleInputChange({ target: { value: e.target.checked ? '0' : '', type: 'text' } }, 'height')} className="w-4 h-4 accent-[#88C250]" />
                                             </div>
                                             <input required type="number" disabled={formData.height === '0' || formData.height === 0} placeholder={formData.height === '0' ? "N/A" : "cm"} value={formData.height === '0' ? "" : formData.height} onChange={(e) => handleInputChange(e, 'height')} className={`w-full border-2 ${errors.height ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] disabled:opacity-30 text-[#006838] font-semibold`} />
@@ -379,7 +379,7 @@ const Onboarding = () => {
                                         </div>
 
                                         <div className="md:col-span-1 space-y-2">
-                                            <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Insurance Provider</label>
+                                            <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Insurance Provider</label>
                                             <select value={formData.insurance.provider} onChange={(e) => handleInputChange(e, 'provider', 'insurance')} className={`w-full border-2 border-gray-100 px-5 py-4 text-sm outline-none bg-white focus:border-[#88C250] text-[#006838] font-semibold`}>
                                                 <option value="None">Direct Pay / Cash</option>
                                                 <option value="Mutuelle">Mutuelle (RSSB)</option>
@@ -390,7 +390,7 @@ const Onboarding = () => {
                                         </div>
                                         {formData.insurance.provider !== 'None' && (
                                             <div className="md:col-span-2 space-y-2 animate-in slide-in-from-right-4 duration-500">
-                                                <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Policy Number</label>
+                                                <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Policy Number</label>
                                                 <input type="text" placeholder="ID / Policy Reference" value={formData.insurance.policyNumber} onChange={(e) => handleInputChange(e, 'policyNumber', 'insurance')} className="w-full border-2 border-gray-100 px-5 py-4 text-sm outline-none focus:border-[#88C250] text-[#006838] font-semibold" />
                                             </div>
                                         )}
@@ -401,12 +401,12 @@ const Onboarding = () => {
                                     <div className="space-y-10">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                             <div className="space-y-2">
-                                                <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Emergency Contact Name</label>
+                                                <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Emergency Contact Name</label>
                                                 <input required type="text" value={formData.emergencyContact.name} onChange={(e) => handleInputChange(e, 'name', 'emergencyContact')} className={`w-full border-2 ${errors['emergencyContact.name'] ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] text-[#006838] font-semibold`} placeholder="Full Name" />
                                                 <InputError msg={errors['emergencyContact.name']} />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Emergency Phone Number</label>
+                                                <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Emergency Phone Number</label>
                                                 <input required type="tel" value={formData.emergencyContact.phone} onChange={(e) => handleInputChange(e, 'phone', 'emergencyContact')} className={`w-full border-2 ${errors['emergencyContact.phone'] ? 'border-red-500' : 'border-gray-100'} px-5 py-4 text-sm outline-none focus:border-[#88C250] text-[#006838] font-semibold`} placeholder="Phone Number" />
                                                 <InputError msg={errors['emergencyContact.phone']} />
                                             </div>
@@ -421,7 +421,7 @@ const Onboarding = () => {
                                                     {formData.digitalConsent && <FaCheck className="text-[10px]" />}
                                                 </div>
                                                 <div className="space-y-1">
-                                                    <p className="text-xs font-bold uppercase tracking-widest text-[#006838]">Digital Consent Protocol</p>
+                                                    <p className="text-xs font-bold   tracking-widest text-[#006838]">Digital Consent Protocol</p>
                                                     <p className="text-[11px] text-[#006838]/60 leading-relaxed font-medium">I authorize E-ivuze to securely process, encrypt, and archive my clinical records for authorized medical consultations and diagnostic tracking.</p>
                                                     <InputError msg={errors.digitalConsent} />
                                                 </div>

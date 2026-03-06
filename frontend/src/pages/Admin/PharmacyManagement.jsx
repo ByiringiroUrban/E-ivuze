@@ -62,7 +62,7 @@ const PharmacyManagement = () => {
 
   const handleCreatePharmacy = async (e) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.phone || !formData.address || !formData.licenseNumber || !formData.managerName || !formData.managerPassword) {
       toast.error(t('admin.pharmacyManagement.fillAllFields'));
       return;
@@ -103,7 +103,7 @@ const PharmacyManagement = () => {
         });
         setShowCreateForm(false);
         fetchPharmacies();
-        
+
         // Show invitation details
         if (data.manager) {
           toast.info(
@@ -123,7 +123,7 @@ const PharmacyManagement = () => {
 
   const handleEditPharmacy = async (e) => {
     e.preventDefault();
-    
+
     if (!editingPharmacy) return;
 
     setLoading(true);
@@ -250,7 +250,7 @@ const PharmacyManagement = () => {
     setLoading(true);
     try {
       let response;
-      
+
       if (newStatus === 'APPROVED') {
         response = await axios.post(
           backendUrl + `/api/admin/pharmacies/${statusPharmacyId}/approve`,
@@ -324,7 +324,7 @@ const PharmacyManagement = () => {
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-widest text-white/70">
+            <p className="text-xs   tracking-widest text-white/70">
               {t('admin.pharmacyManagement.title') || 'Pharmacy management'}
             </p>
             <h1 className="text-3xl sm:text-4xl font-semibold">
@@ -365,7 +365,7 @@ const PharmacyManagement = () => {
           <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
             <div className="px-6 py-5 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-primary-dark">
+                <p className="text-xs   tracking-[0.35em] text-primary-dark">
                   {t('admin.pharmacyManagement.listTitle') || 'Registered pharmacies'}
                 </p>
                 <p className="text-sm text-gray-500">
@@ -381,7 +381,7 @@ const PharmacyManagement = () => {
               </button>
             </div>
 
-            <div className="hidden md:grid grid-cols-[1fr_2fr_1.5fr_2fr_1fr_1.75fr] gap-4 py-3 px-6 border-b bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <div className="hidden md:grid grid-cols-[1fr_2fr_1.5fr_2fr_1fr_1.75fr] gap-4 py-3 px-6 border-b bg-gray-50 text-xs font-medium text-gray-500   tracking-wider">
               <p>{t('admin.pharmacyManagement.name')}</p>
               <p>{t('admin.pharmacyManagement.email')}</p>
               <p>{t('admin.pharmacyManagement.phone')}</p>
@@ -420,11 +420,10 @@ const PharmacyManagement = () => {
                   </div>
                   <div>
                     <span
-                      className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${
-                        pharmacy.invitationAccepted
+                      className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${pharmacy.invitationAccepted
                           ? 'bg-primary/10 text-primary'
                           : 'bg-yellow-100 text-yellow-700'
-                      }`}
+                        }`}
                     >
                       {pharmacy.invitationAccepted
                         ? (t('admin.pharmacyManagement.active') || 'Active')
@@ -496,7 +495,7 @@ const PharmacyManagement = () => {
           <div className="bg-white rounded-lg w-full max-w-3xl shadow-xl overflow-hidden">
             <div className="px-6 py-5 border-b border-gray-200 flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-primary-dark">
+                <p className="text-xs   tracking-[0.35em] text-primary-dark">
                   {editingPharmacy
                     ? (t('admin.pharmacyManagement.editPharmacy') || 'Edit pharmacy')
                     : (t('admin.pharmacyManagement.createNewPharmacy') || 'Add new pharmacy')}
@@ -689,7 +688,7 @@ const PharmacyManagement = () => {
           <div className="bg-white rounded-lg p-6 max-w-md w-full">
             <h3 className="text-lg font-semibold mb-4 text-purple-600">{t('admin.pharmacyManagement.updatePharmacyStatus')}</h3>
             <p className="text-gray-600 mb-4">{t('admin.pharmacyManagement.changeStatusFor')} <strong>{statusPharmacyName}</strong></p>
-            
+
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-2">{t('admin.pharmacyManagement.selectStatus')}</label>
               <select

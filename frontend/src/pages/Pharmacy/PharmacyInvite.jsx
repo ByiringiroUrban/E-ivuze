@@ -106,13 +106,13 @@ const PharmacyInvite = () => {
     return (
       <div className="bg-white min-h-screen flex items-center justify-center px-4">
         <div className="border border-border bg-white p-10 max-w-md w-full text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-red-500">{t('pharmacy.invite.invalidToken') || 'Invalid Invitation Link'}</p>
+          <p className="text-xs   tracking-[0.4em] text-red-500">{t('pharmacy.invite.invalidToken') || 'Invalid Invitation Link'}</p>
           <h2 className="text-2xl font-semibold text-accent mt-4">
             {t('pharmacy.invite.invalidTokenMessage') || 'This invitation link is invalid or has expired.'}
           </h2>
           <button
             onClick={() => navigate('/login')}
-            className="mt-8 w-full border border-accent px-6 py-3 text-xs uppercase tracking-[0.4em] hover:bg-accent hover:text-white transition"
+            className="mt-8 w-full border border-accent px-6 py-3 text-xs   tracking-[0.4em] hover:bg-accent hover:text-white transition"
           >
             {t('pharmacy.invite.goToLogin') || 'Go to Login'}
           </button>
@@ -131,7 +131,7 @@ const PharmacyInvite = () => {
         <div className="bg-[#14324f] text-white p-8 sm:p-12 lg:p-16 flex flex-col gap-10">
           <div>
             <img src={assets.logo} alt="E-ivuzeConnect" className="w-36 mb-6" />
-            <p className="text-xs uppercase tracking-[0.5em] text-white/70">{t('pharmacy.invite.eyebrow') || 'Partner Onboarding'}</p>
+            <p className="text-xs   tracking-[0.5em] text-white/70">{t('pharmacy.invite.eyebrow') || 'Partner Onboarding'}</p>
             <h1 className="text-3xl sm:text-4xl font-semibold mt-4">
               {t('pharmacy.invite.heroTitle') || 'Activate your clinical supply workspace'}
             </h1>
@@ -141,15 +141,15 @@ const PharmacyInvite = () => {
           </div>
           <ul className="space-y-4 text-sm">
             <li className="flex gap-3">
-              <span className="text-white/70 tracking-[0.4em] text-[10px] uppercase">01</span>
+              <span className="text-white/70 tracking-[0.4em] text-[10px]  ">01</span>
               <p>{t('pharmacy.invite.pointOne') || 'Verify the token and set a secure administrator password.'}</p>
             </li>
             <li className="flex gap-3">
-              <span className="text-white/70 tracking-[0.4em] text-[10px] uppercase">02</span>
+              <span className="text-white/70 tracking-[0.4em] text-[10px]  ">02</span>
               <p>{t('pharmacy.invite.pointTwo') || 'Accept the compliance terms so we can sync prescriptions immediately.'}</p>
             </li>
             <li className="flex gap-3">
-              <span className="text-white/70 tracking-[0.4em] text-[10px] uppercase">03</span>
+              <span className="text-white/70 tracking-[0.4em] text-[10px]  ">03</span>
               <p>{t('pharmacy.invite.pointThree') || 'Sign in to start confirming orders and managing deliveries.'}</p>
             </li>
           </ul>
@@ -158,7 +158,7 @@ const PharmacyInvite = () => {
         <div className="flex items-center justify-center px-4 sm:px-8 py-14 bg-white">
           <div className="w-full max-w-md border border-border bg-white p-6 sm:p-8">
             <div className="space-y-2 text-center">
-              <p className="text-xs uppercase tracking-[0.4em] text-primary-dark">{t('pharmacy.invite.title') || 'Complete Your Registration'}</p>
+              <p className="text-xs   tracking-[0.4em] text-primary-dark">{t('pharmacy.invite.title') || 'Complete Your Registration'}</p>
               <h2 className="text-2xl font-semibold text-accent">
                 {t('pharmacy.invite.subtitle') || 'Set up your pharmacy administrator account'}
               </h2>

@@ -101,7 +101,7 @@ const FAQ = () => {
           <div className="flex-1 w-full lg:w-2/3">
             {/* Header */}
             <div className="text-left mb-6">
-              <p className="text-sm uppercase tracking-wider text-primary-dark/70 font-medium mb-2">
+              <p className="text-sm   tracking-wider text-primary-dark/70 font-medium mb-2">
                 {t('pages.faq.trustedBy') || 'TRUSTED BY'}
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-primary-dark mb-4">
@@ -123,8 +123,8 @@ const FAQ = () => {
                   key={index}
                   data-faq-index={index}
                   className={`roun-xl shadow-md transition-all duration-300 overflow-hidden ${openIndex === index
-                      ? 'bg-primary/10 border-2 border-primary/30'
-                      : 'bg-transparent border border-primary/20 hover:border-primary/40'
+                    ? 'bg-primary/10 border-2 border-primary/30'
+                    : 'bg-transparent border border-primary/20 hover:border-primary/40'
                     }`}
                 >
                   <button
@@ -136,8 +136,8 @@ const FAQ = () => {
                       {faq.question}
                     </span>
                     <div className={`flex-shrink-0 w-8 h-8 roun-full flex items-center justify-center transition-all duration-300 ${openIndex === index
-                        ? 'bg-primary text-white rotate-45'
-                        : 'bg-primary/20 text-primary-dark group-hover:bg-primary/30'
+                      ? 'bg-primary text-white rotate-45'
+                      : 'bg-primary/20 text-primary-dark group-hover:bg-primary/30'
                       }`}>
                       {openIndex === index ? (
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

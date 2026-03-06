@@ -17,12 +17,11 @@ const DashboardHero = ({
         className="text-white absolute inset-0 pointer-events-none"
       />
       <div
-        className={`relative z-10 flex flex-col gap-4 ${
-          align === "center" ? "text-center items-center" : ""
-        }`}
+        className={`relative z-10 flex flex-col gap-4 ${align === "center" ? "text-center items-center" : ""
+          }`}
       >
         {eyebrow && (
-          <p className="text-[11px] uppercase tracking-[0.45em] text-white/70">
+          <p className="text-[11px]   tracking-[0.45em] text-white/70">
             {eyebrow}
           </p>
         )}

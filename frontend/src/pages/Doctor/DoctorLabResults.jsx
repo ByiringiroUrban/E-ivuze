@@ -93,11 +93,11 @@ const DoctorLabResults = () => {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-gray-50/50 border-b border-gray-100">
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-widest">Test Info</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-widest">Patient</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-widest">Findings</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-widest">Status</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-widest text-right">Actions</th>
+                                    <th className="px-6 py-4 text-xs font-bold text-gray-400   tracking-widest">Test Info</th>
+                                    <th className="px-6 py-4 text-xs font-bold text-gray-400   tracking-widest">Patient</th>
+                                    <th className="px-6 py-4 text-xs font-bold text-gray-400   tracking-widest">Findings</th>
+                                    <th className="px-6 py-4 text-xs font-bold text-gray-400   tracking-widest">Status</th>
+                                    <th className="px-6 py-4 text-xs font-bold text-gray-400   tracking-widest text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-50">
@@ -123,7 +123,7 @@ const DoctorLabResults = () => {
                                             )}
                                         </td>
                                         <td className="px-6 py-5">
-                                            <span className={`px-2 py-1 rounded-none text-[10px] font-black uppercase tracking-tighter
+                                            <span className={`px-2 py-1 rounded-none text-[10px] font-black   tracking-tighter
                                                 ${order.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
                                                 {order.status}
                                             </span>

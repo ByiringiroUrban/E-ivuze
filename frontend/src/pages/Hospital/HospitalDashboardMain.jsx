@@ -45,18 +45,18 @@ const HospitalDashboardMain = () => {
             <IconTexture opacity={0.1} size={24} className="text-white" />
             <div className='flex flex-col lg:flex-row items-start lg:items-center justify-between relative z-10 gap-4 lg:gap-0'>
               <div className='flex-1'>
-                <p className='text-[10px] sm:text-xs uppercase tracking-widest text-white/70 mb-2'>{t('hospital.dashboard.welcome')}</p>
+                <p className='text-[10px] sm:text-xs   tracking-widest text-white/70 mb-2'>{t('hospital.dashboard.welcome')}</p>
                 <p className='text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6'>{hospital?.name || t('hospital.dashboard.title')}</p>
                 <div className='flex gap-2 sm:gap-3 flex-wrap'>
                   <button
                     onClick={() => navigate('/hospital-dashboard/doctors')}
-                    className='bg-white text-[#006838] px-4 sm:px-6 py-2 sm:py-3 text-[10px] sm:text-xs uppercase tracking-wider hover:bg-light-bg transition-all rounded-lg'
+                    className='bg-white text-[#006838] px-4 sm:px-6 py-2 sm:py-3 text-[10px] sm:text-xs   tracking-wider hover:bg-light-bg transition-all rounded-lg'
                   >
                     {t('hospital.dashboard.manageDoctors')}
                   </button>
                   <button
                     onClick={() => navigate('/hospital-dashboard/reports')}
-                    className='border border-white text-white px-4 sm:px-6 py-2 sm:py-3 text-[10px] sm:text-xs uppercase tracking-wider hover:bg-white/10 transition-all rounded-lg'
+                    className='border border-white text-white px-4 sm:px-6 py-2 sm:py-3 text-[10px] sm:text-xs   tracking-wider hover:bg-white/10 transition-all rounded-lg'
                   >
                     {t('hospital.dashboard.viewReportsAction')}
                   </button>

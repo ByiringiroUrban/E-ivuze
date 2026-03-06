@@ -106,7 +106,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-bold text-[#081828] mb-8 font-merriweather">Send us a message</h2>
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="text-sm font-bold text-[#081828] mb-2 block uppercase tracking-wider">{t('pages.contact.form.name')}</label>
+                    <label className="text-sm font-bold text-[#081828] mb-2 block   tracking-wider">{t('pages.contact.form.name')}</label>
                     <input
                       type="text"
                       name="name"
@@ -118,7 +118,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-bold text-[#081828] mb-2 block uppercase tracking-wider">{t('pages.contact.form.email')}</label>
+                    <label className="text-sm font-bold text-[#081828] mb-2 block   tracking-wider">{t('pages.contact.form.email')}</label>
                     <input
                       type="email"
                       name="email"
@@ -130,7 +130,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="text-sm font-bold text-[#081828] mb-2 block uppercase tracking-wider">{t('pages.contact.form.subject')}</label>
+                    <label className="text-sm font-bold text-[#081828] mb-2 block   tracking-wider">{t('pages.contact.form.subject')}</label>
                     <input
                       type="text"
                       name="subject"
@@ -141,7 +141,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="text-sm font-bold text-[#081828] mb-2 block uppercase tracking-wider">{t('pages.contact.form.message')}</label>
+                    <label className="text-sm font-bold text-[#081828] mb-2 block   tracking-wider">{t('pages.contact.form.message')}</label>
                     <textarea
                       name="message"
                       rows={6}

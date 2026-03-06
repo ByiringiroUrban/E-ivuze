@@ -188,8 +188,8 @@ const HospitalSettings = () => {
               <p><strong>{t('hospital.settings.name')}</strong> {hospital.name}</p>
               <p><strong>{t('hospital.settings.status')}</strong>
                 <span className={`ml-2 px-2 py-1 rounded text-sm ${hospital.status === 'APPROVED' ? 'bg-emerald-100 text-[#006838]' :
-                    hospital.status === 'PENDING' ? 'bg-yellow-100 text-yellow-800' :
-                      'bg-red-100 text-red-800'
+                  hospital.status === 'PENDING' ? 'bg-yellow-100 text-yellow-800' :
+                    'bg-red-100 text-red-800'
                   }`}>
                   {hospital.status}
                 </span>
@@ -230,8 +230,8 @@ const HospitalSettings = () => {
             <button
               onClick={() => setBillingPeriod('monthly')}
               className={`flex-1 py-2 rounded-md text-sm font-medium transition-colors ${billingPeriod === 'monthly'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-white text-primary shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
                 }`}
             >
               {t('hospital.settings.monthly')}
@@ -239,8 +239,8 @@ const HospitalSettings = () => {
             <button
               onClick={() => setBillingPeriod('yearly')}
               className={`flex-1 py-2 rounded-md text-sm font-medium transition-colors ${billingPeriod === 'yearly'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-white text-primary shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
                 }`}
             >
               {t('hospital.settings.yearly')}
@@ -268,8 +268,8 @@ const HospitalSettings = () => {
                 onClick={() => handleOpenPaymentPopup('basic')}
                 disabled={currentPlan?.type === 'basic'}
                 className={`w-full py-2 rounded-lg font-medium transition-colors ${currentPlan?.type === 'basic'
-                    ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
-                    : 'bg-[#006838] text-white hover:bg-[#004d2a]'
+                  ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
+                  : 'bg-[#006838] text-white hover:bg-[#004d2a]'
                   }`}
               >
                 {currentPlan?.type === 'basic' ? 'Current Plan' : t('hospital.settings.subscribe')}
@@ -299,8 +299,8 @@ const HospitalSettings = () => {
                 onClick={() => handleOpenPaymentPopup('premium')}
                 disabled={currentPlan?.type === 'premium'}
                 className={`w-full py-2 rounded-lg font-medium transition-colors ${currentPlan?.type === 'premium'
-                    ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
-                    : 'bg-[#006838] text-white hover:bg-[#004d2a]'
+                  ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
+                  : 'bg-[#006838] text-white hover:bg-[#004d2a]'
                   }`}
               >
                 {currentPlan?.type === 'premium' ? 'Current Plan' : t('hospital.settings.subscribe')}
@@ -327,8 +327,8 @@ const HospitalSettings = () => {
                 onClick={() => handleOpenPaymentPopup('enterprise')}
                 disabled={currentPlan?.type === 'enterprise'}
                 className={`w-full py-2 rounded-lg font-medium transition-colors ${currentPlan?.type === 'enterprise'
-                    ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
-                    : 'bg-[#006838] text-white hover:bg-[#004d2a]'
+                  ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
+                  : 'bg-[#006838] text-white hover:bg-[#004d2a]'
                   }`}
               >
                 {currentPlan?.type === 'enterprise' ? 'Current Plan' : t('hospital.settings.subscribe')}
@@ -354,10 +354,10 @@ const HospitalSettings = () => {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Plan</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Amount</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  ">Plan</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  ">Amount</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  ">Date</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  ">Status</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
@@ -370,8 +370,8 @@ const HospitalSettings = () => {
                       <td className="px-4 py-3 text-sm">{new Date(payment.createdAt).toLocaleDateString()}</td>
                       <td className="px-4 py-3 text-sm">
                         <span className={`px-2 py-1 rounded text-xs font-medium ${payment.status === 'approved' ? 'bg-green-100 text-green-800' :
-                            payment.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                              'bg-red-100 text-red-800'
+                          payment.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                            'bg-red-100 text-red-800'
                           }`}>
                           {payment.status}
                         </span>

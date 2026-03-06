@@ -68,8 +68,8 @@ const HospitalTrials = () => {
   };
 
   const handleSelectHospital = (hospitalId) => {
-    setSelectedHospitals(prev => 
-      prev.includes(hospitalId) 
+    setSelectedHospitals(prev =>
+      prev.includes(hospitalId)
         ? prev.filter(id => id !== hospitalId)
         : [...prev, hospitalId]
     );
@@ -99,7 +99,7 @@ const HospitalTrials = () => {
     }
 
     const hospitalIds = applyToAll ? filteredHospitals.map(h => h._id) : selectedHospitals;
-    
+
     if (hospitalIds.length === 0) {
       toast.error(t('admin.hospitalTrials.selectHospitals'));
       return;
@@ -169,7 +169,7 @@ const HospitalTrials = () => {
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.45em] text-white/70">{t('admin.hospitalTrials.title')}</p>
+            <p className="text-xs   tracking-[0.45em] text-white/70">{t('admin.hospitalTrials.title')}</p>
             <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.hospitalTrials.hero')}</h1>
             <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.hospitalTrials.subtitle')}</p>
           </div>
@@ -216,41 +216,37 @@ const HospitalTrials = () => {
             <div className="flex gap-2 bg-gray-100 rounded-lg p-1">
               <button
                 onClick={() => setFilter('all')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  filter === 'all' 
-                    ? 'bg-white text-primary shadow-sm' 
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'all'
+                    ? 'bg-white text-primary shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
-                }`}
+                  }`}
               >
                 {t('admin.hospitalTrials.filterAll')} ({hospitals.length})
               </button>
               <button
                 onClick={() => setFilter('active')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  filter === 'active' 
-                    ? 'bg-white text-primary shadow-sm' 
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'active'
+                    ? 'bg-white text-primary shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
-                }`}
+                  }`}
               >
                 {t('admin.hospitalTrials.filterActive')} ({hospitals.filter(h => h.trialStatus === 'active').length})
               </button>
               <button
                 onClick={() => setFilter('expired')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  filter === 'expired' 
-                    ? 'bg-white text-primary shadow-sm' 
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'expired'
+                    ? 'bg-white text-primary shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
-                }`}
+                  }`}
               >
                 {t('admin.hospitalTrials.filterExpired')} ({hospitals.filter(h => h.trialStatus === 'expired').length})
               </button>
               <button
                 onClick={() => setFilter('subscribed')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  filter === 'subscribed' 
-                    ? 'bg-white text-primary shadow-sm' 
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'subscribed'
+                    ? 'bg-white text-primary shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
-                }`}
+                  }`}
               >
                 {t('admin.hospitalTrials.filterSubscribed')} ({hospitals.filter(h => h.trialStatus === 'subscribed').length})
               </button>
@@ -272,7 +268,7 @@ const HospitalTrials = () => {
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         <input
                           type="checkbox"
                           checked={selectedHospitals.length === filteredHospitals.length && filteredHospitals.length > 0}
@@ -280,25 +276,25 @@ const HospitalTrials = () => {
                           className="rounded border-gray-300 text-primary focus:ring-primary"
                         />
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalTrials.hospitalName')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalTrials.status')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalTrials.trialPeriod')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalTrials.daysRemaining')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalTrials.subscription')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalTrials.approvedDate')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalTrials.contact')}
                       </th>
                     </tr>
@@ -337,12 +333,11 @@ const HospitalTrials = () => {
                         </td>
                         <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm">
                           {hospital.daysRemaining !== null ? (
-                            <span className={`font-medium ${
-                              hospital.daysRemaining < 0 ? 'text-red-600' :
-                              hospital.daysRemaining < 7 ? 'text-yellow-600' :
-                              'text-green-600'
-                            }`}>
-                              {hospital.daysRemaining < 0 
+                            <span className={`font-medium ${hospital.daysRemaining < 0 ? 'text-red-600' :
+                                hospital.daysRemaining < 7 ? 'text-yellow-600' :
+                                  'text-green-600'
+                              }`}>
+                              {hospital.daysRemaining < 0
                                 ? `${t('admin.hospitalTrials.expired')} ${Math.abs(hospital.daysRemaining)} ${t('admin.hospitalTrials.daysAgo')}`
                                 : `${hospital.daysRemaining} ${t('admin.hospitalTrials.days')}`
                               }
@@ -485,11 +480,10 @@ const HospitalTrials = () => {
                 <button
                   onClick={handleTrialAction}
                   disabled={loading}
-                  className={`flex-1 py-2 rounded-lg font-medium transition-colors ${
-                    trialAction === 'remove'
+                  className={`flex-1 py-2 rounded-lg font-medium transition-colors ${trialAction === 'remove'
                       ? 'bg-red-600 hover:bg-red-700 text-white'
                       : 'bg-primary hover:bg-primary-dark text-white'
-                  } disabled:opacity-50`}
+                    } disabled:opacity-50`}
                 >
                   {loading ? t('admin.hospitalTrials.processing') : t('admin.hospitalTrials.apply')}
                 </button>

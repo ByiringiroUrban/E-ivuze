@@ -345,7 +345,7 @@ const DoctorProfile = () => {
               {/* Quick Info */}
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
+                  <p className="text-xs text-gray-500   tracking-wide mb-1">
                     {t('doctor.profilePage.status') || 'Status'}
                   </p>
                   <div className="flex items-center gap-2">
@@ -358,7 +358,7 @@ const DoctorProfile = () => {
 
                 {profileData.licenseNumber && (
                   <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
+                    <p className="text-xs text-gray-500   tracking-wide mb-1">
                       {t('doctor.profilePage.medicalLicenseNumber') || 'License Number'}
                     </p>
                     <p className="text-sm font-medium text-gray-800">{profileData.licenseNumber}</p>
@@ -367,7 +367,7 @@ const DoctorProfile = () => {
 
                 {profileData.email && (
                   <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
+                    <p className="text-xs text-gray-500   tracking-wide mb-1">
                       {t('doctor.profilePage.email') || 'Email'}
                     </p>
                     <p className="text-sm font-medium text-gray-800 break-all">{profileData.email}</p>

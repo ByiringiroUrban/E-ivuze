@@ -41,7 +41,7 @@ const Appointment = () => {
         <section className="appointment py-24 bg-[#f0f4f2] relative overflow-hidden">
             {/* Background Watermark */}
             <div className="absolute top-10 left-0 right-0 flex justify-center pointer-events-none z-0 overflow-hidden">
-                <span className="text-[120px] md:text-[180px] font-bold uppercase text-gray-100/50 whitespace-nowrap select-none font-merriweather">
+                <span className="text-[120px] md:text-[180px] font-bold   text-gray-100/50 whitespace-nowrap select-none font-merriweather">
                     APPOINT
                 </span>
             </div>
@@ -105,7 +105,7 @@ const Appointment = () => {
                         className="w-full lg:w-2/3"
                     >
                         <div className="appointment-title relative mb-10">
-                            <div className="inline-block px-4 py-1.5 bg-emerald-100 text-[#006838] rounded-full text-xs font-bold uppercase tracking-wider mb-4 relative z-10">
+                            <div className="inline-block px-4 py-1.5 bg-emerald-100 text-[#006838] rounded-full text-xs font-bold   tracking-wider mb-4 relative z-10">
                                 Easy Booking
                             </div>
                             <h2 className="relative z-10 text-4xl lg:text-5xl font-bold text-[#081828] mb-6 font-merriweather">Book An Appointment</h2>
@@ -169,7 +169,7 @@ const Appointment = () => {
                                 <button
                                     type="submit"
                                     disabled={submitting}
-                                    className="w-full h-[60px] bg-[#006838] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#004d2a] hover:shadow-xl hover:-translate-y-1 transition-all rounded-lg disabled:opacity-60 shadow-lg shadow-emerald-900/10"
+                                    className="w-full h-[60px] bg-[#006838] text-white font-bold text-sm   tracking-widest hover:bg-[#004d2a] hover:shadow-xl hover:-translate-y-1 transition-all rounded-lg disabled:opacity-60 shadow-lg shadow-emerald-900/10"
                                 >
                                     {submitting ? 'Sending Request…' : 'Get Appointment'}
                                 </button>

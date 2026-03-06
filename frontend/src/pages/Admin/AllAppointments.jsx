@@ -33,7 +33,7 @@ const AllAppointments = () => {
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-widest text-white/70">{t('admin.allAppointments.title') || t('admin.allAppointmentsTitle') || 'All Appointments'}</p>
+            <p className="text-xs   tracking-widest text-white/70">{t('admin.allAppointments.title') || t('admin.allAppointmentsTitle') || 'All Appointments'}</p>
             <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.allAppointmentsTitle')}</h1>
             <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.allAppointmentsSubtitle')}</p>
           </div>
@@ -47,13 +47,13 @@ const AllAppointments = () => {
           <div className="bg-white border border-gray-200 rounded-lg shadow-sm text-sm max-h-[80vh] min-h-[60vh] overflow-y-auto">
             {/* Desktop Headers */}
             <div className="hidden sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] grid-flow-col py-3 px-6 border-b bg-gray-50 sticky top-0 z-10">
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">#</p>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{t('admin.allAppointments.patient')}</p>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{t('admin.allAppointments.age')}</p>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{t('admin.allAppointments.dateTime')}</p>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{t('admin.allAppointments.doctor')}</p>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{t('admin.allAppointments.fees')}</p>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{t('admin.allAppointments.actions')}</p>
+              <p className="text-xs font-medium text-gray-500   tracking-wider">#</p>
+              <p className="text-xs font-medium text-gray-500   tracking-wider">{t('admin.allAppointments.patient')}</p>
+              <p className="text-xs font-medium text-gray-500   tracking-wider">{t('admin.allAppointments.age')}</p>
+              <p className="text-xs font-medium text-gray-500   tracking-wider">{t('admin.allAppointments.dateTime')}</p>
+              <p className="text-xs font-medium text-gray-500   tracking-wider">{t('admin.allAppointments.doctor')}</p>
+              <p className="text-xs font-medium text-gray-500   tracking-wider">{t('admin.allAppointments.fees')}</p>
+              <p className="text-xs font-medium text-gray-500   tracking-wider">{t('admin.allAppointments.actions')}</p>
             </div>
 
             {orderedAppointments.length === 0 ? (

@@ -81,7 +81,7 @@ export const LoadingComponents = {
                 text={text}
                 textColor={COLORS.accent}
             />
-            {text && <p className="mt-4 text-xs font-black uppercase tracking-widest text-slate-400">{text}</p>}
+            {text && <p className="mt-4 text-xs font-black   tracking-widest text-slate-400">{text}</p>}
         </div>
     ),
 

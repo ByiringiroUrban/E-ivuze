@@ -61,7 +61,7 @@ const PharmacyNavBar = () => {
           </button>
           <img src={assets.logo} alt="Logo" className="w-8 h-8 object-contain" />
           <div>
-            <p className="text-[11px] uppercase tracking-[0.4em] text-white/60">
+            <p className="text-[11px]   tracking-[0.4em] text-white/60">
               {t('pharmacy.navbar.eyebrow') || 'Pharmacy Control'}
             </p>
             <h1 className="text-lg sm:text-xl font-semibold">
@@ -92,7 +92,7 @@ const PharmacyNavBar = () => {
           <div className="relative profile-dropdown">
             <button
               onClick={() => setShowProfileDropdown(!showProfileDropdown)}
-              className="flex items-center gap-2 px-3 py-2 border border-white/30 text-xs uppercase tracking-[0.3em] hover:bg-white/10 transition"
+              className="flex items-center gap-2 px-3 py-2 border border-white/30 text-xs   tracking-[0.3em] hover:bg-white/10 transition"
             >
               <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
                 <FaUser />

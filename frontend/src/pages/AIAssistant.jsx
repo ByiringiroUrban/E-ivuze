@@ -559,7 +559,7 @@ const AIAssistant = () => {
                 <div className="space-y-2 max-h-60 overflow-y-auto">
                   {searchResults.map((r, i) => (
                     <div key={i} className="bg-[#022d22] p-3 rounded text-sm text-gray-300 border border-[#059669]/10">
-                      <div className="font-bold text-[#059669] text-xs uppercase mb-1">{r.document?.title || 'Source'}</div>
+                      <div className="font-bold text-[#059669] text-xs   mb-1">{r.document?.title || 'Source'}</div>
                       <div className="prose prose-invert max-w-none text-sm text-gray-300">
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}

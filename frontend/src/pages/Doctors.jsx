@@ -129,7 +129,7 @@ const Doctors = () => {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-gray-50">
-                  <h4 className="text-sm font-bold text-[#081828] mb-4 uppercase tracking-wider">Practice Type</h4>
+                  <h4 className="text-sm font-bold text-[#081828] mb-4   tracking-wider">Practice Type</h4>
                   <div className="space-y-3">
                     {['all', 'private', 'hospital'].map(type => (
                       <label key={type} className="flex items-center space-x-3 cursor-pointer group">
@@ -151,7 +151,7 @@ const Doctors = () => {
                 {appliedSpeciality && (
                   <button
                     onClick={handleClearFilters}
-                    className="w-full mt-10 py-4 text-xs font-bold uppercase tracking-widest text-red-500 border border-red-500/20 hover:bg-red-50 transition-all rounded-sm"
+                    className="w-full mt-10 py-4 text-xs font-bold   tracking-widest text-red-500 border border-red-500/20 hover:bg-red-50 transition-all rounded-sm"
                   >
                     Reset All Filters
                   </button>
@@ -194,7 +194,7 @@ const Doctors = () => {
                         />
 
                         {/* Status Label */}
-                        <div className={`absolute top-4 left-4 px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest ${doc.available ? 'bg-[#88C250] text-white' : 'bg-gray-400 text-white'
+                        <div className={`absolute top-4 left-4 px-3 py-1 rounded-sm text-[10px] font-bold   tracking-widest ${doc.available ? 'bg-[#88C250] text-white' : 'bg-gray-400 text-white'
                           }`}>
                           {doc.available ? 'Available' : 'Busy'}
                         </div>
@@ -202,7 +202,7 @@ const Doctors = () => {
                         {/* Hover Overlay with Brief View */}
                         <div className="absolute inset-0 bg-[#006838]/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400 p-6 text-center">
                           <p className="text-white/80 text-xs mb-4 italic">"Dedicated to professional healthcare excellence in Rwanda."</p>
-                          <span className="bg-white text-[#006838] px-6 py-2 text-xs font-bold uppercase tracking-wider rounded-sm shadow-lg">
+                          <span className="bg-white text-[#006838] px-6 py-2 text-xs font-bold   tracking-wider rounded-sm shadow-lg">
                             Book Appointment
                           </span>
                         </div>
@@ -210,7 +210,7 @@ const Doctors = () => {
 
                       <div className="p-6 text-center border-t border-gray-50">
                         <h4 className="text-[#081828] font-bold text-lg mb-1 font-merriweather">{doc.name}</h4>
-                        <p className="text-[#88C250] text-sm font-bold mb-3 uppercase tracking-wider">{doc.speciality}</p>
+                        <p className="text-[#88C250] text-sm font-bold mb-3   tracking-wider">{doc.speciality}</p>
                         <div className="flex items-center justify-center space-x-2 text-gray-400 text-xs border-t border-gray-50 pt-4">
                           <span className="font-bold text-[#006838] text-sm">{currency} {consultationFee?.toLocaleString()}</span>
                           <span className="opacity-50">/ consultation</span>

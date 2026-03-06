@@ -100,7 +100,7 @@ const Settings = () => {
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.45em] text-white/70">{t('admin.settings.title')}</p>
+            <p className="text-xs   tracking-[0.45em] text-white/70">{t('admin.settings.title')}</p>
             <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.settings.hero')}</h1>
             <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.settings.subtitle')}</p>
           </div>

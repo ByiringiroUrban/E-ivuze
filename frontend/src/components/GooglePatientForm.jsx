@@ -20,7 +20,7 @@ const GooglePatientForm = ({ googleUserData, onSubmit, onCancel, submitting }) =
     return (
         <form onSubmit={handleSubmit} className="w-full max-w-md border border-border bg-white/95 shadow-2xl p-6 sm:p-8 space-y-6 text-sm text-zinc-700 rounded-lg">
             <div className="space-y-2 text-center">
-                <p className="text-xs uppercase tracking-[0.4em] text-primary-dark">
+                <p className="text-xs   tracking-[0.4em] text-primary-dark">
                     {t('pages.login.completeProfile') || 'Almost There'}
                 </p>
                 <h2 className="text-2xl font-semibold text-accent">
@@ -33,7 +33,7 @@ const GooglePatientForm = ({ googleUserData, onSubmit, onCancel, submitting }) =
 
             <div className="space-y-4">
                 <div>
-                    <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+                    <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
                         {t('pages.login.gender') || 'Gender'} *
                     </label>
                     <select
@@ -54,14 +54,14 @@ const GooglePatientForm = ({ googleUserData, onSubmit, onCancel, submitting }) =
                     type="button"
                     onClick={onCancel}
                     disabled={submitting}
-                    className="flex-1 border border-border text-accent py-3 text-xs uppercase tracking-[0.4em] hover:bg-gray-50 transition rounded disabled:opacity-50"
+                    className="flex-1 border border-border text-accent py-3 text-xs   tracking-[0.4em] hover:bg-gray-50 transition rounded disabled:opacity-50"
                 >
                     {t('buttons.cancel') || 'Cancel'}
                 </button>
                 <button
                     type="submit"
                     disabled={submitting}
-                    className="flex-2 bg-primary text-white py-3 text-xs uppercase tracking-[0.4em] hover:bg-primary-dark transition rounded disabled:opacity-50"
+                    className="flex-2 bg-primary text-white py-3 text-xs   tracking-[0.4em] hover:bg-primary-dark transition rounded disabled:opacity-50"
                 >
                     {submitting ? t('buttons.processing') : (t('buttons.continue') || 'Continue')}
                 </button>

@@ -104,7 +104,7 @@ const PharmacyImpersonate = () => {
       <div className="bg-white min-h-screen px-4 sm:px-8 py-8 flex items-center justify-center">
         <div className="border border-yellow-300 bg-yellow-50 max-w-xl w-full p-8 text-center space-y-4">
           <FaExclamationTriangle className="w-12 h-12 text-yellow-600 mx-auto" />
-          <p className="text-xs uppercase tracking-[0.35em] text-yellow-700">
+          <p className="text-xs   tracking-[0.35em] text-yellow-700">
             {t('pharmacy.impersonate.notAllowed') || 'Impersonation Not Allowed'}
           </p>
           <p className="text-sm text-yellow-900">

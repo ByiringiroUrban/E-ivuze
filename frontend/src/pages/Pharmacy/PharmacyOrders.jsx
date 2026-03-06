@@ -95,7 +95,7 @@ const PharmacyOrders = () => {
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
-          className="w-full md:w-80 px-4 py-3 border border-border uppercase text-[11px] tracking-[0.3em]"
+          className="w-full md:w-80 px-4 py-3 border border-border   text-[11px] tracking-[0.3em]"
         >
           <option value="">{t('pharmacy.orders.allStatuses') || 'All Statuses'}</option>
           <option value="Pending">{t('pharmacy.orders.pending') || 'Pending'}</option>
@@ -112,25 +112,25 @@ const PharmacyOrders = () => {
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  ">
                   {t('pharmacy.orders.orderId') || 'Order ID'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  ">
                   {t('pharmacy.orders.patient') || 'Patient'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  ">
                   {t('pharmacy.orders.items') || 'Items'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  ">
                   {t('pharmacy.orders.total') || 'Total'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  ">
                   {t('pharmacy.orders.status') || 'Status'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  ">
                   {t('pharmacy.orders.date') || 'Date'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  ">
                   {t('pharmacy.orders.actions') || 'Actions'}
                 </th>
               </tr>
@@ -277,14 +277,14 @@ const PharmacyOrders = () => {
                             href={selectedOrder.prescriptionImageUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 text-center text-xs uppercase tracking-[0.3em] border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-white transition"
+                            className="flex-1 text-center text-xs   tracking-[0.3em] border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-white transition"
                           >
                             View PDF
                           </a>
                           <a
                             href={selectedOrder.prescriptionImageUrl}
                             download
-                            className="flex-1 text-center text-xs uppercase tracking-[0.3em] bg-primary text-white px-4 py-2 hover:bg-primary-dark transition"
+                            className="flex-1 text-center text-xs   tracking-[0.3em] bg-primary text-white px-4 py-2 hover:bg-primary-dark transition"
                           >
                             Download
                           </a>
@@ -302,14 +302,14 @@ const PharmacyOrders = () => {
                             href={selectedOrder.prescriptionImageUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 text-center text-xs uppercase tracking-[0.3em] border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-white transition"
+                            className="flex-1 text-center text-xs   tracking-[0.3em] border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-white transition"
                           >
                             View Full Size
                           </a>
                           <a
                             href={selectedOrder.prescriptionImageUrl}
                             download
-                            className="flex-1 text-center text-xs uppercase tracking-[0.3em] bg-primary text-white px-4 py-2 hover:bg-primary-dark transition"
+                            className="flex-1 text-center text-xs   tracking-[0.3em] bg-primary text-white px-4 py-2 hover:bg-primary-dark transition"
                           >
                             Download
                           </a>

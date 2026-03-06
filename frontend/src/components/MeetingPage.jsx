@@ -1272,7 +1272,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
           {showClinicalFeed && (
             <div className="absolute top-4 left-4 bottom-4 w-72 bg-white/95 backdrop-blur shadow-2xl roun-xl z-20 flex flex-col overflow-hidden border border-gray-200">
               <div className="p-3 bg-[#006838] text-white flex justify-between items-center">
-                <h3 className="font-bold text-sm uppercase tracking-wider flex items-center gap-2">
+                <h3 className="font-bold text-sm   tracking-wider flex items-center gap-2">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" /></svg>
                   Live Consultation
                 </h3>
@@ -1287,7 +1287,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
                   clinicalUpdates.map((update, idx) => (
                     <div key={idx} className="bg-gray-50 roun-lg p-3 border-l-4 border-[#006838] shadow-sm animate-fade-in">
                       <div className="flex justify-between items-start mb-1">
-                        <span className="text-[10px] font-black text-[#006838] uppercase tracking-tighter">
+                        <span className="text-[10px] font-black text-[#006838]   tracking-tighter">
                           {update.type}
                         </span>
                         <span className="text-[9px] text-gray-400">
@@ -1458,7 +1458,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
                 className="w-10 h-10 roun-lg bg-green-600 hover:bg-green-700 text-white flex flex-col items-center justify-center transition-all"
                 title="Clinical Notes"
               >
-                <div className="text-[10px] font-bold uppercase leading-none mb-0.5">Note</div>
+                <div className="text-[10px] font-bold   leading-none mb-0.5">Note</div>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               </button>
               <button
@@ -1466,7 +1466,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
                 className="w-10 h-10 roun-lg bg-purple-600 hover:bg-purple-700 text-white flex flex-col items-center justify-center transition-all"
                 title="Prescription (Rx)"
               >
-                <div className="text-[10px] font-bold uppercase leading-none mb-0.5">Rx</div>
+                <div className="text-[10px] font-bold   leading-none mb-0.5">Rx</div>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a2 2 0 00-1.96 1.414l-.477 2.387a2 2 0 00.547 1.96l2.387.477a2 2 0 001.96-1.414l.477-2.387a2 2 0 00-.547-1.022z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12.828 11.172a4 4 0 10-5.656 0 4 4 0 005.656 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12.828 11.172l4.243 4.243m-4.243-4.243l-4.243-4.243" /></svg>
               </button>
               <button
@@ -1474,7 +1474,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
                 className="w-10 h-10 roun-lg bg-[#006838] hover:bg-[#004d2a] text-white flex flex-col items-center justify-center transition-all"
                 title="Lab Order"
               >
-                <div className="text-[10px] font-bold uppercase leading-none mb-0.5">Lab</div>
+                <div className="text-[10px] font-bold   leading-none mb-0.5">Lab</div>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a2 2 0 00-1.96 1.414l-.477 2.387a2 2 0 00.547 1.96l2.387.477a2 2 0 001.96-1.414l.477-2.387a2 2 0 00-.547-1.022z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12.828 11.172a4 4 0 10-5.656 0 4 4 0 005.656 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12.828 11.172l4.243 4.243m-4.243-4.243l-4.243-4.243" /></svg>
               </button>
               <button
@@ -1482,7 +1482,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
                 className="w-10 h-10 roun-lg bg-blue-600 hover:bg-blue-700 text-white flex flex-col items-center justify-center transition-all"
                 title="Referral"
               >
-                <div className="text-[10px] font-bold uppercase leading-none mb-0.5">Ref</div>
+                <div className="text-[10px] font-bold   leading-none mb-0.5">Ref</div>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
               </button>
               <button
@@ -1490,7 +1490,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
                 className="w-10 h-10 roun-lg bg-orange-600 hover:bg-orange-700 text-white flex flex-col items-center justify-center transition-all"
                 title="Vaccine"
               >
-                <div className="text-[10px] font-bold uppercase leading-none mb-0.5">Vac</div>
+                <div className="text-[10px] font-bold   leading-none mb-0.5">Vac</div>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" /></svg>
               </button>
             </div>

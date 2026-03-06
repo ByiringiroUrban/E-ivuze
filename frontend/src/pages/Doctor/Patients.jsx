@@ -309,7 +309,7 @@ const Patients = () => {
 
                         {/* Personal & Identity */}
                         <div className="space-y-4">
-                          <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                          <h4 className="text-sm font-bold text-gray-400   tracking-wider flex items-center gap-2">
                             <FaUser className="text-[#006838]" /> Identity & Profile
                           </h4>
                           <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 space-y-3">
@@ -340,7 +340,7 @@ const Patients = () => {
 
                         {/* Health & Insurance */}
                         <div className="space-y-4">
-                          <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                          <h4 className="text-sm font-bold text-gray-400   tracking-wider flex items-center gap-2">
                             <FaShieldAlt className="text-blue-500" /> Health & Insurance
                           </h4>
                           <div className="bg-blue-50/50 p-4 rounded-xl border border-blue-100 space-y-3">
@@ -371,7 +371,7 @@ const Patients = () => {
 
                         {/* Emergency & Allergies */}
                         <div className="space-y-4">
-                          <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                          <h4 className="text-sm font-bold text-gray-400   tracking-wider flex items-center gap-2">
                             <FaExclamationTriangle className="text-orange-500" /> Urgent Info
                           </h4>
                           <div className="space-y-3">
@@ -419,7 +419,7 @@ const Patients = () => {
                                   <p className="text-sm font-bold text-gray-800">{record.title}</p>
                                   <p className="text-xs text-gray-500 line-clamp-2 mt-1">{record.description}</p>
                                   <div className="flex justify-between items-center mt-2">
-                                    <span className="text-[10px] uppercase font-bold text-gray-400">{record.recordType}</span>
+                                    <span className="text-[10px]   font-bold text-gray-400">{record.recordType}</span>
                                     <span className="text-[10px] font-bold text-[#006838]">{new Date(record.createdAt).toLocaleDateString()}</span>
                                   </div>
                                 </div>
@@ -504,7 +504,7 @@ const Patients = () => {
                                 <div key={ref._id} className="p-2 border-b border-gray-50 last:border-0">
                                   <p className="text-xs font-bold text-gray-800">To: {ref.toHospital?.name || 'External Facility'}</p>
                                   <p className="text-[10px] text-gray-500 mt-1 line-clamp-1">{ref.reason}</p>
-                                  <p className="text-[9px] text-primary font-bold mt-1 uppercase">{ref.status}</p>
+                                  <p className="text-[9px] text-primary font-bold mt-1  ">{ref.status}</p>
                                 </div>
                               )) : <p className="text-xs text-gray-400 italic text-center py-4">No referrals found.</p>}
                             </div>

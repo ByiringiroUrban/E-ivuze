@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
             <img className="mx-auto mb-6 w-40 h-auto object-contain" src={assets.logo} alt="Logo" />
             <h1 className="text-4xl font-bold text-[#081828] mb-4 font-merriweather">{t('pages.privacyPolicy.title')}</h1>
             <div className="w-16 h-1 bg-[#88C250] mx-auto mb-6"></div>
-            <p className="text-[#006838]/60 font-medium uppercase tracking-widest text-xs">{t('pages.privacyPolicy.lastUpdated')}</p>
+            <p className="text-[#006838]/60 font-medium   tracking-widest text-xs">{t('pages.privacyPolicy.lastUpdated')}</p>
           </div>
 
           {/* Content */}

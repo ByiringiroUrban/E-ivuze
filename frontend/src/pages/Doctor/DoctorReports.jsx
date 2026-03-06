@@ -372,19 +372,19 @@ const DoctorReports = () => {
                                 <h3 className="text-2xl font-bold text-gray-800">{patientData.info?.name}</h3>
                                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
                                     <div className="flex flex-col">
-                                        <span className="text-xs text-gray-500 uppercase">Age</span>
+                                        <span className="text-xs text-gray-500  ">Age</span>
                                         <span className="font-medium">{calculateAge(patientData.info?.dob)} Years</span>
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-xs text-gray-500 uppercase">Gender</span>
+                                        <span className="text-xs text-gray-500  ">Gender</span>
                                         <span className="font-medium capitalize">{patientData.info?.gender}</span>
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-xs text-gray-500 uppercase">Phone</span>
+                                        <span className="text-xs text-gray-500  ">Phone</span>
                                         <span className="font-medium">{patientData.info?.phone}</span>
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-xs text-gray-500 uppercase">Email</span>
+                                        <span className="text-xs text-gray-500  ">Email</span>
                                         <span className="font-medium">{patientData.info?.email}</span>
                                     </div>
                                 </div>
@@ -405,7 +405,7 @@ const DoctorReports = () => {
                                             <p className="font-bold text-gray-700">{visit.appointmentId?.slotDate} | {visit.appointmentId?.slotTime}</p>
                                             <p className="text-xs text-gray-500">Reason: {visit.clinicalSummary}</p>
                                         </div>
-                                        <span className="px-2 py-1 bg-blue-100 text-blue-800 text-[10px] font-bold uppercase rounded-none">
+                                        <span className="px-2 py-1 bg-blue-100 text-blue-800 text-[10px] font-bold   rounded-none">
                                             {visit.outcome}
                                         </span>
                                     </div>
@@ -434,7 +434,7 @@ const DoctorReports = () => {
                                 <div key={idx} className="p-4 border border-gray-100 bg-emerald-50/30 rounded-none">
                                     <div className="flex justify-between items-center mb-2">
                                         <p className="font-bold text-gray-800">{lab.testName}</p>
-                                        <span className={`px-2 py-0.5 text-[10px] font-black uppercase rounded-none ${lab.status === 'COMPLETED' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                                        <span className={`px-2 py-0.5 text-[10px] font-black   rounded-none ${lab.status === 'COMPLETED' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
                                             {lab.status}
                                         </span>
                                     </div>
@@ -458,7 +458,7 @@ const DoctorReports = () => {
                         <div className="overflow-x-auto">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-gray-50 text-xs font-bold text-gray-500 uppercase">
+                                    <tr className="bg-gray-50 text-xs font-bold text-gray-500  ">
                                         <th className="p-3 border-b">Date</th>
                                         <th className="p-3 border-b">Diagnosis</th>
                                         <th className="p-3 border-b">Medications</th>
@@ -520,7 +520,7 @@ const DoctorReports = () => {
                                         <p className="font-bold text-gray-800">{imm.vaccineName}</p>
                                         <p className="text-xs text-gray-500">Dose: {imm.doseNumber} | Date: {new Date(imm.administeredDate).toLocaleDateString()}</p>
                                     </div>
-                                    <span className="text-[10px] font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-none uppercase">Administered</span>
+                                    <span className="text-[10px] font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-none  ">Administered</span>
                                 </div>
                             )) : <p className="text-gray-400 italic text-sm">No immunization records found.</p>}
                         </div>
@@ -581,10 +581,10 @@ const DoctorReports = () => {
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
                                     <tr>
-                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & Time</th>
-                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Patient</th>
-                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fees</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">Date & Time</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">Patient</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">Status</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">Fees</th>
                                     </tr>
 
                                 </thead>
@@ -633,10 +633,10 @@ const DoctorReports = () => {
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
                                     <tr>
-                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Patient</th>
-                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
-                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Visit</th>
-                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Records</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">Patient</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">Contact</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">Last Visit</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">Records</th>
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">

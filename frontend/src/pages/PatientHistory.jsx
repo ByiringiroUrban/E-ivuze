@@ -119,7 +119,7 @@ const PatientHistory = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex-1 flex items-center justify-center gap-2 py-4 px-4 text-sm font-bold tracking-normal uppercase transition-all rounded-none ${activeTab === tab.id
+                                className={`flex-1 flex items-center justify-center gap-2 py-4 px-4 text-sm font-bold tracking-normal   transition-all rounded-none ${activeTab === tab.id
                                     ? 'bg-white text-[#006838] shadow-sm border border-gray-100 translate-y-0'
                                     : 'text-gray-400 hover:text-gray-600'
                                     }`}
@@ -197,7 +197,7 @@ const PatientHistory = () => {
                                         <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
                                             <table className="w-full text-left">
                                                 <thead>
-                                                    <tr className="bg-gray-50/80 text-[10px] uppercase tracking-wider font-black text-gray-400">
+                                                    <tr className="bg-gray-50/80 text-[10px]   tracking-wider font-black text-gray-400">
                                                         <th className="px-6 py-4">Date</th>
                                                         <th className="px-6 py-4">Code</th>
                                                         <th className="px-6 py-4">Description</th>
@@ -215,7 +215,7 @@ const PatientHistory = () => {
                                                             </td>
                                                             <td className="px-6 py-4 text-sm font-semibold text-gray-800">{diag.description}</td>
                                                             <td className="px-6 py-4">
-                                                                <span className={`text-[9px] font-black uppercase tracking-tighter px-2 py-0.5 rounded-full ${diag.type === 'Primary' ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600'
+                                                                <span className={`text-[9px] font-black   tracking-tighter px-2 py-0.5 rounded-full ${diag.type === 'Primary' ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600'
                                                                     }`}>
                                                                     {diag.type || 'Secondary'}
                                                                 </span>
@@ -244,7 +244,7 @@ const PatientHistory = () => {
                                                     <div key={rx._id} className="p-6 bg-white border border-gray-100 rounded-2xl">
                                                         <div className="flex justify-between items-start mb-4">
                                                             <div>
-                                                                <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Prescribed On</p>
+                                                                <p className="text-xs text-gray-400 font-bold   tracking-wider">Prescribed On</p>
                                                                 <p className="font-bold text-gray-800">{new Date(rx.createdAt).toLocaleDateString()}</p>
                                                             </div>
                                                             <div className="bg-emerald-50 text-[#006838] text-[10px] font-black px-2 py-1 rounded-lg">
@@ -310,7 +310,7 @@ const PatientHistory = () => {
                                         <div className="flex items-center justify-between">
                                             <h3 className="text-xl font-bold text-gray-800">Financial Ledger</h3>
                                             <div className="flex flex-col text-right">
-                                                <span className="text-xs text-gray-400 uppercase font-bold tracking-wider">Total Expenses</span>
+                                                <span className="text-xs text-gray-400   font-bold tracking-wider">Total Expenses</span>
                                                 <span className="text-2xl font-black text-[#006838]">
                                                     {history.payments.filter(p => p.status === 'approved').reduce((acc, curr) => acc + curr.amount, 0).toLocaleString()} RWF
                                                 </span>
@@ -332,7 +332,7 @@ const PatientHistory = () => {
                                                         </div>
                                                         <div className="text-right">
                                                             <p className="text-lg font-black text-gray-800">{pay.amount.toLocaleString()} RWF</p>
-                                                            <span className={`text-[10px] font-black uppercase tracking-wider ${pay.status === 'approved' ? 'text-emerald-500' :
+                                                            <span className={`text-[10px] font-black   tracking-wider ${pay.status === 'approved' ? 'text-emerald-500' :
                                                                 pay.status === 'rejected' ? 'text-rose-500' : 'text-amber-500'
                                                                 }`}>
                                                                 {pay.status}
@@ -382,7 +382,7 @@ const VisitCard = ({ visit, index, onOpen }) => {
             <div className="flex justify-between items-start mb-4">
                 <div className="flex gap-4">
                     <div className="w-14 h-14 bg-emerald-50 rounded-none flex flex-col items-center justify-center border border-emerald-100">
-                        <span className="text-[10px] uppercase font-black text-emerald-400 leading-none">
+                        <span className="text-[10px]   font-black text-emerald-400 leading-none">
                             {dateObj.toLocaleString('default', { month: 'short' })}
                         </span>
                         <span className="text-lg font-black text-emerald-900 leading-none">
@@ -395,7 +395,7 @@ const VisitCard = ({ visit, index, onOpen }) => {
                     </div>
                 </div>
                 <div className="text-right">
-                    <span className="text-[10px] font-black uppercase tracking-wider text-[#006838] bg-emerald-50 px-2 py-1 rounded-none border border-emerald-100">
+                    <span className="text-[10px] font-black   tracking-wider text-[#006838] bg-emerald-50 px-2 py-1 rounded-none border border-emerald-100">
                         {visit.outcome}
                     </span>
                 </div>
@@ -403,11 +403,11 @@ const VisitCard = ({ visit, index, onOpen }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-gray-50">
                 <div>
-                    <span className="text-[10px] uppercase font-black text-gray-400 tracking-wider block mb-1">Chief Complaint</span>
+                    <span className="text-[10px]   font-black text-gray-400 tracking-wider block mb-1">Chief Complaint</span>
                     <p className="text-sm text-gray-700 font-medium line-clamp-2 italic">"{visit.chiefComplaint}"</p>
                 </div>
                 <div>
-                    <span className="text-[10px] uppercase font-black text-gray-400 tracking-wider block mb-1">Diagnoses</span>
+                    <span className="text-[10px]   font-black text-gray-400 tracking-wider block mb-1">Diagnoses</span>
                     <div className="flex flex-wrap gap-1">
                         {(visit.diagnosis || []).map((d, i) => (
                             <span key={i} className="text-xs font-bold text-gray-900 bg-gray-100 px-2 py-1 rounded-md">
@@ -472,31 +472,31 @@ const VisitSummaryModal = ({ visit, onClose, linkedData }) => {
                     <section>
                         <div className="flex items-center gap-2 mb-4 text-primary">
                             <FaNotesMedical size={18} />
-                            <h3 className="text-sm font-black uppercase tracking-wider text-gray-900">Consultation Notes</h3>
+                            <h3 className="text-sm font-black   tracking-wider text-gray-900">Consultation Notes</h3>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-6 rounded-2xl border border-slate-100">
                             <div>
-                                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">Chief Complaint</h4>
+                                <h4 className="text-[10px] font-black text-slate-400   tracking-wider mb-1">Chief Complaint</h4>
                                 <p className="text-sm text-slate-700 font-medium italic">"{visit.chiefComplaint}"</p>
                             </div>
                             <div>
-                                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">Outcome</h4>
+                                <h4 className="text-[10px] font-black text-slate-400   tracking-wider mb-1">Outcome</h4>
                                 <p className="text-sm text-slate-900 font-bold">{visit.outcome}</p>
                             </div>
                             <div className="md:col-span-2">
-                                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">Diagnostic Assessment</h4>
+                                <h4 className="text-[10px] font-black text-slate-400   tracking-wider mb-1">Diagnostic Assessment</h4>
                                 <div className="flex flex-wrap gap-2 mt-2">
                                     {(visit.diagnosis || []).map((d, i) => (
                                         <div key={i} className="bg-white border border-slate-200 px-3 py-2 rounded-xl text-sm">
                                             <span className="font-bold text-slate-900">{d.description}</span>
                                             {d.code && <span className="text-primary text-xs ml-2 font-mono bg-primary/5 px-1.5 py-0.5 rounded">[{d.code}]</span>}
-                                            <span className="block text-[10px] text-slate-400 uppercase font-bold mt-1">{d.type}</span>
+                                            <span className="block text-[10px] text-slate-400   font-bold mt-1">{d.type}</span>
                                         </div>
                                     ))}
                                 </div>
                             </div>
                             <div className="md:col-span-2">
-                                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">Detailed Plan</h4>
+                                <h4 className="text-[10px] font-black text-slate-400   tracking-wider mb-1">Detailed Plan</h4>
                                 <p className="text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">{visit.treatmentPlan}</p>
                             </div>
                         </div>
@@ -507,7 +507,7 @@ const VisitSummaryModal = ({ visit, onClose, linkedData }) => {
                         <section>
                             <div className="flex items-center gap-2 mb-4 text-emerald-600">
                                 <FaPills size={18} />
-                                <h3 className="text-sm font-black uppercase tracking-wider text-gray-900">Prescriptions</h3>
+                                <h3 className="text-sm font-black   tracking-wider text-gray-900">Prescriptions</h3>
                             </div>
                             {linkedData.prescriptions.length === 0 ? (
                                 <p className="text-sm text-gray-400 italic">No electronic prescriptions linked to this visit.</p>
@@ -530,7 +530,7 @@ const VisitSummaryModal = ({ visit, onClose, linkedData }) => {
                         <section>
                             <div className="flex items-center gap-2 mb-4 text-blue-600">
                                 <FaFlask size={18} />
-                                <h3 className="text-sm font-black uppercase tracking-wider text-gray-900">Lab Orders</h3>
+                                <h3 className="text-sm font-black   tracking-wider text-gray-900">Lab Orders</h3>
                             </div>
                             {linkedData.labs.length === 0 ? (
                                 <p className="text-sm text-gray-400 italic">No lab orders issued during this visit.</p>
@@ -540,7 +540,7 @@ const VisitSummaryModal = ({ visit, onClose, linkedData }) => {
                                         <div key={lab._id} className="p-4 border border-emerald-100 bg-emerald-50/30 rounded-2xl flex justify-between items-center">
                                             <div>
                                                 <p className="text-sm font-bold text-emerald-900">{lab.testName}</p>
-                                                <p className="text-[10px] text-emerald-600 font-bold uppercase tracking-widest">{lab.testCategory}</p>
+                                                <p className="text-[10px] text-emerald-600 font-bold   tracking-widest">{lab.testCategory}</p>
                                             </div>
                                             <span className="text-[10px] font-black bg-white px-2 py-1 rounded-lg border border-emerald-100">{lab.status}</span>
                                         </div>
@@ -555,7 +555,7 @@ const VisitSummaryModal = ({ visit, onClose, linkedData }) => {
                         <section>
                             <div className="flex items-center gap-2 mb-4 text-purple-600">
                                 <FaExternalLinkAlt size={16} />
-                                <h3 className="text-sm font-black uppercase tracking-widest text-gray-900">Referrals</h3>
+                                <h3 className="text-sm font-black   tracking-widest text-gray-900">Referrals</h3>
                             </div>
                             {linkedData.referrals.length === 0 ? (
                                 <p className="text-sm text-gray-400 italic">No referrals made.</p>
@@ -563,7 +563,7 @@ const VisitSummaryModal = ({ visit, onClose, linkedData }) => {
                                 <div className="space-y-3">
                                     {linkedData.referrals.map(refer => (
                                         <div key={refer._id} className="p-4 border border-purple-100 bg-purple-50/30 rounded-2xl">
-                                            <p className="text-[10px] font-black text-purple-400 uppercase tracking-wider mb-1">Referred To</p>
+                                            <p className="text-[10px] font-black text-purple-400   tracking-wider mb-1">Referred To</p>
                                             <p className="text-sm font-bold text-purple-900">{refer.toHospital}</p>
                                             <p className="text-xs text-purple-700 mt-2 font-medium">{refer.reason}</p>
                                         </div>
@@ -575,7 +575,7 @@ const VisitSummaryModal = ({ visit, onClose, linkedData }) => {
                         <section>
                             <div className="flex items-center gap-2 mb-4 text-orange-600">
                                 <FaSyringe size={18} />
-                                <h3 className="text-sm font-black uppercase tracking-widest text-gray-900">Vaccines</h3>
+                                <h3 className="text-sm font-black   tracking-widest text-gray-900">Vaccines</h3>
                             </div>
                             {linkedData.immunizations.length === 0 ? (
                                 <p className="text-sm text-gray-400 italic">No vaccinations recorded.</p>
@@ -588,7 +588,7 @@ const VisitSummaryModal = ({ visit, onClose, linkedData }) => {
                                                 <p className="text-xs text-orange-600">Dose {immu.doseNumber}</p>
                                             </div>
                                             <div className="text-right">
-                                                <p className="text-[10px] font-black text-orange-400 uppercase tracking-wider font-bold">Administered</p>
+                                                <p className="text-[10px] font-black text-orange-400   tracking-wider font-bold">Administered</p>
                                                 <p className="text-xs font-bold text-orange-900">{new Date(immu.dateAdministered).toLocaleDateString()}</p>
                                             </div>
                                         </div>

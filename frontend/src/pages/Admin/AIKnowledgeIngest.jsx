@@ -69,7 +69,7 @@ const AIKnowledgeIngest = () => {
     <div className="bg-white min-h-screen">
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-5xl space-y-3">
-          <p className="text-xs uppercase tracking-widest text-white/70">{t('ai.header.title') || 'AI'} / Knowledge</p>
+          <p className="text-xs   tracking-widest text-white/70">{t('ai.header.title') || 'AI'} / Knowledge</p>
           <h1 className="text-3xl sm:text-4xl font-semibold">AI Knowledge Ingest</h1>
           <p className="text-sm sm:text-base text-white/80 max-w-3xl">
             Add curated sources to power semantic search and grounded answers.
@@ -83,7 +83,7 @@ const AIKnowledgeIngest = () => {
             <form onSubmit={handleSubmit} className="border border-border rounded-lg p-5 sm:p-7 space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">Document Id (optional)</label>
+                  <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">Document Id (optional)</label>
                   <input
                     className="w-full border border-border px-4 py-3 mt-2"
                     value={documentId}
@@ -92,7 +92,7 @@ const AIKnowledgeIngest = () => {
                   />
                 </div>
                 <div>
-                  <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">Visibility</label>
+                  <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">Visibility</label>
                   <select
                     className="w-full border border-border px-4 py-3 mt-2"
                     value={visibility}
@@ -105,7 +105,7 @@ const AIKnowledgeIngest = () => {
               </div>
 
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">Title *</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">Title *</label>
                 <input
                   className="w-full border border-border px-4 py-3 mt-2"
                   value={title}
@@ -117,7 +117,7 @@ const AIKnowledgeIngest = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">Source</label>
+                  <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">Source</label>
                   <input
                     className="w-full border border-border px-4 py-3 mt-2"
                     value={source}
@@ -126,7 +126,7 @@ const AIKnowledgeIngest = () => {
                   />
                 </div>
                 <div>
-                  <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">URL</label>
+                  <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">URL</label>
                   <input
                     className="w-full border border-border px-4 py-3 mt-2"
                     value={url}
@@ -138,7 +138,7 @@ const AIKnowledgeIngest = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">Language</label>
+                  <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">Language</label>
                   <select
                     className="w-full border border-border px-4 py-3 mt-2"
                     value={language}
@@ -149,7 +149,7 @@ const AIKnowledgeIngest = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">Tags (comma-separated)</label>
+                  <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">Tags (comma-separated)</label>
                   <input
                     className="w-full border border-border px-4 py-3 mt-2"
                     value={tagsRaw}
@@ -160,7 +160,7 @@ const AIKnowledgeIngest = () => {
               </div>
 
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">Text *</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">Text *</label>
                 <textarea
                   className="w-full border border-border px-4 py-3 mt-2 min-h-[220px]"
                   value={text}
@@ -174,7 +174,7 @@ const AIKnowledgeIngest = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full sm:w-auto bg-primary text-white px-6 py-3 text-xs uppercase tracking-[0.4em] rounded disabled:opacity-60"
+                  className="w-full sm:w-auto bg-primary text-white px-6 py-3 text-xs   tracking-[0.4em] rounded disabled:opacity-60"
                 >
                   {loading ? 'Ingesting...' : 'Ingest'}
                 </button>
@@ -192,7 +192,7 @@ const AIKnowledgeIngest = () => {
                     setText('');
                     setLastResult(null);
                   }}
-                  className="w-full sm:w-auto border border-border text-accent px-6 py-3 text-xs uppercase tracking-[0.4em] rounded disabled:opacity-60"
+                  className="w-full sm:w-auto border border-border text-accent px-6 py-3 text-xs   tracking-[0.4em] rounded disabled:opacity-60"
                 >
                   Clear
                 </button>
@@ -201,7 +201,7 @@ const AIKnowledgeIngest = () => {
 
             {lastResult?.success && (
               <div className="mt-6 border border-border rounded-lg p-5">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Result</p>
+                <p className="text-xs   tracking-[0.3em] text-muted-foreground">Result</p>
                 <div className="mt-2 text-sm text-accent space-y-1">
                   <div>Document: <span className="font-mono">{lastResult?.document?._id}</span></div>
                   <div>Chunks: {lastResult?.chunks}</div>

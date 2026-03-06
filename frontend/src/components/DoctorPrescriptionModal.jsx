@@ -131,7 +131,7 @@ const DoctorPrescriptionModal = ({ isOpen, onClose, patientId, patientName, appo
                         {medications.map((med, index) => (
                             <div key={index} className="grid grid-cols-12 gap-2 bg-gray-50 p-3 rounded-lg border border-gray-100 items-end">
                                 <div className="col-span-12 sm:col-span-3">
-                                    <label className="text-[10px] text-gray-500 uppercase">Drug Name</label>
+                                    <label className="text-[10px] text-gray-500  ">Drug Name</label>
                                     <input
                                         className="w-full border rounded p-1.5 text-sm"
                                         placeholder="e.g. Amoxicillin"
@@ -140,7 +140,7 @@ const DoctorPrescriptionModal = ({ isOpen, onClose, patientId, patientName, appo
                                     />
                                 </div>
                                 <div className="col-span-4 sm:col-span-2">
-                                    <label className="text-[10px] text-gray-500 uppercase">Form</label>
+                                    <label className="text-[10px] text-gray-500  ">Form</label>
                                     <select
                                         className="w-full border rounded p-1.5 text-sm"
                                         value={med.form}
@@ -155,7 +155,7 @@ const DoctorPrescriptionModal = ({ isOpen, onClose, patientId, patientName, appo
                                     </select>
                                 </div>
                                 <div className="col-span-4 sm:col-span-2">
-                                    <label className="text-[10px] text-gray-500 uppercase">Dosage</label>
+                                    <label className="text-[10px] text-gray-500  ">Dosage</label>
                                     <input
                                         className="w-full border rounded p-1.5 text-sm"
                                         placeholder="500mg"
@@ -164,7 +164,7 @@ const DoctorPrescriptionModal = ({ isOpen, onClose, patientId, patientName, appo
                                     />
                                 </div>
                                 <div className="col-span-4 sm:col-span-2">
-                                    <label className="text-[10px] text-gray-500 uppercase">Freq</label>
+                                    <label className="text-[10px] text-gray-500  ">Freq</label>
                                     <select
                                         className="w-full border rounded p-1.5 text-sm"
                                         value={med.frequency}
@@ -181,7 +181,7 @@ const DoctorPrescriptionModal = ({ isOpen, onClose, patientId, patientName, appo
                                     </select>
                                 </div>
                                 <div className="col-span-4 sm:col-span-1">
-                                    <label className="text-[10px] text-gray-500 uppercase">Dur</label>
+                                    <label className="text-[10px] text-gray-500  ">Dur</label>
                                     <input
                                         className="w-full border rounded p-1.5 text-sm"
                                         placeholder="5d"
@@ -190,7 +190,7 @@ const DoctorPrescriptionModal = ({ isOpen, onClose, patientId, patientName, appo
                                     />
                                 </div>
                                 <div className="col-span-4 sm:col-span-1">
-                                    <label className="text-[10px] text-gray-500 uppercase">Qty</label>
+                                    <label className="text-[10px] text-gray-500  ">Qty</label>
                                     <input
                                         type="number"
                                         className="w-full border rounded p-1.5 text-sm"
@@ -199,7 +199,7 @@ const DoctorPrescriptionModal = ({ isOpen, onClose, patientId, patientName, appo
                                     />
                                 </div>
                                 <div className="col-span-4 sm:col-span-1">
-                                    <label className="text-[10px] text-gray-500 uppercase">Route</label>
+                                    <label className="text-[10px] text-gray-500  ">Route</label>
                                     <select
                                         className="w-full border rounded p-1.5 text-sm"
                                         value={med.route}

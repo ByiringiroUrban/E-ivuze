@@ -32,7 +32,7 @@ const Dashboard = () => {
     <div className="bg-white min-h-screen">
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-5xl space-y-3">
-          <p className="text-xs uppercase tracking-widest text-white/70">{t('admin.dashboardTitle') || 'Admin dashboard'}</p>
+          <p className="text-xs   tracking-widest text-white/70">{t('admin.dashboardTitle') || 'Admin dashboard'}</p>
           <h1 className="text-3xl sm:text-4xl font-semibold">
             {t('admin.dashboardHero') || 'Monitor the entire E-ivuzenetwork'}
           </h1>
@@ -97,7 +97,7 @@ const Dashboard = () => {
             <div className="border border-border bg-white shadow-sm">
               <div className="px-5 py-4 border-b border-border flex items-center justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-primary-dark">{t('admin.latestAppointments') || 'Latest appointments'}</p>
+                  <p className="text-xs   tracking-[0.35em] text-primary-dark">{t('admin.latestAppointments') || 'Latest appointments'}</p>
                   <p className="text-sm text-muted-foreground">
                     {t('admin.latestAppointmentsSubtitle') || 'Most recent bookings across the network'}
                   </p>
@@ -105,7 +105,7 @@ const Dashboard = () => {
               </div>
               <div className="overflow-x-auto">
                 <table className="min-w-full text-sm">
-                  <thead className="text-xs uppercase tracking-[0.25em] text-muted-foreground border-b border-border">
+                  <thead className="text-xs   tracking-[0.25em] text-muted-foreground border-b border-border">
                     <tr>
                       <th className="text-left px-5 py-3">{t('doctor.doctor')}</th>
                       <th className="text-left px-5 py-3">{t('pages.appointment.bookingSlots')}</th>
@@ -121,13 +121,13 @@ const Dashboard = () => {
                         <td className="px-5 py-3 text-muted-foreground">{item.userData?.name || '—'}</td>
                         <td className="px-5 py-3">
                           {item.cancelled ? (
-                            <span className="text-xs uppercase tracking-[0.35em] text-red-500">{t('doctor.dashboardCancelled')}</span>
+                            <span className="text-xs   tracking-[0.35em] text-red-500">{t('doctor.dashboardCancelled')}</span>
                           ) : item.isCompleted ? (
-                            <span className="text-xs uppercase tracking-[0.35em] text-primary">{t('doctor.dashboardCompleted')}</span>
+                            <span className="text-xs   tracking-[0.35em] text-primary">{t('doctor.dashboardCompleted')}</span>
                           ) : (
                             <button
                               onClick={() => cancelAppointment(item._id)}
-                              className="text-xs uppercase tracking-[0.35em] text-primary hover:underline"
+                              className="text-xs   tracking-[0.35em] text-primary hover:underline"
                             >
                               {t('buttons.cancel')}
                             </button>
@@ -149,7 +149,7 @@ const Dashboard = () => {
 
             <div className="border border-border bg-white shadow-sm p-5 space-y-5">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-primary-dark">{t('admin.quickActions') || 'Quick actions'}</p>
+                <p className="text-xs   tracking-[0.35em] text-primary-dark">{t('admin.quickActions') || 'Quick actions'}</p>
                 <p className="text-sm text-muted-foreground">{t('admin.quickActionsSubtitle')}</p>
               </div>
               <div className="space-y-3">
@@ -158,13 +158,13 @@ const Dashboard = () => {
                   t('admin.allAppointments.title') || t('admin.allAppointmentsTitle') || 'Review appointments',
                   t('admin.paymentApprovals.title') || t('admin.paymentApprovalsTitle') || 'Payment approvals'
                 ].map(action => (
-                  <button key={action} className="w-full text-left border border-border px-4 py-3 text-xs uppercase tracking-[0.3em] hover:bg-light-bg transition">
+                  <button key={action} className="w-full text-left border border-border px-4 py-3 text-xs   tracking-[0.3em] hover:bg-light-bg transition">
                     {action}
                   </button>
                 ))}
               </div>
               <div className="border-t border-border pt-5">
-                <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground mb-2">{t('admin.support') || 'Support'}</p>
+                <p className="text-xs   tracking-[0.35em] text-muted-foreground mb-2">{t('admin.support') || 'Support'}</p>
                 <p className="text-sm text-accent">team@E-ivuze.com</p>
                 <p className="text-sm text-accent mt-1">+250788777888/+250 788854243</p>
               </div>

@@ -93,7 +93,7 @@ const LabDashboard = () => {
                                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-sm text-gray-500 uppercase tracking-wider">Total Tests</p>
+                                            <p className="text-sm text-gray-500   tracking-wider">Total Tests</p>
                                             <p className="text-3xl font-bold text-gray-800 mt-1">{stats.total}</p>
                                         </div>
                                         <div className="bg-primary/10 p-3 rounded-lg">
@@ -105,7 +105,7 @@ const LabDashboard = () => {
                                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-sm text-gray-500 uppercase tracking-wider">Pending</p>
+                                            <p className="text-sm text-gray-500   tracking-wider">Pending</p>
                                             <p className="text-3xl font-bold text-yellow-600 mt-1">{stats.pending}</p>
                                         </div>
                                         <div className="bg-yellow-100 p-3 rounded-lg">
@@ -117,7 +117,7 @@ const LabDashboard = () => {
                                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-sm text-gray-500 uppercase tracking-wider">In Progress</p>
+                                            <p className="text-sm text-gray-500   tracking-wider">In Progress</p>
                                             <p className="text-3xl font-bold text-emerald-600 mt-1">{stats.inProgress}</p>
                                         </div>
                                         <div className="bg-emerald-100 p-3 rounded-lg">
@@ -129,7 +129,7 @@ const LabDashboard = () => {
                                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-sm text-gray-500 uppercase tracking-wider">Completed</p>
+                                            <p className="text-sm text-gray-500   tracking-wider">Completed</p>
                                             <p className="text-3xl font-bold text-green-600 mt-1">{stats.completed}</p>
                                         </div>
                                         <div className="bg-green-100 p-3 rounded-lg">

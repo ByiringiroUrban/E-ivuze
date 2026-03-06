@@ -266,8 +266,8 @@ const Medications = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
-              <p className="text-emerald-400 font-black text-[10px] uppercase tracking-[0.3em] mb-2 px-1">Pharmaceutical Logistics</p>
-              <h1 className="text-4xl font-extrabold text-white tracking-tight uppercase">{t('pages.medications.title')}</h1>
+              <p className="text-emerald-400 font-black text-[10px]   tracking-[0.3em] mb-2 px-1">Pharmaceutical Logistics</p>
+              <h1 className="text-4xl font-extrabold text-white tracking-tight  ">{t('pages.medications.title')}</h1>
               <p className="text-emerald-200 mt-2 font-medium flex items-center gap-2">
                 Find and order medications from verified pharmacies across Rwanda.
               </p>
@@ -277,7 +277,7 @@ const Medications = () => {
                 💊
               </div>
               <div>
-                <p className="text-[10px] font-black uppercase text-emerald-200 leading-none tracking-widest">Inventory</p>
+                <p className="text-[10px] font-black   text-emerald-200 leading-none tracking-widest">Inventory</p>
                 <p className="text-2xl font-black text-white mt-1 leading-none">{medications.length}</p>
               </div>
             </div>
@@ -290,21 +290,21 @@ const Medications = () => {
         <div className="bg-white shadow-2xl border border-slate-200 p-8">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-6">
             <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-3">Search Therapeutics</p>
+              <p className="text-[10px] font-black   tracking-widest text-primary mb-3">Search Therapeutics</p>
               <input
                 type="text"
                 value={filters.search}
                 onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
                 placeholder="SEARCH BY MEDICATION NAME OR ACTIVE INGREDIENT..."
-                className="w-full bg-slate-50 border-2 border-slate-100 px-6 py-4 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                className="w-full bg-slate-50 border-2 border-slate-100 px-6 py-4 text-xs font-black   tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
               />
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-3">Pharmacy Selection</p>
+              <p className="text-[10px] font-black   tracking-widest text-primary mb-3">Pharmacy Selection</p>
               <select
                 value={filters.pharmacyId}
                 onChange={(e) => setFilters(prev => ({ ...prev, pharmacyId: e.target.value }))}
-                className="w-full bg-slate-50 border-2 border-slate-100 px-6 py-4 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                className="w-full bg-slate-50 border-2 border-slate-100 px-6 py-4 text-xs font-black   tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
               >
                 <option value="">ALL PHARMACIES</option>
                 {pharmaciesLoading ? (
@@ -326,12 +326,12 @@ const Medications = () => {
           <div className="bg-white shadow-xl border border-slate-200 p-20 text-center">
             <div className="flex flex-col items-center gap-4">
               <div className="w-12 h-12 border-4 border-emerald-500 border-t-transparent animate-spin"></div>
-              <p className="text-xs font-black uppercase tracking-widest text-[#006838]">Gathering Pharmaceutical Data...</p>
+              <p className="text-xs font-black   tracking-widest text-[#006838]">Gathering Pharmaceutical Data...</p>
             </div>
           </div>
         ) : medications.length === 0 ? (
           <div className="bg-white shadow-xl border border-slate-200 p-20 text-center">
-            <p className="text-xs font-black uppercase tracking-widest text-slate-400">No therapeutic matches found</p>
+            <p className="text-xs font-black   tracking-widest text-slate-400">No therapeutic matches found</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -342,31 +342,31 @@ const Medications = () => {
                 <div key={med._id} className="bg-white shadow-xl border border-slate-200 flex flex-col hover:translate-y-[-4px] transition-all group">
                   <div className="h-48 relative overflow-hidden">
                     <img src={imageSrc} alt={med.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute top-4 right-4 bg-[#006838] text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest shadow-xl">
+                    <div className="absolute top-4 right-4 bg-[#006838] text-white px-3 py-1 text-[10px] font-black   tracking-widest shadow-xl">
                       {med.price?.toLocaleString()} RWF
                     </div>
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-[#006838] mb-2 leading-none">{pharmacy.name || 'Verified Partner'}</p>
-                    <h3 className="text-xl font-black text-slate-800 uppercase tracking-tight mb-2 leading-tight">{med.name}</h3>
+                    <p className="text-[10px] font-black   tracking-widest text-[#006838] mb-2 leading-none">{pharmacy.name || 'Verified Partner'}</p>
+                    <h3 className="text-xl font-black text-slate-800   tracking-tight mb-2 leading-tight">{med.name}</h3>
                     <p className="text-xs font-semibold text-slate-500 mb-4 flex-1 line-clamp-3 leading-relaxed">{med.description || 'Verified pharmaceutical therapeutic.'}</p>
 
                     <div className="pt-4 border-t border-slate-100 flex flex-col gap-4">
                       <div className="flex items-center justify-between">
                         <div className="flex flex-col">
-                          <span className="text-[8px] font-black uppercase text-slate-400 tracking-widest">Dosage</span>
-                          <span className="text-[10px] font-black text-slate-700 uppercase">{med.dosage || 'Standard'}</span>
+                          <span className="text-[8px] font-black   text-slate-400 tracking-widest">Dosage</span>
+                          <span className="text-[10px] font-black text-slate-700  ">{med.dosage || 'Standard'}</span>
                         </div>
                         <div className="flex flex-col text-right">
-                          <span className="text-[8px] font-black uppercase text-slate-400 tracking-widest">Availability</span>
-                          <span className={`text-[10px] font-black uppercase ${med.stock > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+                          <span className="text-[8px] font-black   text-slate-400 tracking-widest">Availability</span>
+                          <span className={`text-[10px] font-black   ${med.stock > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
                             {med.stock > 0 ? `In Stock (${med.stock})` : 'Out of Stock'}
                           </span>
                         </div>
                       </div>
                       <button
                         onClick={() => handleOrderClick(med)}
-                        className="w-full bg-[#006838] text-white py-4 text-[10px] font-black uppercase tracking-widest shadow-lg hover:bg-[#88C250] transition"
+                        className="w-full bg-[#006838] text-white py-4 text-[10px] font-black   tracking-widest shadow-lg hover:bg-[#88C250] transition"
                       >
                         Initialize Order
                       </button>
@@ -384,7 +384,7 @@ const Medications = () => {
           <div className="bg-white shadow-2xl border border-slate-200 max-w-2xl w-full max-h-[90vh] overflow-y-auto flex flex-col">
             <div className="p-8 space-y-6">
               <div className="flex justify-between items-center border-b-4 border-[#006838] pb-4">
-                <h2 className="text-xl font-black text-slate-800 uppercase tracking-tight">
+                <h2 className="text-xl font-black text-slate-800   tracking-tight">
                   {t('pages.medications.order.modalTitle', {
                     name: orderModal.medication.name
                   })}
@@ -409,14 +409,14 @@ const Medications = () => {
                   className="w-full md:w-32 h-32 object-cover border-2 border-white shadow-sm"
                 />
                 <div className="flex-1 space-y-1">
-                  <p className="text-[10px] font-black uppercase text-[#006838] tracking-widest">
+                  <p className="text-[10px] font-black   text-[#006838] tracking-widest">
                     {orderModal.medication.pharmacyId?.name ||
                       t('pages.medications.labels.unknownPharmacy')}
                   </p>
-                  <p className="text-xl font-black text-slate-800 uppercase">
+                  <p className="text-xl font-black text-slate-800  ">
                     {orderModal.medication.name}
                   </p>
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">
+                  <p className="text-xs font-semibold text-slate-500   tracking-widest">
                     {orderModal.medication.dosage || 'Standard Dosage'}
                   </p>
                   <p className="text-sm font-black text-[#006838] pt-2">
@@ -427,7 +427,7 @@ const Medications = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                  <label className="block text-[10px] font-black   tracking-widest text-slate-400 mb-2">
                     Order Quantity
                   </label>
                   <input
@@ -440,11 +440,11 @@ const Medications = () => {
                         qty: Number(e.target.value || 1)
                       }))
                     }
-                    className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                    className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black   tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                  <label className="block text-[10px] font-black   tracking-widest text-slate-400 mb-2">
                     Payment Method
                   </label>
                   <div className="flex gap-4">
@@ -462,7 +462,7 @@ const Medications = () => {
                         }
                         className="accent-primary"
                       />
-                      <span className="text-[10px] font-black uppercase tracking-widest">Self Pay</span>
+                      <span className="text-[10px] font-black   tracking-widest">Self Pay</span>
                     </label>
                     <label className="flex-1 flex items-center justify-center gap-2 border-2 border-slate-100 px-4 py-3 cursor-pointer hover:bg-slate-50 transition">
                       <input
@@ -478,14 +478,14 @@ const Medications = () => {
                         }
                         className="accent-primary"
                       />
-                      <span className="text-[10px] font-black uppercase tracking-widest">Insurance</span>
+                      <span className="text-[10px] font-black   tracking-widest">Insurance</span>
                     </label>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400">
+                <label className="block text-[10px] font-black   tracking-widest text-slate-400">
                   Logistics & Delivery Address
                 </label>
                 <input
@@ -493,14 +493,14 @@ const Medications = () => {
                   placeholder="ADDRESS LINE 1 (E.G. HOUSE NO, STREET)..."
                   value={orderModal.deliveryAddress.line1}
                   onChange={(e) => handleDeliveryChange('line1', e.target.value)}
-                  className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                  className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black   tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
                 />
                 <input
                   type="text"
                   placeholder="ADDRESS LINE 2 (OPTIONAL)..."
                   value={orderModal.deliveryAddress.line2}
                   onChange={(e) => handleDeliveryChange('line2', e.target.value)}
-                  className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                  className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black   tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
                 />
                 <div className="grid grid-cols-2 gap-4">
                   <input
@@ -508,7 +508,7 @@ const Medications = () => {
                     placeholder="CITY / PROVINCE..."
                     value={orderModal.deliveryAddress.city}
                     onChange={(e) => handleDeliveryChange('city', e.target.value)}
-                    className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                    className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black   tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
                   />
                   <input
                     type="text"
@@ -517,13 +517,13 @@ const Medications = () => {
                     onChange={(e) =>
                       handleDeliveryChange('country', e.target.value)
                     }
-                    className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                    className="w-full bg-slate-50 border-2 border-slate-100 px-4 py-3 text-xs font-black   tracking-widest focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                <label className="block text-[10px] font-black   tracking-widest text-slate-400 mb-2">
                   Prescription Verification
                 </label>
                 <div className="border-2 border-dashed border-slate-200 p-6 text-center hover:border-primary transition cursor-pointer relative bg-slate-50">
@@ -533,7 +533,7 @@ const Medications = () => {
                     onChange={handlePrescriptionFileChange}
                     className="absolute inset-0 opacity-0 cursor-pointer"
                   />
-                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">
+                  <p className="text-[10px] font-black   tracking-widest text-slate-500">
                     {orderModal.prescriptionFile ? orderModal.prescriptionFile.name : 'Click to upload Rx documentation'}
                   </p>
                 </div>
@@ -544,7 +544,7 @@ const Medications = () => {
                   type="button"
                   onClick={closeOrderModal}
                   disabled={orderModal.submitting}
-                  className="px-8 py-4 bg-slate-100 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:bg-slate-200 transition"
+                  className="px-8 py-4 bg-slate-100 text-[10px] font-black   tracking-widest text-slate-500 hover:bg-slate-200 transition"
                 >
                   {t('buttons.cancel')}
                 </button>
@@ -552,7 +552,7 @@ const Medications = () => {
                   type="button"
                   onClick={submitOrder}
                   disabled={orderModal.submitting}
-                  className="px-10 py-4 bg-[#006838] text-white text-[10px] font-black uppercase tracking-widest shadow-xl hover:bg-[#88C250] transition disabled:opacity-50"
+                  className="px-10 py-4 bg-[#006838] text-white text-[10px] font-black   tracking-widest shadow-xl hover:bg-[#88C250] transition disabled:opacity-50"
                 >
                   {orderModal.submitting
                     ? 'TRANSMITTING...'

@@ -301,7 +301,7 @@ const ManageUsers = () => {
     <div className='bg-white min-h-screen'>
       <section className='bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14'>
         <div className='max-w-5xl space-y-3'>
-          <p className='text-xs uppercase tracking-widest text-white/70'>Admin</p>
+          <p className='text-xs   tracking-widest text-white/70'>Admin</p>
           <h1 className='text-3xl sm:text-4xl font-semibold'>Manage Users</h1>
           <p className='text-sm sm:text-base text-white/80 max-w-3xl'>Create, edit, delete users, change roles, and export to CSV.</p>
         </div>
@@ -312,7 +312,7 @@ const ManageUsers = () => {
           <div className='flex flex-col lg:flex-row gap-3 lg:items-end lg:justify-between'>
             <form onSubmit={onSearchSubmit} className='flex flex-col sm:flex-row gap-3 w-full lg:max-w-2xl'>
               <div className='flex-1'>
-                <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Search</label>
+                <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Search</label>
                 <input
                   value={q}
                   onChange={(e) => setQ(e.target.value)}
@@ -323,14 +323,14 @@ const ManageUsers = () => {
               <div className='flex gap-2'>
                 <button
                   type='submit'
-                  className='h-[46px] mt-[26px] sm:mt-[28px] px-5 border border-border bg-[#14324f] text-white text-xs uppercase tracking-[0.35em] hover:opacity-90'
+                  className='h-[46px] mt-[26px] sm:mt-[28px] px-5 border border-border bg-[#14324f] text-white text-xs   tracking-[0.35em] hover:opacity-90'
                   disabled={loading}
                 >
                   {loading ? t('buttons.loading') : t('buttons.search')}
                 </button>
                 <button
                   type='button'
-                  className='h-[46px] mt-[26px] sm:mt-[28px] px-5 border border-border bg-white text-xs uppercase tracking-[0.35em] hover:bg-light-bg'
+                  className='h-[46px] mt-[26px] sm:mt-[28px] px-5 border border-border bg-white text-xs   tracking-[0.35em] hover:bg-light-bg'
                   onClick={resetAll}
                   disabled={loading}
                 >
@@ -340,7 +340,7 @@ const ManageUsers = () => {
             </form>
 
             <div className='flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-end'>
-              <label className='px-5 py-3 border border-border bg-white text-xs uppercase tracking-[0.35em] hover:bg-light-bg cursor-pointer'>
+              <label className='px-5 py-3 border border-border bg-white text-xs   tracking-[0.35em] hover:bg-light-bg cursor-pointer'>
                 {t('admin.manageUsers.importCsv')}
                 <input
                   type='file'
@@ -357,7 +357,7 @@ const ManageUsers = () => {
               <button
                 type='button'
                 onClick={exportCsv}
-                className='px-5 py-3 border border-border bg-white text-xs uppercase tracking-[0.35em] hover:bg-light-bg'
+                className='px-5 py-3 border border-border bg-white text-xs   tracking-[0.35em] hover:bg-light-bg'
                 disabled={loading}
               >
                 Export CSV
@@ -365,7 +365,7 @@ const ManageUsers = () => {
               <button
                 type='button'
                 onClick={openCreate}
-                className='px-5 py-3 border border-border bg-[#14324f] text-white text-xs uppercase tracking-[0.35em] hover:opacity-90'
+                className='px-5 py-3 border border-border bg-[#14324f] text-white text-xs   tracking-[0.35em] hover:opacity-90'
                 disabled={loading}
               >
                 Add User
@@ -375,7 +375,7 @@ const ManageUsers = () => {
 
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
             <div className='border border-border bg-white px-4 py-3'>
-              <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Role</label>
+              <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Role</label>
               <select
                 className='w-full border border-border px-4 py-3 text-sm'
                 value={roleFilter}
@@ -391,7 +391,7 @@ const ManageUsers = () => {
               </select>
             </div>
             <div className='border border-border bg-white px-4 py-3'>
-              <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Google Account</label>
+              <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Google Account</label>
               <select
                 className='w-full border border-border px-4 py-3 text-sm'
                 value={hasGoogleFilter}
@@ -406,7 +406,7 @@ const ManageUsers = () => {
               </select>
             </div>
             <div className='border border-border bg-white px-4 py-3'>
-              <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Must Change Password</label>
+              <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Must Change Password</label>
               <select
                 className='w-full border border-border px-4 py-3 text-sm'
                 value={mustChangePasswordFilter}
@@ -425,12 +425,12 @@ const ManageUsers = () => {
           <div className='border border-border bg-white shadow-sm overflow-x-auto'>
             <div className='px-5 py-4 border-b border-border flex items-center justify-between'>
               <div>
-                <p className='text-xs uppercase tracking-[0.35em] text-primary-dark'>Users</p>
+                <p className='text-xs   tracking-[0.35em] text-primary-dark'>Users</p>
                 <p className='text-sm text-muted-foreground'>Total: {total}</p>
               </div>
 
               <div className='flex items-center gap-2'>
-                <label className='text-xs uppercase tracking-[0.25em] text-muted-foreground'>Per page</label>
+                <label className='text-xs   tracking-[0.25em] text-muted-foreground'>Per page</label>
                 <select
                   className='border border-border px-3 py-2 text-sm'
                   value={limit}
@@ -447,7 +447,7 @@ const ManageUsers = () => {
             </div>
 
             <table className='min-w-full text-sm'>
-              <thead className='text-xs uppercase tracking-[0.25em] text-muted-foreground border-b border-border'>
+              <thead className='text-xs   tracking-[0.25em] text-muted-foreground border-b border-border'>
                 <tr>
                   <th className='text-left px-5 py-3'>Name</th>
                   <th className='text-left px-5 py-3'>Email</th>
@@ -468,14 +468,14 @@ const ManageUsers = () => {
                     <td className='px-5 py-3'>
                       <div className='flex items-center gap-2'>
                         <button
-                          className='text-xs uppercase tracking-[0.35em] text-primary hover:underline'
+                          className='text-xs   tracking-[0.35em] text-primary hover:underline'
                           onClick={() => openEdit(u)}
                           disabled={loading}
                         >
                           Edit
                         </button>
                         <button
-                          className='text-xs uppercase tracking-[0.35em] text-red-600 hover:underline'
+                          className='text-xs   tracking-[0.35em] text-red-600 hover:underline'
                           onClick={() => openDelete(u._id)}
                           disabled={loading}
                         >
@@ -502,14 +502,14 @@ const ManageUsers = () => {
               </p>
               <div className='flex items-center gap-2'>
                 <button
-                  className='px-4 py-2 border border-border text-xs uppercase tracking-[0.35em] hover:bg-light-bg disabled:opacity-50'
+                  className='px-4 py-2 border border-border text-xs   tracking-[0.35em] hover:bg-light-bg disabled:opacity-50'
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={loading || page <= 1}
                 >
                   Prev
                 </button>
                 <button
-                  className='px-4 py-2 border border-border text-xs uppercase tracking-[0.35em] hover:bg-light-bg disabled:opacity-50'
+                  className='px-4 py-2 border border-border text-xs   tracking-[0.35em] hover:bg-light-bg disabled:opacity-50'
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={loading || page >= totalPages}
                 >
@@ -526,7 +526,7 @@ const ManageUsers = () => {
           <div className='w-full max-w-xl bg-white border border-border shadow-lg'>
             <div className='px-5 py-4 border-b border-border flex items-center justify-between'>
               <div>
-                <p className='text-xs uppercase tracking-[0.35em] text-muted-foreground'>Admin</p>
+                <p className='text-xs   tracking-[0.35em] text-muted-foreground'>Admin</p>
                 <h2 className='text-lg font-semibold'>{showCreateModal ? 'Create user' : 'Edit user'}</h2>
               </div>
               <button
@@ -541,7 +541,7 @@ const ManageUsers = () => {
             <form onSubmit={showCreateModal ? handleCreate : handleUpdate} className='p-5 space-y-4'>
               <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                 <div>
-                  <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Name</label>
+                  <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Name</label>
                   <input
                     className='w-full border border-border px-4 py-3 text-sm'
                     value={formData.name}
@@ -550,7 +550,7 @@ const ManageUsers = () => {
                   />
                 </div>
                 <div>
-                  <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Email</label>
+                  <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Email</label>
                   <input
                     type='email'
                     className='w-full border border-border px-4 py-3 text-sm'
@@ -560,7 +560,7 @@ const ManageUsers = () => {
                   />
                 </div>
                 <div>
-                  <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Phone</label>
+                  <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Phone</label>
                   <input
                     className='w-full border border-border px-4 py-3 text-sm'
                     value={formData.phone}
@@ -568,7 +568,7 @@ const ManageUsers = () => {
                   />
                 </div>
                 <div>
-                  <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Role</label>
+                  <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Role</label>
                   <select
                     className='w-full border border-border px-4 py-3 text-sm'
                     value={formData.role}
@@ -580,7 +580,7 @@ const ManageUsers = () => {
                   </select>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label className='block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2'>Password</label>
+                  <label className='block text-xs   tracking-[0.25em] text-muted-foreground mb-2'>Password</label>
                   <input
                     type='password'
                     className='w-full border border-border px-4 py-3 text-sm'
@@ -595,7 +595,7 @@ const ManageUsers = () => {
               <div className='flex items-center justify-end gap-2 pt-2'>
                 <button
                   type='button'
-                  className='px-5 py-3 border border-border bg-white text-xs uppercase tracking-[0.35em] hover:bg-light-bg'
+                  className='px-5 py-3 border border-border bg-white text-xs   tracking-[0.35em] hover:bg-light-bg'
                   onClick={closeModals}
                   disabled={loading}
                 >
@@ -603,7 +603,7 @@ const ManageUsers = () => {
                 </button>
                 <button
                   type='submit'
-                  className='px-5 py-3 border border-border bg-[#14324f] text-white text-xs uppercase tracking-[0.35em] hover:opacity-90'
+                  className='px-5 py-3 border border-border bg-[#14324f] text-white text-xs   tracking-[0.35em] hover:opacity-90'
                   disabled={loading}
                 >
                   {loading ? t('buttons.saving') : t('buttons.save')}
@@ -628,7 +628,7 @@ const ManageUsers = () => {
               <div className='flex items-center justify-end gap-2'>
                 <button
                   type='button'
-                  className='px-5 py-3 border border-border bg-white text-xs uppercase tracking-[0.35em] hover:bg-light-bg'
+                  className='px-5 py-3 border border-border bg-white text-xs   tracking-[0.35em] hover:bg-light-bg'
                   onClick={closeModals}
                   disabled={loading}
                 >
@@ -636,7 +636,7 @@ const ManageUsers = () => {
                 </button>
                 <button
                   type='button'
-                  className='px-5 py-3 border border-red-200 bg-red-600 text-white text-xs uppercase tracking-[0.35em] hover:opacity-90'
+                  className='px-5 py-3 border border-red-200 bg-red-600 text-white text-xs   tracking-[0.35em] hover:opacity-90'
                   onClick={confirmDelete}
                   disabled={loading}
                 >
@@ -660,25 +660,25 @@ const ManageUsers = () => {
             <div className='p-5 space-y-4'>
               <div className='grid grid-cols-1 sm:grid-cols-3 gap-3'>
                 <div className='border border-border p-4'>
-                  <p className='text-xs uppercase tracking-[0.25em] text-muted-foreground'>Created</p>
+                  <p className='text-xs   tracking-[0.25em] text-muted-foreground'>Created</p>
                   <p className='text-2xl font-semibold text-[#14324f]'>{importResult.created ?? 0}</p>
                 </div>
                 <div className='border border-border p-4'>
-                  <p className='text-xs uppercase tracking-[0.25em] text-muted-foreground'>Updated</p>
+                  <p className='text-xs   tracking-[0.25em] text-muted-foreground'>Updated</p>
                   <p className='text-2xl font-semibold text-[#14324f]'>{importResult.updated ?? 0}</p>
                 </div>
                 <div className='border border-border p-4'>
-                  <p className='text-xs uppercase tracking-[0.25em] text-muted-foreground'>Skipped</p>
+                  <p className='text-xs   tracking-[0.25em] text-muted-foreground'>Skipped</p>
                   <p className='text-2xl font-semibold text-[#14324f]'>{importResult.skipped ?? 0}</p>
                 </div>
               </div>
 
               {Array.isArray(importResult.errors) && importResult.errors.length > 0 ? (
                 <div className='border border-border p-4'>
-                  <p className='text-xs uppercase tracking-[0.25em] text-muted-foreground mb-3'>Errors (first 20)</p>
+                  <p className='text-xs   tracking-[0.25em] text-muted-foreground mb-3'>Errors (first 20)</p>
                   <div className='max-h-64 overflow-auto'>
                     <table className='min-w-full text-sm'>
-                      <thead className='text-xs uppercase tracking-[0.25em] text-muted-foreground border-b border-border'>
+                      <thead className='text-xs   tracking-[0.25em] text-muted-foreground border-b border-border'>
                         <tr>
                           <th className='text-left py-2 pr-4'>Row</th>
                           <th className='text-left py-2 pr-4'>Email</th>

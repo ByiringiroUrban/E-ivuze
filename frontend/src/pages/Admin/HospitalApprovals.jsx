@@ -106,7 +106,7 @@ const HospitalApprovals = () => {
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.45em] text-white/70">{t('admin.hospitalApprovals.title')}</p>
+            <p className="text-xs   tracking-[0.45em] text-white/70">{t('admin.hospitalApprovals.title')}</p>
             <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.hospitalApprovals.hero')}</h1>
             <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.hospitalApprovals.subtitle')}</p>
           </div>
@@ -130,19 +130,19 @@ const HospitalApprovals = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
                       <tr>
-                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                           {t('admin.hospitalApprovals.hospitalName')}
                         </th>
-                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                           {t('admin.hospitalApprovals.address')}
                         </th>
-                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                           {t('admin.hospitalApprovals.phone')}
                         </th>
-                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                           {t('admin.hospitalApprovals.appliedDate')}
                         </th>
-                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                           {t('admin.hospitalApprovals.actions')}
                         </th>
                       </tr>
@@ -197,19 +197,19 @@ const HospitalApprovals = () => {
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalApprovals.hospitalName')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalApprovals.status')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalApprovals.address')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalApprovals.phone')}
                       </th>
-                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                         {t('admin.hospitalApprovals.date')}
                       </th>
                     </tr>
@@ -221,11 +221,10 @@ const HospitalApprovals = () => {
                           {hospital.name}
                         </td>
                         <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            hospital.status === 'APPROVED' ? 'bg-primary-100 text-primary-800' :
-                            hospital.status === 'PENDING' ? 'bg-yellow-100 text-yellow-800' :
-                            'bg-red-100 text-red-800'
-                          }`}>
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${hospital.status === 'APPROVED' ? 'bg-primary-100 text-primary-800' :
+                              hospital.status === 'PENDING' ? 'bg-yellow-100 text-yellow-800' :
+                                'bg-red-100 text-red-800'
+                            }`}>
                             {hospital.status}
                           </span>
                         </td>

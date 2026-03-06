@@ -132,7 +132,7 @@ const DoctorClinicalNoteModal = ({ isOpen, onClose, appointmentId, patientId, pa
 
                         {/* Vitals Section */}
                         <div className="bg-blue-50 p-4 rounded-lg">
-                            <h3 className="text-sm font-semibold text-blue-800 mb-3 uppercase tracking-wide">Vital Signs</h3>
+                            <h3 className="text-sm font-semibold text-blue-800 mb-3   tracking-wide">Vital Signs</h3>
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                                 <div>
                                     <label className="text-xs text-gray-600 block mb-1">BP (mmHg)</label>

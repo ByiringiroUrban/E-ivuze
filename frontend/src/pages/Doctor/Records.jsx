@@ -244,12 +244,12 @@ const Records = () => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.recordsPage.appointmentId')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.recordsPage.type')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.recordsPage.recordTitleLabel')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.recordsPage.attachments')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">{t('doctor.prescriptionsPage.date')}</th>
-                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-right text-[10px] sm:text-xs font-semibold text-gray-700 uppercase">Action</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.recordsPage.appointmentId')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.recordsPage.type')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.recordsPage.recordTitleLabel')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.recordsPage.attachments')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-[10px] sm:text-xs font-semibold text-gray-700  ">{t('doctor.prescriptionsPage.date')}</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-right text-[10px] sm:text-xs font-semibold text-gray-700  ">Action</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">

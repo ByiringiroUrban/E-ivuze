@@ -133,7 +133,7 @@ const PharmacyInventory = () => {
               resetForm();
               setShowModal(true);
             }}
-            className="bg-white text-[#14324f] px-5 py-3 text-xs uppercase tracking-[0.35em] hover:bg-light-bg transition flex items-center gap-2"
+            className="bg-white text-[#14324f] px-5 py-3 text-xs   tracking-[0.35em] hover:bg-light-bg transition flex items-center gap-2"
           >
             <FaPlus className="text-[#205c90]" />
             {t('pharmacy.inventory.addMedication') || 'Add Medication'}
@@ -184,22 +184,22 @@ const PharmacyInventory = () => {
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                   {t('pharmacy.inventory.sku') || 'SKU'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                   {t('pharmacy.inventory.name') || 'Name'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                   {t('pharmacy.inventory.category') || 'Category'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                   {t('pharmacy.inventory.price') || 'Price'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                   {t('pharmacy.inventory.stock') || 'Stock'}
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500   tracking-wider">
                   {t('pharmacy.inventory.actions') || 'Actions'}
                 </th>
               </tr>
@@ -231,8 +231,8 @@ const PharmacyInventory = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 py-1 text-xs font-medium roun-full ${(med.stock || 0) < 10 ? 'bg-red-100 text-red-800' :
-                          (med.stock || 0) < 50 ? 'bg-yellow-100 text-yellow-800' :
-                            'bg-primary-100 text-primary-800'
+                        (med.stock || 0) < 50 ? 'bg-yellow-100 text-yellow-800' :
+                          'bg-primary-100 text-primary-800'
                         }`}>
                         {med.stock ?? 0}
                       </span>

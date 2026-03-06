@@ -291,7 +291,7 @@ const Chatbot = () => {
                 type="button"
                 onClick={requestHandoff}
                 disabled={handoffLoading}
-                className="w-full flex items-center justify-center gap-2 bg-primary px-3 py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-primary/90 disabled:opacity-60"
+                className="w-full flex items-center justify-center gap-2 bg-primary px-3 py-2 text-xs font-semibold   tracking-wider text-white transition hover:bg-primary/90 disabled:opacity-60"
               >
                 <FaUserMd />
                 {handoffLoading ? (t('ai.handoff.loading') || 'Connecting...') : (t('ai.handoff.cta') || 'Contact Support')}
@@ -306,7 +306,7 @@ const Chatbot = () => {
               </p>
               <button
                 onClick={handleConsentAccept}
-                className="mt-2 w-full bg-primary px-3 py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-primary/90"
+                className="mt-2 w-full bg-primary px-3 py-2 text-xs font-semibold   tracking-wider text-white transition hover:bg-primary/90"
               >
                 {t('ai.consent.accept') || 'Acknowledge Protocol'}
               </button>

@@ -119,11 +119,11 @@ const HospitalTransfers = () => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.fromHospital')}</th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.patient')}</th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.reason')}</th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.status')}</th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.actions')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.fromHospital')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.patient')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.reason')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.status')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.actions')}</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -190,11 +190,11 @@ const HospitalTransfers = () => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.toHospital')}</th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.patient')}</th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.reason')}</th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.status')}</th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.transfers.date')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.toHospital')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.patient')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.reason')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.status')}</th>
+                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.transfers.date')}</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">

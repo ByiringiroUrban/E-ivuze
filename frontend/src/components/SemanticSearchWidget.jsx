@@ -170,7 +170,7 @@ const SemanticSearchWidget = () => {
 
               {results.length ? (
                 <div className="space-y-3">
-                  <div className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                  <div className="text-xs   tracking-[0.3em] text-slate-500">
                     {t('ai.search.sources') || 'Sources'}
                   </div>
                   {results.map((r) => (
@@ -196,7 +196,7 @@ const SemanticSearchWidget = () => {
 
               {externalResults.length ? (
                 <div className="space-y-3">
-                  <div className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                  <div className="text-xs   tracking-[0.3em] text-slate-500">
                     {t('ai.search.externalSources') || 'External sources'}
                   </div>
                   {externalResults.map((r) => (

@@ -57,7 +57,7 @@ const StatCard = ({ icon, end, label, delay }) => {
                 <i className={`${icon} text-3xl text-[#006838]`}></i>
             </div>
             <h3 className="text-4xl font-bold text-white mb-2">{count.toLocaleString()}+</h3>
-            <p className="text-white/80 font-medium text-xs uppercase tracking-[0.2em]">{label}</p>
+            <p className="text-white/80 font-medium text-xs   tracking-[0.2em]">{label}</p>
         </motion.div>
     );
 };

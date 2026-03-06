@@ -244,23 +244,23 @@ const HospitalReports = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500">Doctors</p>
+          <p className="text-xs   tracking-wider text-gray-500">Doctors</p>
           <p className="text-2xl font-bold text-gray-900">{stats.doctors}</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500">Patients</p>
+          <p className="text-xs   tracking-wider text-gray-500">Patients</p>
           <p className="text-2xl font-bold text-gray-900">{stats.patients}</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500">Incoming</p>
+          <p className="text-xs   tracking-wider text-gray-500">Incoming</p>
           <p className="text-2xl font-bold text-gray-900">{stats.incomingTransfers}</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500">Outgoing</p>
+          <p className="text-xs   tracking-wider text-gray-500">Outgoing</p>
           <p className="text-2xl font-bold text-gray-900">{stats.outgoingTransfers}</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500">Pending</p>
+          <p className="text-xs   tracking-wider text-gray-500">Pending</p>
           <p className="text-2xl font-bold text-gray-900">{stats.pendingIncomingTransfers}</p>
         </div>
       </div>

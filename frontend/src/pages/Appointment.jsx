@@ -141,7 +141,7 @@ const Appointment = () => {
 
   if (!docInfo) {
     return (
-      <div className="bg-white min-h-screen flex items-center justify-center text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.35em] text-muted-foreground px-4">
+      <div className="bg-white min-h-screen flex items-center justify-center text-[10px] sm:text-xs   tracking-[0.3em] sm:tracking-[0.35em] text-muted-foreground px-4">
         Loading doctor profile…
       </div>
     );
@@ -173,7 +173,7 @@ const Appointment = () => {
 
         {/* Background Watermark */}
         <div className="absolute top-10 right-0 left-0 flex justify-center pointer-events-none z-0 overflow-hidden">
-          <span className="text-[120px] md:text-[180px] font-bold uppercase text-gray-100/40 whitespace-nowrap select-none font-merriweather">
+          <span className="text-[120px] md:text-[180px] font-bold   text-gray-100/40 whitespace-nowrap select-none font-merriweather">
             BOOKING
           </span>
         </div>
@@ -201,7 +201,7 @@ const Appointment = () => {
               <div className="space-y-8">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="bg-[#006838] text-white px-4 py-1.5 text-[10px] uppercase tracking-widest font-bold rounded-sm">
+                    <span className="bg-[#006838] text-white px-4 py-1.5 text-[10px]   tracking-widest font-bold rounded-sm">
                       {docInfo.speciality}
                     </span>
                     <img className="w-5 h-5" src={assets.verified_icon} alt="Verified" />
@@ -220,14 +220,14 @@ const Appointment = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8 border-b border-gray-100">
                   <div className="space-y-4">
-                    <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#006838]">Biography</p>
+                    <p className="text-xs   tracking-[0.2em] font-bold text-[#006838]">Biography</p>
                     <p className="text-[#006838]/70 leading-relaxed text-sm lg:text-base">
                       {docInfo.about}
                     </p>
                   </div>
                   <div className="space-y-6">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#006838] mb-4">Consultation Fee</p>
+                      <p className="text-xs   tracking-[0.2em] font-bold text-[#006838] mb-4">Consultation Fee</p>
                       <div className="bg-[#006838] p-6 rounded-sm text-white shadow-lg shadow-emerald-900/20">
                         <p className="text-sm opacity-70 mb-1">Fee for single session</p>
                         <p className="text-3xl font-bold font-merriweather">
@@ -240,13 +240,13 @@ const Appointment = () => {
 
                 <div className="flex flex-wrap gap-10">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#006838] mb-3">License & Credential</p>
+                    <p className="text-xs   tracking-[0.2em] font-bold text-[#006838] mb-3">License & Credential</p>
                     <p className="text-[#006838]/80 font-medium text-sm">
                       {docInfo.licenseNumber || 'Verified Rwanda Medical Practitioner'}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#006838] mb-3">Email Address</p>
+                    <p className="text-xs   tracking-[0.2em] font-bold text-[#006838] mb-3">Email Address</p>
                     <p className="text-[#006838]/80 font-medium text-sm">{docInfo.email || 'team@E-ivuze.com'}</p>
                   </div>
                 </div>
@@ -283,7 +283,7 @@ const Appointment = () => {
                           : 'bg-white border-emerald-100/50 text-[#006838]/60 hover:border-[#006838]/30 shadow-sm'
                           }`}
                       >
-                        <span className="text-[10px] uppercase tracking-widest font-bold mb-1">
+                        <span className="text-[10px]   tracking-widest font-bold mb-1">
                           {daysOfWeek[labelDate.getDay()]}
                         </span>
                         <span className="text-2xl font-bold font-merriweather">
@@ -296,11 +296,11 @@ const Appointment = () => {
 
                 {/* Time Selection */}
                 <div className="space-y-6 relative z-10">
-                  <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#006838]/40">
+                  <p className="text-xs   tracking-[0.2em] font-bold text-[#006838]/40">
                     Available Time Segments
                   </p>
                   {selectedSlots.length === 0 ? (
-                    <div className="py-12 border-2 border-dashed border-emerald-100 text-center text-[#006838]/40 uppercase text-[10px] tracking-[0.3em] bg-white/50 rounded-sm">
+                    <div className="py-12 border-2 border-dashed border-emerald-100 text-center text-[#006838]/40   text-[10px] tracking-[0.3em] bg-white/50 rounded-sm">
                       No more slots available for today
                     </div>
                   ) : (
@@ -309,7 +309,7 @@ const Appointment = () => {
                         <button
                           key={index}
                           onClick={() => setSlotTime(slot.time)}
-                          className={`py-3 text-[10px] uppercase tracking-widest font-bold border-2 transition-all duration-300 rounded-sm ${slotTime === slot.time
+                          className={`py-3 text-[10px]   tracking-widest font-bold border-2 transition-all duration-300 rounded-sm ${slotTime === slot.time
                             ? 'bg-[#88C250] border-[#88C250] text-white shadow-md'
                             : 'bg-white border-emerald-100/50 text-[#006838]/70 hover:border-[#88C250]/40 shadow-sm'
                             }`}
@@ -325,12 +325,12 @@ const Appointment = () => {
                   <button
                     disabled={booking}
                     onClick={bookAppointment}
-                    className={`w-full bg-[#006838] text-white py-6 font-bold text-base uppercase tracking-widest transition-all active:scale-[0.98] shadow-xl shadow-emerald-900/20 rounded-sm ${booking ? 'opacity-60 cursor-not-allowed' : 'hover:bg-[#005a30]'
+                    className={`w-full bg-[#006838] text-white py-6 font-bold text-base   tracking-widest transition-all active:scale-[0.98] shadow-xl shadow-emerald-900/20 rounded-sm ${booking ? 'opacity-60 cursor-not-allowed' : 'hover:bg-[#005a30]'
                       }`}
                   >
                     {booking ? t('buttons.booking') : t('buttons.bookAppointment')}
                   </button>
-                  <p className="text-center text-[10px] text-[#006838]/40 mt-6 uppercase tracking-widest">
+                  <p className="text-center text-[10px] text-[#006838]/40 mt-6   tracking-widest">
                     Secured by E-ivuzeAppointment Protocol
                   </p>
                 </div>
@@ -348,7 +348,7 @@ const Appointment = () => {
                         <i className="lni lni-apartment"></i>
                       </div>
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-bold text-[#006838]/50 mb-1">Hospital</p>
+                        <p className="text-[10px]   tracking-widest font-bold text-[#006838]/50 mb-1">Hospital</p>
                         <p className="text-[#006838] font-bold">{docInfo.hospital || 'Partner Medical Center'}</p>
                       </div>
                     </div>
@@ -357,7 +357,7 @@ const Appointment = () => {
                         <i className="lni lni-map-marker"></i>
                       </div>
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-bold text-[#006838]/50 mb-1">Exact Location</p>
+                        <p className="text-[10px]   tracking-widest font-bold text-[#006838]/50 mb-1">Exact Location</p>
                         <p className="text-[#006838] font-bold">{docInfo.address?.line1 || 'KN 67 St, Kigali'}</p>
                         <p className="text-sm text-[#006838]/60">{docInfo.address?.line2 || 'Nyarugenge District'}</p>
                       </div>
@@ -366,7 +366,7 @@ const Appointment = () => {
                 </div>
 
                 <div className="bg-[#006838]/[0.02] border-2 border-emerald-50/50 p-8 rounded-sm shadow-sm">
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-[#006838]/50 mb-4">Support & Help</p>
+                  <p className="text-[10px]   tracking-widest font-bold text-[#006838]/50 mb-4">Support & Help</p>
                   <p className="text-sm text-[#006838]/70 leading-relaxed mb-6">
                     Facing issues with booking? Our technical support is available 24/7.
                   </p>

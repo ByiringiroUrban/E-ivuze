@@ -31,7 +31,7 @@ const About = () => {
 
         {/* Background Watermark */}
         <div className="absolute top-20 right-0 left-0 flex justify-center pointer-events-none z-0 overflow-hidden">
-          <span className="text-[120px] md:text-[180px] font-bold uppercase text-gray-100/50 whitespace-nowrap select-none font-merriweather">
+          <span className="text-[120px] md:text-[180px] font-bold   text-gray-100/50 whitespace-nowrap select-none font-merriweather">
             ABOUT US
           </span>
         </div>
@@ -91,7 +91,7 @@ const About = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  className="bg-emerald-100 text-[#006838] text-[10px] font-bold px-5 py-2 rounded-full uppercase tracking-[0.2em] mb-8 inline-block"
+                  className="bg-emerald-100 text-[#006838] text-[10px] font-bold px-5 py-2 rounded-full   tracking-[0.2em] mb-8 inline-block"
                 >
                   {t('pages.about.subtitle') || "Empowering Rwanda"}
                 </motion.span>
@@ -197,7 +197,7 @@ const About = () => {
       {/* Mission & Vision: Elegant Cards */}
       <section className="py-24 bg-[#f9f9f9]">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 text-center mb-16">
-          <span className="text-[#006838] font-bold text-sm tracking-widest uppercase mb-4 block">Our Purpose</span>
+          <span className="text-[#006838] font-bold text-sm tracking-widest   mb-4 block">Our Purpose</span>
           <h2 className="text-3xl lg:text-4xl font-bold text-[#081828] font-merriweather">Moving Rwandan Healthcare Forward</h2>
         </div>
 
@@ -238,7 +238,7 @@ const About = () => {
       <section className="py-32 bg-[#f0f4f2] relative overflow-hidden">
         {/* Background Watermark */}
         <div className="absolute top-10 left-0 right-0 flex justify-center pointer-events-none z-0 overflow-hidden">
-          <span className="text-[100px] md:text-[140px] font-bold uppercase text-gray-50/50 whitespace-nowrap select-none font-merriweather">
+          <span className="text-[100px] md:text-[140px] font-bold   text-gray-50/50 whitespace-nowrap select-none font-merriweather">
             TEAM
           </span>
         </div>
@@ -315,7 +315,7 @@ const About = () => {
 
                 {/* Footer Info Box */}
                 <div className="p-6 text-center bg-[#f8f9fa] border-t border-gray-50">
-                  <span className="text-[#88C250] font-bold text-[11px] uppercase tracking-widest block mb-2">
+                  <span className="text-[#88C250] font-bold text-[11px]   tracking-widest block mb-2">
                     {member.role}
                   </span>
                   <h4 className="text-xl font-bold text-[#081828] font-merriweather">

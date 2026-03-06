@@ -319,7 +319,7 @@ const Register = () => {
 
               <div className="relative py-2">
                 <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-gray-100"></div></div>
-                <span className="relative px-4 bg-white mx-auto text-[10px] font-bold text-[#006838]/30 uppercase tracking-[0.2em]">OR MANUAL ENROLLMENT</span>
+                <span className="relative px-4 bg-white mx-auto text-[10px] font-bold text-[#006838]/30   tracking-[0.2em]">OR MANUAL ENROLLMENT</span>
               </div>
             </div>
 
@@ -330,7 +330,7 @@ const Register = () => {
                   type="button"
                   key={option}
                   onClick={() => { setRole(option); setStep(1); }}
-                  className={`flex-1 py-4 text-xs font-semibold uppercase tracking-wider transition-all ${role === option ? 'bg-[#006838] text-white' : 'text-[#006838]/40 hover:text-[#006838]'}`}
+                  className={`flex-1 py-4 text-xs font-semibold   tracking-wider transition-all ${role === option ? 'bg-[#006838] text-white' : 'text-[#006838]/40 hover:text-[#006838]'}`}
                 >
                   {option}
                 </button>
@@ -356,11 +356,11 @@ const Register = () => {
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Full Legal Name</label>
+                        <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Full Legal Name</label>
                         <input className="w-full border-2 border-gray-100 px-5 py-4 text-sm focus:border-[#88C250] outline-none transition-all placeholder:text-gray-300 font-semibold text-[#006838]" type="text" onChange={(e) => setName(e.target.value)} value={name} required placeholder="Legal Name" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Gender</label>
+                        <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Gender</label>
                         <select className="w-full border-2 border-gray-100 px-5 py-4 text-sm focus:border-[#88C250] outline-none transition-all bg-white font-semibold text-[#006838]" onChange={(e) => setGender(e.target.value)} value={gender} required>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
@@ -368,11 +368,11 @@ const Register = () => {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Email Address</label>
+                      <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Email Address</label>
                       <input className="w-full border-2 border-gray-100 px-5 py-4 text-sm focus:border-[#88C250] outline-none transition-all placeholder:text-gray-300 font-semibold text-[#006838]" type="email" onChange={(e) => setEmail(e.target.value)} value={email} required placeholder="email@address.com" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Password</label>
+                      <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Password</label>
                       <input className="w-full border-2 border-gray-100 px-5 py-4 text-sm focus:border-[#88C250] outline-none transition-all placeholder:text-gray-300 font-semibold text-[#006838]" type="password" onChange={(e) => setPassword(e.target.value)} value={password} required minLength={8} placeholder="8+ characters" />
                     </div>
                   </div>

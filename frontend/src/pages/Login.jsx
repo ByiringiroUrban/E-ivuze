@@ -330,14 +330,14 @@ const Login = () => {
 
               <div className="relative py-2">
                 <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-gray-100"></div></div>
-                <span className="relative px-4 bg-white mx-auto text-[10px] font-bold text-[#006838]/30 uppercase tracking-[0.2em]">OR SECURE CREDENTIALS</span>
+                <span className="relative px-4 bg-white mx-auto text-[10px] font-bold text-[#006838]/30   tracking-[0.2em]">OR SECURE CREDENTIALS</span>
               </div>
             </div>
 
             <form onSubmit={onSubmitHandler} className="space-y-8">
               <div className="space-y-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Email Address</label>
+                  <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Email Address</label>
                   <input
                     className="w-full border-2 border-gray-100 px-5 py-4 text-sm focus:border-[#88C250] outline-none transition-all placeholder:text-gray-300 font-semibold text-[#006838]"
                     type="email"
@@ -349,7 +349,7 @@ const Login = () => {
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <label className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider">Password</label>
+                    <label className="text-xs font-semibold text-[#006838]/60   tracking-wider">Password</label>
                   </div>
                   <input
                     className="w-full border-2 border-gray-100 px-5 py-4 text-sm focus:border-[#88C250] outline-none transition-all placeholder:text-gray-300 font-semibold text-[#006838]"

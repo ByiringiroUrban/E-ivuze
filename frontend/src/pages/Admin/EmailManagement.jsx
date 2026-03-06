@@ -139,7 +139,7 @@ const EmailManagement = () => {
     <div className="bg-white min-h-screen">
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-5xl space-y-3">
-          <p className="text-xs uppercase tracking-widest text-white/70">Email Management</p>
+          <p className="text-xs   tracking-widest text-white/70">Email Management</p>
           <h1 className="text-3xl sm:text-4xl font-semibold">
             Send Promotional Emails
           </h1>
@@ -247,7 +247,7 @@ const EmailManagement = () => {
               <table className="w-full">
                 <thead className="bg-gray-50 sticky top-0">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  ">
                       <input
                         type="checkbox"
                         checked={selectedEmails.length === availableEmails.length && availableEmails.length > 0}
@@ -255,9 +255,9 @@ const EmailManagement = () => {
                         className="rounded"
                       />
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Type</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  ">Email</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  ">Name</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  ">Type</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -274,11 +274,10 @@ const EmailManagement = () => {
                       <td className="px-4 py-3 text-sm text-gray-900">{item.email}</td>
                       <td className="px-4 py-3 text-sm text-gray-600">{item.name || '-'}</td>
                       <td className="px-4 py-3">
-                        <span className={`px-2 py-1 text-xs rounded ${
-                          item.type === 'user' 
-                            ? 'bg-blue-100 text-blue-800' 
+                        <span className={`px-2 py-1 text-xs rounded ${item.type === 'user'
+                            ? 'bg-blue-100 text-blue-800'
                             : 'bg-green-100 text-green-800'
-                        }`}>
+                          }`}>
                           {item.type === 'user' ? 'User' : 'Subscriber'}
                         </span>
                       </td>

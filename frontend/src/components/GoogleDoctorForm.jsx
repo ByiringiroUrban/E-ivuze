@@ -105,7 +105,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-xl border border-border bg-white/95 shadow-2xl p-6 sm:p-8 space-y-5 text-sm text-zinc-700 rounded-lg">
       <div className="space-y-2">
-        <p className="text-xs uppercase tracking-[0.4em] text-primary-dark">
+        <p className="text-xs   tracking-[0.4em] text-primary-dark">
           {t('pages.login.completeDoctorRegistration') || 'Complete Doctor Registration'}
         </p>
         <h2 className="text-2xl font-semibold text-accent">
@@ -115,13 +115,13 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
         <div className="flex gap-4 mt-6 mb-2">
           <div className="flex-1 space-y-2">
             <div className={`h-1.5 w-full rounded-full transition-colors duration-500 ${step >= 1 ? 'bg-primary' : 'bg-gray-200'}`} />
-            <p className={`text-[10px] uppercase tracking-widest text-center ${step === 1 ? 'text-primary font-bold' : 'text-gray-400'}`}>
+            <p className={`text-[10px]   tracking-widest text-center ${step === 1 ? 'text-primary font-bold' : 'text-gray-400'}`}>
               {t('pages.login.professional') || 'Professional'}
             </p>
           </div>
           <div className="flex-1 space-y-2">
             <div className={`h-1.5 w-full rounded-full transition-colors duration-500 ${step >= 2 ? 'bg-primary' : 'bg-gray-200'}`} />
-            <p className={`text-[10px] uppercase tracking-widest text-center ${step === 2 ? 'text-primary font-bold' : 'text-gray-400'}`}>
+            <p className={`text-[10px]   tracking-widest text-center ${step === 2 ? 'text-primary font-bold' : 'text-gray-400'}`}>
               {t('pages.login.profile') || 'Profile'}
             </p>
           </div>
@@ -131,7 +131,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
       {step === 1 && (
         <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
           <div>
-            <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+            <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
               {t('pages.login.speciality')} *
             </label>
             <select
@@ -150,7 +150,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
           </div>
 
           <div>
-            <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+            <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
               {t('pages.login.gender') || 'Gender'} *
             </label>
             <select
@@ -165,7 +165,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
           </div>
 
           <div>
-            <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+            <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
               {t('pages.login.degree')} *
             </label>
             <input
@@ -179,7 +179,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
           </div>
 
           <div>
-            <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+            <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
               {t('pages.login.medicalLicense')} *
             </label>
             <input
@@ -194,7 +194,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
           </div>
 
           <div>
-            <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+            <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
               {t('pages.login.experience')} *
             </label>
             <input
@@ -212,7 +212,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
       {step === 2 && (
         <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
           <div>
-            <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+            <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
               {t('nav.about')} *
             </label>
             <textarea
@@ -232,7 +232,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+              <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
                 {t('pages.login.addressLine1')} *
               </label>
               <input
@@ -245,7 +245,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
               />
             </div>
             <div>
-              <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+              <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
                 {t('pages.login.addressLine2')}
               </label>
               <input
@@ -259,7 +259,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
           </div>
 
           <div>
-            <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">
+            <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">
               {t('pages.login.profileImageOptional')}
             </label>
             {imagePreview && (
@@ -284,7 +284,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
               onCancel();
             }}
             disabled={submitting}
-            className="flex-1 border border-border text-accent py-3 text-xs uppercase tracking-[0.4em] hover:bg-gray-50 transition rounded disabled:opacity-50"
+            className="flex-1 border border-border text-accent py-3 text-xs   tracking-[0.4em] hover:bg-gray-50 transition rounded disabled:opacity-50"
           >
             {t('buttons.cancel') || 'Cancel'}
           </button>
@@ -293,7 +293,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
             type="button"
             onClick={() => setStep(1)}
             disabled={submitting}
-            className="flex-1 border border-border text-accent py-3 text-xs uppercase tracking-[0.4em] hover:bg-gray-50 transition rounded disabled:opacity-50"
+            className="flex-1 border border-border text-accent py-3 text-xs   tracking-[0.4em] hover:bg-gray-50 transition rounded disabled:opacity-50"
           >
             {t('buttons.back') || 'Back'}
           </button>
@@ -309,7 +309,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
                 toast.error('Please fill all professional details correctly');
               }
             }}
-            className="flex-1 bg-primary text-white py-3 text-xs uppercase tracking-[0.4em] hover:bg-primary-dark transition rounded"
+            className="flex-1 bg-primary text-white py-3 text-xs   tracking-[0.4em] hover:bg-primary-dark transition rounded"
           >
             {t('buttons.next') || 'Next'}
           </button>
@@ -317,7 +317,7 @@ const GoogleDoctorForm = ({ googleUserData, onSubmit, onCancel, submitting, back
           <button
             type="submit"
             disabled={submitting}
-            className={`flex-1 bg-primary text-white py-3 text-xs uppercase tracking-[0.4em] ${submitting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-primary-dark'
+            className={`flex-1 bg-primary text-white py-3 text-xs   tracking-[0.4em] ${submitting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-primary-dark'
               } transition rounded`}
           >
             {submitting ? t('buttons.processing') : t('buttons.createAccount')}

@@ -49,7 +49,7 @@ const LabManagement = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <div className="space-y-3">
-                            <p className="text-xs uppercase tracking-[0.45em] text-white/70">
+                            <p className="text-xs   tracking-[0.45em] text-white/70">
                                 Diagnostic Centers
                             </p>
                             <h1 className="text-3xl sm:text-4xl font-semibold">
@@ -92,7 +92,7 @@ const LabManagement = () => {
                                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-sm text-gray-500 uppercase tracking-wider">Total Labs</p>
+                                            <p className="text-sm text-gray-500   tracking-wider">Total Labs</p>
                                             <p className="text-3xl font-bold text-gray-800 mt-1">{labs.length}</p>
                                         </div>
                                         <div className="bg-primary/10 p-3 rounded-lg">
@@ -103,7 +103,7 @@ const LabManagement = () => {
                                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-sm text-gray-500 uppercase tracking-wider">Active Labs</p>
+                                            <p className="text-sm text-gray-500   tracking-wider">Active Labs</p>
                                             <p className="text-3xl font-bold text-green-600 mt-1">
                                                 {labs.filter(lab => lab.available).length}
                                             </p>
@@ -116,7 +116,7 @@ const LabManagement = () => {
                                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-sm text-gray-500 uppercase tracking-wider">Inactive Labs</p>
+                                            <p className="text-sm text-gray-500   tracking-wider">Inactive Labs</p>
                                             <p className="text-3xl font-bold text-gray-400 mt-1">
                                                 {labs.filter(lab => !lab.available).length}
                                             </p>
@@ -148,8 +148,8 @@ const LabManagement = () => {
                                                         </h3>
                                                         <span
                                                             className={`inline-block px-2 py-1 text-xs font-medium rounded-full ${lab.available
-                                                                    ? 'bg-green-100 text-green-700'
-                                                                    : 'bg-gray-100 text-gray-600'
+                                                                ? 'bg-green-100 text-green-700'
+                                                                : 'bg-gray-100 text-gray-600'
                                                                 }`}
                                                         >
                                                             {lab.available ? 'Active' : 'Inactive'}
@@ -189,7 +189,7 @@ const LabManagement = () => {
                                             {/* Specialties */}
                                             {lab.speciality && lab.speciality.length > 0 && (
                                                 <div className="mt-4 pt-4 border-t border-gray-100">
-                                                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">
+                                                    <p className="text-xs text-gray-500   tracking-wider mb-2">
                                                         Specialties
                                                     </p>
                                                     <div className="flex flex-wrap gap-1">

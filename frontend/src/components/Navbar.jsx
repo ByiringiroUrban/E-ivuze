@@ -182,7 +182,7 @@ const Navbar = () => {
                       setShowMenu(false);
                       navigate("/register");
                     }}
-                    className="mt-6 bg-primary-dark text-white py-4 uppercase font-black text-[11px] tracking-widest hover:bg-accent hover:text-primary-dark transition-colors border-2 border-primary-dark"
+                    className="mt-6 bg-primary-dark text-white py-4   font-black text-[11px] tracking-widest hover:bg-accent hover:text-primary-dark transition-colors border-2 border-primary-dark"
                   >
                     {t("buttons.register")}
                   </button>
@@ -191,7 +191,7 @@ const Navbar = () => {
                       setShowMenu(false);
                       navigate("/login");
                     }}
-                    className="border-2 border-primary-dark text-primary-dark py-4 uppercase font-black text-[11px] tracking-widest hover:bg-gray-50 transition-colors"
+                    className="border-2 border-primary-dark text-primary-dark py-4   font-black text-[11px] tracking-widest hover:bg-gray-50 transition-colors"
                   >
                     {t("buttons.signIn") || t("buttons.login")}
                   </button>

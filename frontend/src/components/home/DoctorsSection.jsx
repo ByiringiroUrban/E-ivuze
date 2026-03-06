@@ -52,13 +52,13 @@ const DoctorCard = ({ doctor, index, onBook }) => {
                 </div>
 
                 {/* Specialty tag ribbon */}
-                <div className="absolute bottom-0 left-0 right-0 bg-[#006838] text-white text-center text-xs font-semibold py-2 tracking-widest uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute bottom-0 left-0 right-0 bg-[#006838] text-white text-center text-xs font-semibold py-2 tracking-widest   translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     {doctor.speciality}
                 </div>
 
                 {/* Available badge */}
                 {doctor.available !== false && (
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-white/90 text-[#006838] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest">
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-white/90 text-[#006838] px-2.5 py-1 text-[10px] font-bold   tracking-widest">
                         <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
                         Available
                     </div>
@@ -100,7 +100,7 @@ const Doctors = () => {
         <section className="doctors py-24 bg-[#f9f9f9] relative overflow-hidden">
             {/* Background watermark */}
             <div className="absolute top-6 left-0 right-0 flex justify-center pointer-events-none z-0 overflow-hidden">
-                <span className="text-[60px] md:text-[80px] lg:text-[100px] font-bold uppercase text-gray-200 whitespace-nowrap select-none font-merriweather opacity-60">
+                <span className="text-[60px] md:text-[80px] lg:text-[100px] font-bold   text-gray-200 whitespace-nowrap select-none font-merriweather opacity-60">
                     doctors
                 </span>
             </div>

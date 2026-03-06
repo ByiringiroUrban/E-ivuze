@@ -13,7 +13,7 @@ const GoogleRoleSelection = ({ onSelectRole, googleUserData }) => {
   return (
     <div className="w-full max-w-xl border border-border bg-white/95 shadow-2xl p-6 sm:p-8 space-y-5 text-sm text-zinc-700 rounded-lg">
       <div className="space-y-2">
-        <p className="text-xs uppercase tracking-[0.4em] text-primary-dark">
+        <p className="text-xs   tracking-[0.4em] text-primary-dark">
           {t('pages.login.unifiedAccessLabel') || 'Unified Access'}
         </p>
         <h2 className="text-2xl font-semibold text-accent">
@@ -30,9 +30,8 @@ const GoogleRoleSelection = ({ onSelectRole, googleUserData }) => {
             type="button"
             key={option}
             onClick={() => handleRoleSelect(option)}
-            className={`flex-1 min-w-[120px] border px-4 py-2.5 text-xs uppercase tracking-[0.35em] ${
-              selectedRole === option ? 'bg-primary text-white border-primary' : 'border-border text-accent hover:border-primary/60'
-            } transition`}
+            className={`flex-1 min-w-[120px] border px-4 py-2.5 text-xs   tracking-[0.35em] ${selectedRole === option ? 'bg-primary text-white border-primary' : 'border-border text-accent hover:border-primary/60'
+              } transition`}
           >
             {t(`pages.login.${option.toLowerCase()}`)}
           </button>

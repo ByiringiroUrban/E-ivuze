@@ -83,7 +83,7 @@ const PharmacySideBar = () => {
                                     <NavLink
                                         to={item.path}
                                         className={`
-                    flex items-center gap-3 px-4 py-3 rounded-lg uppercase text-[11px] tracking-[0.25em] transition-colors
+                    flex items-center gap-3 px-4 py-3 rounded-lg   text-[11px] tracking-[0.25em] transition-colors
                     ${isActive
                                                 ? 'bg-white/10 text-white font-medium border border-white/30'
                                                 : 'text-white/70 hover:bg-white/5'
@@ -98,7 +98,7 @@ const PharmacySideBar = () => {
                         })}
                         <button
                             onClick={handleLogout}
-                            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg uppercase text-[11px] tracking-[0.25em] transition-colors text-white/70 hover:bg-red-500/20 hover:text-white border border-transparent hover:border-red-500/30"
+                            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg   text-[11px] tracking-[0.25em] transition-colors text-white/70 hover:bg-red-500/20 hover:text-white border border-transparent hover:border-red-500/30"
                         >
                             <FaSignOutAlt className="text-lg" />
                             <span>{t('nav.logout')}</span>

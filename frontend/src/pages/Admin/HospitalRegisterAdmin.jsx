@@ -30,7 +30,7 @@ const HospitalRegisterAdmin = () => {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="max-w-md text-center space-y-4 p-8 border border-border bg-white shadow-sm">
-          <p className="text-xs uppercase tracking-[0.4em] text-primary-dark">
+          <p className="text-xs   tracking-[0.4em] text-primary-dark">
             {t('hospital.register.title')}
           </p>
           <h1 className="text-2xl font-semibold text-accent">
@@ -41,7 +41,7 @@ const HospitalRegisterAdmin = () => {
           </p>
           <button
             onClick={() => navigate('/login')}
-            className="px-6 py-3 bg-primary text-white text-xs uppercase tracking-[0.35em] hover:bg-primary-dark transition"
+            className="px-6 py-3 bg-primary text-white text-xs   tracking-[0.35em] hover:bg-primary-dark transition"
           >
             {t('buttons.login')}
           </button>
@@ -121,7 +121,7 @@ const HospitalRegisterAdmin = () => {
 
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-16 py-12 sm:py-16 roun-b-2xl shadow-inner">
         <div className="max-w-4xl space-y-4">
-          <p className="text-xs uppercase tracking-[0.5em] text-white/70">{t('hospital.register.title')}</p>
+          <p className="text-xs   tracking-[0.5em] text-white/70">{t('hospital.register.title')}</p>
           <h1 className="text-3xl sm:text-4xl font-semibold">{t('hospital.register.subtitle')}</h1>
           <p className="text-sm sm:text-base text-white/80 leading-relaxed">
             {t('hospital.register.adminNote') || 'Provision trusted hospital accounts so facilities can manage approvals, referrals and pharmacy coordination directly inside E-ivuze.'}
@@ -133,13 +133,13 @@ const HospitalRegisterAdmin = () => {
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <form onSubmit={handleSubmit} className="border border-border bg-white shadow-lg p-6 sm:p-8 space-y-8 roun-lg">
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.4em] text-primary-dark">{t('hospital.register.hospitalInfo')}</p>
+              <p className="text-xs   tracking-[0.4em] text-primary-dark">{t('hospital.register.hospitalInfo')}</p>
               <p className="text-sm text-muted-foreground">{t('hospital.register.hospitalInfoDescription')}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="md:col-span-2">
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.hospitalName')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.hospitalName')}</label>
                 <input
                   type="text"
                   required
@@ -149,7 +149,7 @@ const HospitalRegisterAdmin = () => {
                 />
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.addressLine1')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.addressLine1')}</label>
                 <input
                   type="text"
                   required
@@ -159,7 +159,7 @@ const HospitalRegisterAdmin = () => {
                 />
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.addressLine2')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.addressLine2')}</label>
                 <input
                   type="text"
                   value={addressLine2}
@@ -168,7 +168,7 @@ const HospitalRegisterAdmin = () => {
                 />
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.city')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.city')}</label>
                 <input
                   type="text"
                   required
@@ -178,7 +178,7 @@ const HospitalRegisterAdmin = () => {
                 />
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.country')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.country')}</label>
                 <input
                   type="text"
                   required
@@ -188,7 +188,7 @@ const HospitalRegisterAdmin = () => {
                 />
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.phone')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.phone')}</label>
                 <input
                   type="tel"
                   required
@@ -198,7 +198,7 @@ const HospitalRegisterAdmin = () => {
                 />
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.website')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.website')}</label>
                 <input
                   type="url"
                   value={website}
@@ -210,13 +210,13 @@ const HospitalRegisterAdmin = () => {
             </div>
 
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.4em] text-primary-dark">{t('hospital.register.adminAccount')}</p>
+              <p className="text-xs   tracking-[0.4em] text-primary-dark">{t('hospital.register.adminAccount')}</p>
               <p className="text-sm text-muted-foreground">{t('hospital.register.adminAccountDescription')}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.adminName')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.adminName')}</label>
                 <input
                   type="text"
                   required
@@ -226,7 +226,7 @@ const HospitalRegisterAdmin = () => {
                 />
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.adminEmail')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.adminEmail')}</label>
                 <input
                   type="email"
                   required
@@ -236,7 +236,7 @@ const HospitalRegisterAdmin = () => {
                 />
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.adminPassword')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.adminPassword')}</label>
                 <input
                   type="password"
                   required
@@ -248,7 +248,7 @@ const HospitalRegisterAdmin = () => {
                 <p className="text-xs text-muted-foreground mt-1">{t('hospital.register.minPassword')}</p>
               </div>
               <div>
-                <label className="uppercase text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.confirmPassword')}</label>
+                <label className="  text-[11px] tracking-[0.3em] text-muted-foreground">{t('hospital.register.confirmPassword')}</label>
                 <input
                   type="password"
                   required
@@ -261,7 +261,7 @@ const HospitalRegisterAdmin = () => {
             </div>
 
             <div className="bg-primary/5 border border-primary/30 px-5 py-4 text-sm text-primary-dark roun-lg">
-              <strong className="uppercase tracking-[0.4em] text-[10px] block mb-2">{t('hospital.register.note')}</strong>
+              <strong className="  tracking-[0.4em] text-[10px] block mb-2">{t('hospital.register.note')}</strong>
               {t('hospital.register.noteText')}
             </div>
 
@@ -269,14 +269,14 @@ const HospitalRegisterAdmin = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex-1 bg-primary text-white py-3 text-xs uppercase tracking-[0.35em] hover:bg-primary-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 bg-primary text-white py-3 text-xs   tracking-[0.35em] hover:bg-primary-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitting ? t('hospital.register.submitting') : t('hospital.register.submitApplication')}
               </button>
               <button
                 type="button"
                 onClick={() => navigate('/hospital-approvals')}
-                className="px-6 py-3 border border-border text-xs uppercase tracking-[0.35em] text-accent hover:border-primary/60 transition"
+                className="px-6 py-3 border border-border text-xs   tracking-[0.35em] text-accent hover:border-primary/60 transition"
               >
                 {t('buttons.cancel') || 'Cancel'}
               </button>

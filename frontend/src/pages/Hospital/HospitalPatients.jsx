@@ -58,12 +58,12 @@ const HospitalPatients = () => {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.patients.name')}</th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.patients.email')}</th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.patients.phone')}</th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.patients.lastBooking')}</th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.patients.appointments')}</th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{t('hospital.patients.actions')}</th>
+                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.patients.name')}</th>
+                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.patients.email')}</th>
+                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.patients.phone')}</th>
+                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.patients.lastBooking')}</th>
+                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.patients.appointments')}</th>
+                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500  ">{t('hospital.patients.actions')}</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">

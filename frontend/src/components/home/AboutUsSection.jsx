@@ -13,7 +13,7 @@ const AboutUs = () => {
 
             {/* Background Watermark */}
             <div className="absolute top-20 right-0 left-0 flex justify-center pointer-events-none z-0 overflow-hidden">
-                <span className="text-[120px] md:text-[180px] font-bold uppercase text-white/50 whitespace-nowrap select-none font-merriweather">
+                <span className="text-[120px] md:text-[180px] font-bold   text-white/50 whitespace-nowrap select-none font-merriweather">
                     ABOUT US
                 </span>
             </div>
@@ -70,7 +70,7 @@ const AboutUs = () => {
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-emerald-100 text-[#006838] text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-[0.2em] mb-6 inline-block"
+                                className="bg-emerald-100 text-[#006838] text-[10px] font-bold px-4 py-1.5 rounded-full   tracking-[0.2em] mb-6 inline-block"
                             >
                                 Empowering Rwanda
                             </motion.span>

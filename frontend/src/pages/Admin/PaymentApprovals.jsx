@@ -331,7 +331,7 @@ const PaymentApprovals = () => {
       <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.45em] text-white/70">{t('admin.paymentApprovals.title') || t('admin.paymentApprovalsTitle') || 'Payment Approvals'}</p>
+            <p className="text-xs   tracking-[0.45em] text-white/70">{t('admin.paymentApprovals.title') || t('admin.paymentApprovalsTitle') || 'Payment Approvals'}</p>
             <h1 className="text-3xl sm:text-4xl font-semibold">{t('admin.paymentApprovalsTitle')}</h1>
             <p className="text-sm sm:text-base text-white/80 max-w-3xl">{t('admin.paymentApprovalsSubtitle')}</p>
           </div>
@@ -377,8 +377,8 @@ const PaymentApprovals = () => {
             <button
               onClick={() => setActiveTab('all')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'all'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-white text-primary shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
                 }`}
             >
               {t('admin.allPayments')} ({allPayments.length})
@@ -386,8 +386,8 @@ const PaymentApprovals = () => {
             <button
               onClick={() => setActiveTab('patient')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'patient'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-white text-primary shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
                 }`}
             >
               {t('admin.patientPayments')} ({patientPayments.length})
@@ -395,8 +395,8 @@ const PaymentApprovals = () => {
             <button
               onClick={() => setActiveTab('hospital')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'hospital'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-white text-primary shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
                 }`}
             >
               {t('admin.hospitalPayments')} ({hospitalPayments.length})
@@ -429,16 +429,16 @@ const PaymentApprovals = () => {
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${payment.type === 'hospital'
-                              ? 'bg-purple-100 text-purple-700'
-                              : 'bg-blue-100 text-blue-700'
+                            ? 'bg-purple-100 text-purple-700'
+                            : 'bg-blue-100 text-blue-700'
                             }`}>
                             {payment.type === 'hospital' ? t('admin.hospital') : t('admin.patient')}
                           </span>
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${payment.status === 'approved'
-                              ? 'bg-green-100 text-green-700'
-                              : payment.status === 'rejected'
-                                ? 'bg-red-100 text-red-700'
-                                : 'bg-yellow-100 text-yellow-700'
+                            ? 'bg-green-100 text-green-700'
+                            : payment.status === 'rejected'
+                              ? 'bg-red-100 text-red-700'
+                              : 'bg-yellow-100 text-yellow-700'
                             }`}>
                             {payment.status === 'approved' ? '✓ Approved' : payment.status === 'rejected' ? '✗ Rejected' : '⏳ Pending'}
                           </span>
@@ -493,7 +493,7 @@ const PaymentApprovals = () => {
                         {payment.type === 'hospital' ? (
                           <>
                             <div className="bg-gray-50 rounded-lg p-3">
-                              <p className="text-xs font-semibold text-gray-500 uppercase mb-1">{t('admin.plan')}</p>
+                              <p className="text-xs font-semibold text-gray-500   mb-1">{t('admin.plan')}</p>
                               <p className="text-sm font-medium text-gray-900">
                                 {payment.planType?.charAt(0).toUpperCase() + payment.planType?.slice(1)} Plan
                               </p>
@@ -503,7 +503,7 @@ const PaymentApprovals = () => {
                         ) : (
                           <>
                             <div className="bg-blue-50 rounded-lg p-3">
-                              <p className="text-xs font-semibold text-blue-600 uppercase mb-1">{t('admin.appointmentWith')}</p>
+                              <p className="text-xs font-semibold text-blue-600   mb-1">{t('admin.appointmentWith')}</p>
                               <p className="text-sm font-semibold text-gray-900 mb-1">
                                 {payment.docId?.name || 'Unknown Doctor'}
                               </p>
@@ -526,7 +526,7 @@ const PaymentApprovals = () => {
                               )}
                             </div>
                             <div className="bg-gray-50 rounded-lg p-3">
-                              <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Appointment Details</p>
+                              <p className="text-xs font-semibold text-gray-500   mb-1">Appointment Details</p>
                               {payment.appointmentId?.slotDate && (
                                 <div className="flex items-center gap-2 text-sm text-gray-700 mb-1">
                                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -672,7 +672,7 @@ const PaymentApprovals = () => {
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <p className="text-xs font-semibold text-blue-600 uppercase mb-2">{t('admin.payer')}</p>
+                    <p className="text-xs font-semibold text-blue-600   mb-2">{t('admin.payer')}</p>
                     <h4 className="text-xl font-bold text-gray-900 mb-1">
                       {paymentType === 'hospital'
                         ? selectedPayment.hospitalId?.name || 'Hospital Account'
@@ -698,8 +698,8 @@ const PaymentApprovals = () => {
                     </div>
                   </div>
                   <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${paymentType === 'hospital'
-                      ? 'bg-purple-100 text-purple-700'
-                      : 'bg-blue-100 text-blue-700'
+                    ? 'bg-purple-100 text-purple-700'
+                    : 'bg-blue-100 text-blue-700'
                     }`}>
                     {paymentType === 'hospital' ? t('admin.hospital') : t('admin.patient')}
                   </span>
@@ -709,7 +709,7 @@ const PaymentApprovals = () => {
               {/* Appointment/Plan Details Card */}
               {paymentType === 'hospital' ? (
                 <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
-                  <p className="text-xs font-semibold text-purple-600 uppercase mb-2">{t('admin.plan')}</p>
+                  <p className="text-xs font-semibold text-purple-600   mb-2">{t('admin.plan')}</p>
                   <p className="text-lg font-bold text-gray-900">
                     {selectedPayment.planType?.charAt(0).toUpperCase() + selectedPayment.planType?.slice(1)} Plan
                   </p>
@@ -717,7 +717,7 @@ const PaymentApprovals = () => {
                 </div>
               ) : (
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border border-green-100">
-                  <p className="text-xs font-semibold text-green-600 uppercase mb-3">{t('admin.appointment')}</p>
+                  <p className="text-xs font-semibold text-green-600   mb-3">{t('admin.appointment')}</p>
                   <h4 className="text-lg font-bold text-gray-900 mb-3">
                     {t('admin.appointmentWith')} {selectedPayment.docId?.name || 'Unknown Doctor'}
                   </h4>
@@ -766,13 +766,13 @@ const PaymentApprovals = () => {
               <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('admin.paymentCode')}</p>
+                    <p className="text-xs font-semibold text-gray-500   mb-2">{t('admin.paymentCode')}</p>
                     <p className="font-mono text-lg font-bold text-gray-900 bg-white px-3 py-2 rounded-lg border border-gray-200">
                       {selectedPayment.paymentCode || FIXED_PAYMENT_CODE}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 uppercase mb-2">{t('admin.amount')}</p>
+                    <p className="text-xs font-semibold text-gray-500   mb-2">{t('admin.amount')}</p>
                     <p className="text-2xl font-bold text-gray-900">
                       {currency} {selectedPayment.amount?.toLocaleString() || selectedPayment.amount}
                     </p>

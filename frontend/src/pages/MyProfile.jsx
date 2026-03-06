@@ -168,7 +168,7 @@ const MyProfile = () => {
                 </div>
                 <div className="flex items-center justify-between py-3 border-b-2 border-gray-50">
                   <span className="text-xs text-[#006838]/60 font-bold">Phone Connection</span>
-                  <span className="text-[10px] font-bold text-[#006838]/40 uppercase tracking-widest">Active</span>
+                  <span className="text-[10px] font-bold text-[#006838]/40   tracking-widest">Active</span>
                 </div>
               </div>
               <button className="w-full mt-8 py-4 border-2 border-gray-100 text-xs font-bold text-[#006838]/60 hover:bg-gray-50 transition-colors">
@@ -339,7 +339,7 @@ const MyProfile = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-[#006838]"></div>
               <div className="flex items-center justify-between mb-8">
                 <div className="space-y-1">
-                  <p className="text-[#88C250] font-bold text-[10px] uppercase tracking-[0.2em]">Verified History</p>
+                  <p className="text-[#88C250] font-bold text-[10px]   tracking-[0.2em]">Verified History</p>
                   <h3 className="text-2xl font-bold text-[#006838] font-merriweather tracking-tight">Active Clinical Observations</h3>
                 </div>
                 <FaExclamationTriangle className="text-[#006838]/10 text-4xl" />
@@ -350,7 +350,7 @@ const MyProfile = () => {
                   {userData.allergies.map((alg, index) => (
                     <div key={index} className="flex justify-between items-center border-2 border-gray-50 p-6 hover:border-[#88C250] transition-colors">
                       <span className="text-sm font-bold text-[#006838]">{alg.allergen}</span>
-                      <span className={`text-[9px] font-bold px-3 py-1 border-b-2 uppercase tracking-widest ${alg.severity === 'High' ? 'bg-red-50 text-red-600 border-red-500' : 'bg-amber-50 text-amber-600 border-amber-500'
+                      <span className={`text-[9px] font-bold px-3 py-1 border-b-2   tracking-widest ${alg.severity === 'High' ? 'bg-red-50 text-red-600 border-red-500' : 'bg-amber-50 text-amber-600 border-amber-500'
                         }`}>
                         {alg.severity}
                       </span>
@@ -364,7 +364,7 @@ const MyProfile = () => {
               )}
 
               <div className="mt-12 pt-6 border-t-2 border-gray-50 text-center">
-                <p className="text-[9px] text-[#006838]/20 font-bold uppercase tracking-[0.4em]">
+                <p className="text-[9px] text-[#006838]/20 font-bold   tracking-[0.4em]">
                   Secure Medical Data Repository
                 </p>
               </div>

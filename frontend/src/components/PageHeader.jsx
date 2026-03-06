@@ -27,7 +27,7 @@ const PageHeader = ({ title, breadcrumbs, bgImage }) => {
                     <h1 className="text-3xl lg:text-5xl font-bold text-white font-merriweather tracking-tight leading-tight">
                         {title}
                     </h1>
-                    <nav className="flex justify-center items-center space-x-3 text-white/50 font-medium tracking-[0.15em] uppercase text-[10px] lg:text-xs">
+                    <nav className="flex justify-center items-center space-x-3 text-white/50 font-medium tracking-[0.15em]   text-[10px] lg:text-xs">
                         <Link to="/" className="hover:text-white transition-all">Home</Link>
                         {breadcrumbs.map((crumb, index) => (
                             <React.Fragment key={index}>

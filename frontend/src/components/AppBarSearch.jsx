@@ -188,7 +188,7 @@ export default function AppBarSearch({ variant = 'dark', className = '' }) {
                 <div className="py-2">
                   {results.doctors.length > 0 && (
                     <section className="px-3 py-1">
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-2 mb-1">
+                      <h3 className="text-xs font-semibold text-gray-500   tracking-wider flex items-center gap-2 mb-1">
                         <FaUserMd className="w-3.5 h-3.5" /> {t('nav.doctors') || 'Doctors'}
                       </h3>
                       {results.doctors.slice(0, 5).map((d) => (
@@ -215,7 +215,7 @@ export default function AppBarSearch({ variant = 'dark', className = '' }) {
                   )}
                   {results.patients.length > 0 && (
                     <section className="px-3 py-1">
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-2 mb-1">
+                      <h3 className="text-xs font-semibold text-gray-500   tracking-wider flex items-center gap-2 mb-1">
                         <FaUser className="w-3.5 h-3.5" /> {t('nav.patients') || 'Patients'}
                       </h3>
                       {results.patients.slice(0, 5).map((p) => (
@@ -242,7 +242,7 @@ export default function AppBarSearch({ variant = 'dark', className = '' }) {
                   )}
                   {results.records.length > 0 && (
                     <section className="px-3 py-1">
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-2 mb-1">
+                      <h3 className="text-xs font-semibold text-gray-500   tracking-wider flex items-center gap-2 mb-1">
                         <FaFileMedical className="w-3.5 h-3.5" /> {t('nav.records') || 'Records'}
                       </h3>
                       {results.records.slice(0, 5).map((r) => (
@@ -260,7 +260,7 @@ export default function AppBarSearch({ variant = 'dark', className = '' }) {
                   )}
                   {results.appointments.length > 0 && (
                     <section className="px-3 py-1">
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-2 mb-1">
+                      <h3 className="text-xs font-semibold text-gray-500   tracking-wider flex items-center gap-2 mb-1">
                         <FaCalendarAlt className="w-3.5 h-3.5" /> {t('nav.appointments') || 'Appointments'}
                       </h3>
                       {results.appointments.slice(0, 5).map((a) => (

@@ -167,7 +167,7 @@ const MyAppointments = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#006838]/60 to-transparent"></div>
                     <div className="absolute bottom-6 left-6 right-6">
                       <p className="text-white text-lg font-bold font-merriweather leading-tight">{item.docData.name}</p>
-                      <p className="text-[#88C250] text-[10px] font-semibold uppercase tracking-wider mt-1">{item.docData.speciality}</p>
+                      <p className="text-[#88C250] text-[10px] font-semibold   tracking-wider mt-1">{item.docData.speciality}</p>
                     </div>
                   </div>
 
@@ -179,7 +179,7 @@ const MyAppointments = () => {
                           <FaCalendarDay size={20} />
                         </div>
                         <div>
-                          <p className="text-[10px] font-semibold text-[#006838]/60 uppercase tracking-wider leading-none">Registered Date</p>
+                          <p className="text-[10px] font-semibold text-[#006838]/60   tracking-wider leading-none">Registered Date</p>
                           <p className="text-xl font-bold text-[#006838] font-merriweather mt-1">{slotDateFormat(item.slotDate)} — {item.slotTime}</p>
                         </div>
                       </div>
@@ -190,7 +190,7 @@ const MyAppointments = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                       <div className="space-y-4">
-                        <p className="text-xs font-semibold text-[#006838]/60 uppercase tracking-wider flex items-center gap-2">
+                        <p className="text-xs font-semibold text-[#006838]/60   tracking-wider flex items-center gap-2">
                           <FaMapMarkerAlt className="text-[#88C250]" /> Healthcare Facility
                         </p>
                         <div className="text-sm font-semibold text-[#006838] bg-gray-50 p-6 border-l-4 border-[#88C250]">
@@ -201,7 +201,7 @@ const MyAppointments = () => {
 
                       {item.approvalStatus === 'rejected' && item.rejectionMessage && (
                         <div className="bg-red-50 p-6 border-l-4 border-red-400">
-                          <p className="text-[10px] font-semibold text-red-600 uppercase tracking-wider mb-2">Protocol Feedback</p>
+                          <p className="text-[10px] font-semibold text-red-600   tracking-wider mb-2">Protocol Feedback</p>
                           <p className="text-xs font-semibold text-red-800 italic">"{item.rejectionMessage}"</p>
                         </div>
                       )}
@@ -213,7 +213,7 @@ const MyAppointments = () => {
                     {!item.cancelled && !item.isCompleted && item.approvalStatus === 'approved' && item.paymentStatus !== 'approved' && (
                       <button
                         onClick={() => setActivePayment(activePayment === item._id ? null : item._id)}
-                        className="w-full bg-[#88C250] text-[#006838] px-6 py-5 font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-3 hover:bg-[#006838] hover:text-white transition-all"
+                        className="w-full bg-[#88C250] text-[#006838] px-6 py-5 font-semibold text-xs   tracking-wider flex items-center justify-center gap-3 hover:bg-[#006838] hover:text-white transition-all"
                       >
                         <FaMoneyBillWave /> {item.paymentStatus === 'pending' ? 'Confirming Payment' : 'Complete Payment'}
                       </button>
@@ -247,7 +247,7 @@ const MyAppointments = () => {
                     )}
 
                     <div className="mt-4 pt-6 border-t border-gray-200 text-center">
-                      <p className="text-[9px] font-semibold text-[#006838]/40 uppercase tracking-widest">Transaction Token</p>
+                      <p className="text-[9px] font-semibold text-[#006838]/40   tracking-widest">Transaction Token</p>
                       <p className="text-xs font-mono font-bold text-[#006838] mt-1">RX-{item._id.slice(-8).toUpperCase()}</p>
                     </div>
                   </div>
