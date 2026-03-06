@@ -8,7 +8,7 @@ import EmptyState from './EmptyState';
 const DoctorNotificationBell = () => {
   const { dToken, backendUrl } = useContext(DoctorContext);
   const navigate = useNavigate();
-  const apiBackendUrl = backendUrl || import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
+  const apiBackendUrl = backendUrl || import.meta.env.VITE_BACKEND_URL || ' https://ivuzebackendv.vercel.app';
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showPopup, setShowPopup] = useState(false);

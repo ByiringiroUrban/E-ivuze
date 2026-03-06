@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'
+const baseUrl = import.meta.env.VITE_BACKEND_URL || ' https://ivuzebackendv.vercel.app'
 
 export async function getFolderCounts(getHeaders) {
   const { data } = await axios.get(`${baseUrl}/api/mail/counts`, { headers: getHeaders() })

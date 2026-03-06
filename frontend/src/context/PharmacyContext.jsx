@@ -12,7 +12,7 @@ const PharmacyContextProvider = (props) => {
   const [orders, setOrders] = useState([]);
   const [dashboard, setDashboard] = useState(null);
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || ' https://ivuzebackendv.vercel.app';
 
   // Accept invitation
   const acceptInvitation = async (invitationData) => {

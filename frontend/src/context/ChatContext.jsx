@@ -15,7 +15,7 @@ const ChatContextProvider = ({ children, role: roleProp = null, tokens = {}, bac
   const [socketStatus, setSocketStatus] = useState('disconnected')
   const [socketError, setSocketError] = useState(null)
 
-  const backendUrl = backendUrlProp || import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'
+  const backendUrl = backendUrlProp || import.meta.env.VITE_BACKEND_URL || ' https://ivuzebackendv.vercel.app'
   const socketUrl = socketUrlProp || import.meta.env.VITE_SOCKET_URL || backendUrl
 
   const role = roleProp || tokens.role || 'patient'

@@ -14,7 +14,7 @@ const HospitalContextProvider = (props) => {
   const [approvedHospitals, setApprovedHospitals] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || ' https://ivuzebackendv.vercel.app';
 
   // Register Hospital
   const registerHospital = async (hospitalData) => {

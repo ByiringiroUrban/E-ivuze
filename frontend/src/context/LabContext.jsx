@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 export const LabContext = createContext();
 
 const LabContextProvider = (props) => {
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || ' https://ivuzebackendv.vercel.app';
     const [lToken, setLToken] = useState(localStorage.getItem('lToken') ? localStorage.getItem('lToken') : '');
     const [labOrders, setLabOrders] = useState([]);
     const [labProfile, setLabProfile] = useState(null);

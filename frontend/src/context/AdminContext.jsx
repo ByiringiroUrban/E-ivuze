@@ -13,7 +13,7 @@ const AdminContextProvider = (props) => {
     const [dashData, setDashData] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || ' https://ivuzebackendv.vercel.app'
 
 
     const getAllDoctors = async () => {
