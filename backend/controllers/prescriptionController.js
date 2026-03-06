@@ -455,7 +455,7 @@ const submitPrescriptionToPharmacy = async (req, res) => {
         }
 
         // Check if user owns this prescription
-        if (prescription.userId !== userId) {
+        if (!prescription.userId || prescription.userId.toString() !== userId.toString()) {
             return res.json({ success: false, message: 'Unauthorized access' });
         }
 

@@ -13,10 +13,16 @@ export const createOrderFromPatient = async (req, res) => {
     const userId = req.body.userId;
     const {
       pharmacyId,
-      items,
-      deliveryAddress,
+      items: rawItems,
+      deliveryAddress: rawDeliveryAddress,
       paymentType // 'self' | 'insurance'
     } = req.body;
+
+    const items = typeof rawItems === 'string' ? JSON.parse(rawItems) : rawItems;
+    const deliveryAddress =
+      typeof rawDeliveryAddress === 'string'
+        ? JSON.parse(rawDeliveryAddress)
+        : rawDeliveryAddress;
 
     if (!userId) {
       return res.json({ success: false, message: 'User not authenticated' });
@@ -101,9 +107,13 @@ export const createOrderFromPatient = async (req, res) => {
 
       orderItems.push({
         medicationId: medication._id,
+        name: medication.name,
         qty,
         price: linePrice,
-        batchNumber: null
+        dosage: item.dosage || medication.dosage || '',
+        frequency: item.frequency || '',
+        duration: item.duration || '',
+        batchNumber: item.batchNumber || null
       });
     }
 
