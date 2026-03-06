@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import AgoraRTC from 'agora-rtc-sdk-ng';
+import AIModelSelector from './AIModelSelector';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { ChatContext } from '../context/ChatContext';
@@ -1453,9 +1454,10 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
           {/* Clinical Tools (Doctor Only) */}
           {role === 'doctor' && (
             <div className="flex items-center gap-2 border-l border-gray-600 pl-4 ml-2">
+              <AIModelSelector className="mr-2" />
               <button
                 onClick={onShowNotes}
-                className="w-10 h-10 roun-lg bg-green-600 hover:bg-green-700 text-white flex flex-col items-center justify-center transition-all"
+                className="w-10 h-10 rounded-lg bg-green-600 hover:bg-green-700 text-white flex flex-col items-center justify-center transition-all"
                 title="Clinical Notes"
               >
                 <div className="text-[10px] font-bold   leading-none mb-0.5">Note</div>
@@ -1463,7 +1465,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
               </button>
               <button
                 onClick={onShowRx}
-                className="w-10 h-10 roun-lg bg-purple-600 hover:bg-purple-700 text-white flex flex-col items-center justify-center transition-all"
+                className="w-10 h-10 rounded-lg bg-purple-600 hover:bg-purple-700 text-white flex flex-col items-center justify-center transition-all"
                 title="Prescription (Rx)"
               >
                 <div className="text-[10px] font-bold   leading-none mb-0.5">Rx</div>
@@ -1471,7 +1473,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
               </button>
               <button
                 onClick={onShowLab}
-                className="w-10 h-10 roun-lg bg-[#006838] hover:bg-[#004d2a] text-white flex flex-col items-center justify-center transition-all"
+                className="w-10 h-10 rounded-lg bg-[#006838] hover:bg-[#004d2a] text-white flex flex-col items-center justify-center transition-all"
                 title="Lab Order"
               >
                 <div className="text-[10px] font-bold   leading-none mb-0.5">Lab</div>
@@ -1479,7 +1481,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
               </button>
               <button
                 onClick={onShowRefer}
-                className="w-10 h-10 roun-lg bg-blue-600 hover:bg-blue-700 text-white flex flex-col items-center justify-center transition-all"
+                className="w-10 h-10 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex flex-col items-center justify-center transition-all"
                 title="Referral"
               >
                 <div className="text-[10px] font-bold   leading-none mb-0.5">Ref</div>
@@ -1487,7 +1489,7 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
               </button>
               <button
                 onClick={onShowVaccine}
-                className="w-10 h-10 roun-lg bg-orange-600 hover:bg-orange-700 text-white flex flex-col items-center justify-center transition-all"
+                className="w-10 h-10 rounded-lg bg-orange-600 hover:bg-orange-700 text-white flex flex-col items-center justify-center transition-all"
                 title="Vaccine"
               >
                 <div className="text-[10px] font-bold   leading-none mb-0.5">Vac</div>
@@ -1500,24 +1502,24 @@ const MeetingPage = ({ appointmentId, patientId, backendUrl, token, role = 'pati
 
       {/* Settings panel */}
       {showSettings && (
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-white roun-lg shadow-2xl p-4 min-w-[300px]">
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-2xl p-4 min-w-[300px]">
           <h3 className="font-semibold mb-3 text-gray-800">Settings</h3>
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-sm text-gray-700">Camera</span>
-              <select className="border roun px-2 py-1 text-sm">
+              <select className="border rounded px-2 py-1 text-sm text-gray-800">
                 <option>Default Camera</option>
               </select>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm text-gray-700">Microphone</span>
-              <select className="border roun px-2 py-1 text-sm">
+              <select className="border rounded px-2 py-1 text-sm text-gray-800">
                 <option>Default Microphone</option>
               </select>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm text-gray-700">Speaker</span>
-              <select className="border roun px-2 py-1 text-sm">
+              <select className="border rounded px-2 py-1 text-sm text-gray-800">
                 <option>Default Speaker</option>
               </select>
             </div>

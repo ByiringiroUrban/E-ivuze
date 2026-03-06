@@ -1,11 +1,20 @@
 import conversationModel from '../models/conversationModel.js';
 import messageModel from '../models/messageModel.js';
-import { ensureDisclaimer, generateTextWithFallback, getAiApiKey, getEmergencyMessage, isEmergencyText } from '../services/aiService.js';
+import { ensureDisclaimer, generateTextWithFallback, getAiApiKey, getEmergencyMessage, isEmergencyText, getAvailableModels, formatAiError } from '../services/aiService.js';
 import chatRoomModel from '../models/chatRoomModel.js';
 import chatMessageModel from '../models/chatMessageModel.js';
 import userModel from '../models/userModel.js';
 import { redactForLogs } from '../utils/redactForLogs.js';
 import { sanitizeForAiContents } from '../utils/sanitizeForAi.js';
+
+export const listSupportModels = async (req, res) => {
+  try {
+    const models = getAvailableModels();
+    res.json({ success: true, models });
+  } catch (error) {
+    res.json({ success: false, message: 'Failed to fetch models' });
+  }
+};
 
 // Language detection helper
 const detectLanguage = (text) => {
@@ -371,7 +380,7 @@ export const deleteConversation = async (req, res) => {
 export const sendMessage = async (req, res) => {
   try {
     const { id } = req.params;
-    const { text, userId } = req.body;
+    const { text, userId, requestedModel } = req.body;
 
     if (!text || !text.trim()) {
       return res.json({ success: false, message: 'Message text is required' });
@@ -445,7 +454,11 @@ export const sendMessage = async (req, res) => {
     } else {
       const contents = [...conversationHistory, { role: 'user', parts: [{ text: text.trim() }] }];
       const sanitizedContents = sanitizeForAiContents(contents);
-      const result = await generateTextWithFallback({ systemPrompt, contents: sanitizedContents });
+      const result = await generateTextWithFallback({
+        systemPrompt,
+        contents: sanitizedContents,
+        generationConfig: requestedModel ? { requestedModel } : {}
+      });
       assistantText = ensureDisclaimer(result.text, detectedLang);
       modelUsed = result.model;
     }
@@ -491,9 +504,14 @@ export const sendMessage = async (req, res) => {
     });
   } catch (error) {
     console.error('Send message error:', redactForLogs(error));
+    // Detect language from context or default to RW
+    const lang = detectLanguage(req.body.text || '');
+    const friendlyMessage = formatAiError(error, lang);
+
     res.json({
       success: false,
-      message: error.message || 'Failed to get AI response. Please try again.'
+      message: friendlyMessage,
+      technicalInfo: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 };

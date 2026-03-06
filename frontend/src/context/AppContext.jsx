@@ -18,6 +18,8 @@ const AppContextProvider = (props) => {
     const [userData, setUserData] = useState(false)
     const [isBusy, setIsBusy] = useState(false)
     const [pageLoading, setPageLoading] = useState(false)
+    const [aiModels, setAiModels] = useState([])
+    const [preferredAiModel, setPreferredAiModel] = useState(localStorage.getItem('preferredAiModel') || 'gemini-1.5-flash-latest')
 
     const runWithBusy = async (fn) => {
         if (isBusy) return;
@@ -105,6 +107,22 @@ const AppContextProvider = (props) => {
         return dateArray[0] + " " + months[Number(dateArray[1])] + " " + dateArray[2]
     }
 
+    const fetchAiModels = async () => {
+        try {
+            const { data } = await axios.get(backendUrl + '/api/ai/models');
+            if (data.success) {
+                setAiModels(data.models);
+            }
+        } catch (error) {
+            console.error('Failed to fetch AI models', error);
+        }
+    }
+
+    const updatePreferredModel = (modelId) => {
+        setPreferredAiModel(modelId);
+        localStorage.setItem('preferredAiModel', modelId);
+    }
+
     const value = {
         doctors,
         getDoctorsData,
@@ -122,13 +140,17 @@ const AppContextProvider = (props) => {
         runWithBusy,
         pageLoading,
         setPageLoading,
-        withPageLoader
+        withPageLoader,
+        aiModels,
+        preferredAiModel,
+        updatePreferredModel
     }
 
 
     useEffect(() => {
         getDoctorsData()
         getPublicSettings()
+        fetchAiModels()
     }, [])
 
     useEffect(() => {

@@ -16,13 +16,17 @@ const getClient = () => {
 };
 
 const textModelCandidates = [
-  'gemini-2.5-flash',
-  'gemini-2.5-pro',
-  'gemini-1.5-pro-latest',
-  'gemini-1.5-flash-latest',
-  'gemini-1.5-pro',
-  'gemini-1.5-flash',
-  'gemini-pro'
+  'gemini-1.5-flash-latest',       // Primary: high daily quota (1500 RPD free tier)
+  'models/gemini-1.5-flash-latest',// Fallback with prefix
+  'gemini-1.5-pro-latest',         // Fallback: smarter but slower
+  'gemini-2.0-flash',              // Reserve: only 20 RPD on free tier
+  'models/gemini-2.0-flash'
+];
+
+export const getAvailableModels = () => [
+  { id: 'gemini-1.5-flash-latest', name: 'Gemini 1.5 Flash ✓ (Recommended)', description: 'Best for daily use — high request quota. Ideal for clinical notes and suggestions.' },
+  { id: 'gemini-1.5-pro-latest', name: 'Gemini 1.5 Pro (Most Intelligent)', description: 'Deeper reasoning and analysis. Use for complex multi-language tasks.' },
+  { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash (Low Quota)', description: 'Fastest model but limited to 20 requests/day on free tier.' }
 ];
 
 const embeddingModelCandidates = ['text-embedding-004'];
@@ -93,6 +97,39 @@ export const getEmergencyMessage = (language = 'en') => {
   return 'Your symptoms could be serious. If you have chest pain, trouble breathing, severe bleeding, confusion, fainting, or you feel in immediate danger, seek urgent care now (call local emergency services or go to the nearest emergency department). If you want, I can help you contact a clinician.';
 };
 
+export const formatAiError = (error, language = 'en') => {
+  const msg = error?.message || String(error);
+
+  const translations = {
+    en: {
+      quota: "The assistant is taking a short break. Please try again in a moment.",
+      timeout: "The connection is a bit slow right now. Please try again.",
+      safety: "This content couldn't be processed. Please rephrase and try again.",
+      invalid: "Something went wrong with the request. Please try again.",
+      default: "The assistant is temporarily unavailable. Please try again shortly."
+    },
+    rw: {
+      quota: "Umufasha aruhutse gato. Ongera ugerageze nyuma y'akanya gato.",
+      timeout: "Umuyoboro uratinda gato. Ongera ugerageze.",
+      safety: "Ibi ntibishobora gusuzumwa. Ongera wandike mu bundi buryo.",
+      invalid: "Habaye ikibazo gito. Ongera ugerageze.",
+      default: "Umufasha ntabwo ahari muri uyu mwanya. Ongera ugerageze."
+    }
+  };
+
+  const t = translations[language] || translations.en;
+
+  // 429 quota errors: never show a scary message — just return a soft retry hint
+  if (msg.includes('429') || msg.includes('quota') || msg.includes('RESOURCE_EXHAUSTED')) {
+    return t.quota;
+  }
+  if (msg.includes('TIMEOUT') || msg.includes('ETIMEDOUT')) return t.timeout;
+  if (msg.includes('SAFETY') || msg.includes('blocked')) return t.safety;
+  if (msg.includes('400') || msg.includes('Invalid')) return t.invalid;
+
+  return t.default;
+};
+
 const extractTextFromGenerateResult = (result) => {
   const response = result?.response;
   if (!response) return '';
@@ -119,17 +156,47 @@ export const generateTextWithFallback = async ({
 
   let lastError = null;
 
-  for (const modelName of modelNames) {
+  // If a specific model is requested, try it first
+  const modelsToTry = [...modelNames];
+  if (generationConfig?.requestedModel && modelsToTry.includes(generationConfig.requestedModel)) {
+    // Move it to the front
+    const idx = modelsToTry.indexOf(generationConfig.requestedModel);
+    modelsToTry.splice(idx, 1);
+    modelsToTry.unshift(generationConfig.requestedModel);
+  }
+
+  for (const modelName of modelsToTry) {
     try {
-      const model = genAI.getGenerativeModel({ model: modelName, systemInstruction: systemPrompt });
+      console.log(`[AI SERVICE] Attempting generation with model: ${modelName} using v1beta API...`);
+
+      const model = genAI.getGenerativeModel(
+        { model: modelName, systemInstruction: systemPrompt },
+        { apiVersion: 'v1beta' }
+      );
+
       const request = generationConfig ? { contents, generationConfig } : { contents };
       const result = await model.generateContent(request);
       const text = extractTextFromGenerateResult(result);
+
       if (text) {
+        console.log(`[AI SERVICE] SUCCESS with model: ${modelName}`);
         return { text, model: modelName };
       }
+      console.warn(`[AI SERVICE] Model ${modelName} returned empty response.`);
       lastError = new Error('Empty response from AI model');
     } catch (error) {
+      // 429 = rate limit: skip silently to next fallback model
+      if (error.status === 429) {
+        console.warn(`[AI SERVICE] Rate limit on ${modelName}, switching to next model...`);
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        lastError = error;
+        continue;
+      }
+      console.error(`[AI SERVICE] ERROR with model ${modelName}:`, {
+        message: error.message,
+        status: error.status,
+        name: error.name
+      });
       lastError = error;
       continue;
     }

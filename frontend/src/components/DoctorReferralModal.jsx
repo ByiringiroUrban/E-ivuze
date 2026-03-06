@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { createPortal } from 'react-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AppContext } from '../context/AppContext';
@@ -63,8 +64,8 @@ const DoctorReferralModal = ({ isOpen, onClose, patientId, patientName, appointm
         }
     };
 
-    return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[1000] p-4">
+    return createPortal(
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[1000000] p-4">
             <div className="bg-white rounded-xl max-w-lg w-full shadow-2xl overflow-hidden">
                 <div className="bg-primary text-white p-4 flex justify-between items-center">
                     <h3 className="text-lg font-semibold flex items-center gap-2">
@@ -138,7 +139,8 @@ const DoctorReferralModal = ({ isOpen, onClose, patientId, patientName, appointm
                     </button>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 
