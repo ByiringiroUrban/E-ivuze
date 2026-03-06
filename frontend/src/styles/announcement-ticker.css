@@ -1,0 +1,28 @@
+.announcement-ticker-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.announcement-ticker-content {
+  display: inline-flex;
+  animation: announcement-scroll 60s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.announcement-item {
+  padding: 0 4rem;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes announcement-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

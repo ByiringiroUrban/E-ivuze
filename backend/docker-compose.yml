@@ -1,0 +1,66 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: E-ivuze-backend
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - MONGODB_URI=${MONGODB_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - VITE_FRONTEND_URL=${VITE_FRONTEND_URL}
+      - FRONTEND_URL=${FRONTEND_URL}
+    volumes:
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4000/api/public/settings"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - onehealth-network
+
+  # Optional: MongoDB service for local development
+  mongodb:
+    image: mongo:6.0
+    container_name: E-ivuze-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=onehealth
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+    networks:
+      - onehealth-network
+    profiles:
+      - with-db
+
+  # Optional: Redis for caching (if needed in future)
+  redis:
+    image: redis:7-alpine
+    container_name: E-ivuze-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - onehealth-network
+    profiles:
+      - with-redis
+
+networks:
+  onehealth-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:

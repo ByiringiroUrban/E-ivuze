@@ -1,0 +1,19 @@
+/* Custom Toastify Overrides for "Bubble" Design */
+.Toastify__toast {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    margin-bottom: 1rem !important;
+}
+
+.Toastify__toast-body {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.Toastify__close-button {
+    display: none !important;
+}

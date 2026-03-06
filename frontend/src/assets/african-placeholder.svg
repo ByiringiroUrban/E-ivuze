@@ -1,0 +1,28 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="200" fill="#E8F5E9"/>
+  
+  <!-- Head shape -->
+  <ellipse cx="200" cy="180" rx="120" ry="140" fill="#8D6E63"/>
+  
+  <!-- Face features -->
+  <!-- Eyes -->
+  <ellipse cx="170" cy="160" rx="12" ry="18" fill="#1A1A1A"/>
+  <ellipse cx="230" cy="160" rx="12" ry="18" fill="#1A1A1A"/>
+  
+  <!-- Nose -->
+  <ellipse cx="200" cy="190" rx="8" ry="20" fill="#6D4C41"/>
+  
+  <!-- Mouth -->
+  <path d="M 180 220 Q 200 230 220 220" stroke="#6D4C41" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Hair -->
+  <path d="M 80 120 Q 100 60 120 100 Q 140 40 160 90 Q 180 30 200 100 Q 220 30 240 90 Q 260 40 280 100 Q 300 60 320 120" stroke="#3E2723" stroke-width="25" fill="none" stroke-linecap="round"/>
+  
+  <!-- Neck -->
+  <rect x="180" y="280" width="40" height="50" fill="#8D6E63"/>
+  
+  <!-- Shoulders -->
+  <ellipse cx="200" cy="360" rx="150" ry="40" fill="#8D6E63"/>
+</svg>
+
