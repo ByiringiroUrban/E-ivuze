@@ -41,7 +41,7 @@ ENV PORT=4000
 
 # Health check - test the backend API
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:4000/api/public/settings || exit 1
+    CMD curl -f  https://ivuzebackendv.vercel.app/api/public/settings || exit 1
 
 # Start the backend application
 CMD ["npm", "start"]

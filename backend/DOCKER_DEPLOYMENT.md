@@ -240,7 +240,7 @@ netstat -an | findstr :4000
 ### Database Connection Issues
 ```bash
 # Test backend health
-docker exec E-ivuze-backend curl -f http://localhost:4000/api/public/settings
+docker exec E-ivuze-backend curl -f  https://ivuzebackendv.vercel.app/api/public/settings
 ```
 
 ### Permission Issues (Linux/Mac)

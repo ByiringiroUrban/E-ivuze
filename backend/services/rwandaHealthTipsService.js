@@ -269,7 +269,7 @@ const resolveFinalUrl = async (url) => {
       timeoutMs: 8000,
       maxRedirects: 5,
       headers: {
-        'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+http://localhost:4000)'
+        'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+ https://ivuzebackendv.vercel.app)'
       }
     });
     return res?.url || url;
@@ -370,7 +370,7 @@ const addFromRssUrl = async ({ url, lang, max = 10, sourceName = '' } = {}) => {
       timeoutMs: 12000,
       maxRedirects: 5,
       headers: {
-        'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+http://localhost:4000)'
+        'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+ https://ivuzebackendv.vercel.app)'
       }
     });
 
@@ -432,7 +432,7 @@ export const getRwandaHealthTips = async ({ lang = 'rw', limit = 3 } = {}) => {
       timeoutMs: 12000,
       maxRedirects: 5,
       headers: {
-        'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+http://localhost:4000)'
+        'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+ https://ivuzebackendv.vercel.app)'
       }
     });
 
@@ -481,7 +481,7 @@ export const getRwandaHealthTips = async ({ lang = 'rw', limit = 3 } = {}) => {
       timeoutMs: 12000,
       maxRedirects: 5,
       headers: {
-        'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+http://localhost:4000)'
+        'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+ https://ivuzebackendv.vercel.app)'
       }
     });
 

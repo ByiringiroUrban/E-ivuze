@@ -89,7 +89,7 @@ export const getTrendingRwandaHealthNews = async ({ lang = 'rw', limit = 3, quer
   const url = buildGoogleNewsRssUrl({ query: q, lang });
   const res = await fetch(url, {
     headers: {
-      'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+http://localhost:4000)'
+      'User-Agent': 'E-ivuzeConnectDoctor/1.0 (+ https://ivuzebackendv.vercel.app)'
     }
   });
 
