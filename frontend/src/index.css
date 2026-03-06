@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Merriweather:wght@400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+.font-merriweather {
+    font-family: 'Merriweather', serif !important;
+}
+
+/* === NOTIFICATION SYSTEM — matches homepage design === */
+
+/* Container: top-right */
+.Toastify__toast-container {
+    width: 400px !important;
+    padding: 0 !important;
+    top: 100px !important;
+    right: 32px !important;
+}
+
+/* Individual toast card */
+.Toastify__toast {
+    background: #ffffff !important;
+    border-radius: 4px !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 6px solid #006838 !important;
+    padding: 20px 24px !important;
+    margin-bottom: 16px !important;
+    min-height: auto !important;
+    font-family: 'Outfit', sans-serif !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Icon spacing */
+.Toastify__toast-icon {
+    margin-right: 16px !important;
+    width: 24px !important;
+}
+
+/* Type-specific left border colors */
+.Toastify__toast--success {
+    border-left-color: #006838 !important;
+}
+
+.Toastify__toast--error {
+    border-left-color: #dc2626 !important;
+}
+
+.Toastify__toast--info {
+    border-left-color: #081828 !important;
+}
+
+.Toastify__toast--warning {
+    border-left-color: #d97706 !important;
+}
+
+/* Toast body text */
+.Toastify__toast-body {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0.9375rem !important;
+    color: #1f2937 !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+}
+
+/* Progress bar */
+.Toastify__progress-bar {
+    height: 3px !important;
+    border-radius: 0 !important;
+}
+
+.Toastify__progress-bar--success {
+    background: #006838 !important;
+}
+
+.Toastify__progress-bar--error {
+    background: #dc2626 !important;
+}
+
+.Toastify__progress-bar--info {
+    background: #081828 !important;
+}
+
+.Toastify__progress-bar--warning {
+    background: #d97706 !important;
+}
+
+/* Close button - larger and light */
+.Toastify__close-button {
+    align-self: center !important;
+    opacity: 0.4 !important;
+    color: #111827 !important;
+}
+
+.Toastify__close-button:hover {
+    opacity: 1 !important;
+}
+
+body {
+    background-color: #FFFFFF;
+    /* White background */
+}
+
+html {
+    background-color: #FFFFFF;
+    /* White background */
+    scroll-behavior: smooth;
+}
+
+.active hr {
+    @apply block
+}
+
+/* Custom Scrollbar Styling - Brutalist Sharp Emerald Design */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #006838;
+    border: none;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #88C250;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #004d2a;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #006838 transparent;
+}
+
+/* Smooth scrolling for all elements */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+}
+
+@media (max-width:740px) {
+    .active p {
+        @apply text-white bg-primary
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+}
+
+/* Dark mode support - Brutalist Sharp */
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #059669;
+    }
+
+    * {
+        scrollbar-color: #059669 transparent;
+    }
+}
+
+@keyframes bounce-slow {
+
+    0%,
+    100% {
+        transform: translateY(-5%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 3s infinite;
+}
