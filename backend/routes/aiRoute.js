@@ -6,7 +6,8 @@ import {
   updateConversation,
   deleteConversation,
   sendMessage,
-  handoffConversation
+  handoffConversation,
+  listSupportModels
 } from '../controllers/aiController.js';
 import authAiOptional from '../middleware/authAiOptional.js';
 import authUser from '../middleware/authUser.js';
@@ -15,6 +16,9 @@ const aiRouter = express.Router();
 
 // All routes support optional authentication (userId from authUserOptional middleware if logged in)
 // If not logged in, userId will be null and conversations are anonymous
+
+// List available models
+aiRouter.get('/models', listSupportModels);
 
 // Create conversation
 aiRouter.post('/conversations', authAiOptional, createConversation);

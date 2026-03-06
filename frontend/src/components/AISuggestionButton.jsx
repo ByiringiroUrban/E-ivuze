@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import { FaMagic, FaSpinner, FaCheck, FaTimes } from 'react-icons/fa';
+import { FaMagic, FaSpinner, FaCheck, FaTimes, FaExclamationCircle } from 'react-icons/fa';
 import axios from 'axios';
+import { AppContext } from '../context/AppContext';
+import { useContext, useState } from 'react';
+import React from 'react';
 
-const AISuggestionButton = ({ 
-  context, 
-  fieldType = 'description', 
-  onSuggestion, 
-  backendUrl, 
+const AISuggestionButton = ({
+  context,
+  fieldType = 'description',
+  onSuggestion,
   token,
-  className = '' 
+  className = ''
 }) => {
+  const { backendUrl, preferredAiModel } = useContext(AppContext);
   const [loading, setLoading] = useState(false);
   const [suggestion, setSuggestion] = useState('');
   const [showPreview, setShowPreview] = useState(false);
   const [error, setError] = useState(null);
+  const [isTechnical, setIsTechnical] = useState(false);
 
   const generateSuggestion = async () => {
     if (!context || context.trim().length < 10) {
@@ -23,7 +26,7 @@ const AISuggestionButton = ({
 
     setLoading(true);
     setError(null);
-    
+
     try {
       const headers = token ? { token } : {};
       const { data } = await axios.post(
@@ -31,7 +34,8 @@ const AISuggestionButton = ({
         {
           context: context.trim(),
           fieldType,
-          language: 'en'
+          language: 'en',
+          requestedModel: preferredAiModel
         },
         { headers }
       );
@@ -41,10 +45,13 @@ const AISuggestionButton = ({
         setShowPreview(true);
       } else {
         setError(data.message || 'Failed to generate suggestion');
+        setIsTechnical(!!data.technicalInfo);
       }
     } catch (err) {
       console.error('AI suggestion error:', err);
-      setError(err.response?.data?.message || 'Failed to get AI suggestion');
+      const friendlyMsg = err.response?.data?.message || 'AI service is temporarily resting.';
+      setError(friendlyMsg);
+      setIsTechnical(true);
     } finally {
       setLoading(false);
     }
@@ -114,7 +121,22 @@ const AISuggestionButton = ({
         )}
       </button>
       {error && (
-        <p className="text-xs text-red-500 mt-1">{error}</p>
+        <div className="flex items-center gap-2 mt-2 bg-orange-50 border border-orange-100 p-2 rounded-lg text-orange-700 animate-in fade-in slide-in-from-top-1">
+          <FaExclamationCircle size={14} className="flex-shrink-0" />
+          <div>
+            <p className="text-[11px] font-medium leading-tight">
+              {error}
+            </p>
+            {isTechnical && (
+              <button
+                onClick={generateSuggestion}
+                className="text-[10px] underline hover:no-underline font-bold mt-1 block"
+              >
+                Retry Request
+              </button>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );

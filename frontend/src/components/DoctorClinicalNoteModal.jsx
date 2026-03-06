@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { createPortal } from 'react-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AppContext } from '../context/AppContext';
@@ -117,8 +118,8 @@ const DoctorClinicalNoteModal = ({ isOpen, onClose, appointmentId, patientId, pa
         }, { headers: { dToken } });
     }
 
-    return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[1000] p-4 overflow-y-auto">
+    return createPortal(
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[1000000] p-4 overflow-y-auto">
             <div className="bg-white rounded-xl max-w-2xl w-full flex flex-col max-h-[90vh]">
                 <div className="p-6 border-b border-gray-100 flex justify-between items-center">
                     <h2 className="text-xl font-bold text-gray-800">Clinical Consultation</h2>
@@ -218,7 +219,8 @@ const DoctorClinicalNoteModal = ({ isOpen, onClose, appointmentId, patientId, pa
                     </button>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 

@@ -240,6 +240,12 @@ const App = () => {
                   <Route path='/doctor-approvals' element={<DoctorApprovals />} />
                   <Route path='/announcements' element={<Announcements />} />
                   <Route path='/settings' element={<Settings />} />
+                  <Route path='/admin-ai-knowledge' element={<AIKnowledgeIngest />} />
+                  <Route path='/hospital-register' element={<HospitalRegisterAdmin />} />
+                  <Route path='/hospital-trials' element={<HospitalTrials />} />
+                  <Route path='/pharmacy-management' element={<PharmacyManagement />} />
+                  <Route path='/lab-management' element={<LabManagement />} />
+                  <Route path='/email-management' element={<EmailManagement />} />
                 </>
               )}
               <Route path='*' element={IsDoctor ? <DoctorDashboard /> : <Dashboard />} />

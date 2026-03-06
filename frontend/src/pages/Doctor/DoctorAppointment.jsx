@@ -223,59 +223,6 @@ const DoctorAppointment = () => {
                     onShowVaccine={() => setShowImmunizationModal({ appointmentId: item._id, patientId: item.userData._id, name: item.userData.name })}
                   />
                 )}
-                {/* SOAP Modal */}
-                {showSoapModal?.appointmentId === item._id && (
-                  <DoctorClinicalNoteModal
-                    isOpen={true}
-                    onClose={() => setShowSoapModal(null)}
-                    appointmentId={item._id}
-                    patientId={item.userData._id}
-                    patientName={item.userData.name}
-                  />
-                )}
-
-                {/* Referral Modal */}
-                {showReferralModal?.appointmentId === item._id && (
-                  <DoctorReferralModal
-                    isOpen={true}
-                    onClose={() => setShowReferralModal(null)}
-                    appointmentId={item._id}
-                    patientId={item.userData._id}
-                    patientName={item.userData.name}
-                  />
-                )}
-
-                {/* Immunization Modal */}
-                {showImmunizationModal?.appointmentId === item._id && (
-                  <DoctorImmunizationModal
-                    isOpen={true}
-                    onClose={() => setShowImmunizationModal(null)}
-                    patientId={item.userData._id}
-                    patientName={item.userData.name}
-                  />
-                )}
-
-                {/* Prescription Modal */}
-                {showPrescriptionModal?.appointmentId === item._id && (
-                  <DoctorPrescriptionModal
-                    isOpen={true}
-                    onClose={() => setShowPrescriptionModal(null)}
-                    appointmentId={item._id}
-                    patientId={item.userData._id}
-                    patientName={item.userData.name}
-                  />
-                )}
-
-                {/* Lab Order Modal */}
-                {showLabModal?.appointmentId === item._id && (
-                  <DoctorLabOrderModal
-                    isOpen={true}
-                    onClose={() => setShowLabModal(null)}
-                    appointmentId={item._id}
-                    patientId={item.userData._id}
-                    patientName={item.userData.name}
-                  />
-                )}
               </React.Fragment>
             )) : (
               <div className='p-12 text-center'>
@@ -285,6 +232,57 @@ const DoctorAppointment = () => {
           }
         </div>
       </div>
+
+      {/* Global Clinical Modals (Moved outside loop for reliability) */}
+      {showSoapModal && (
+        <DoctorClinicalNoteModal
+          isOpen={true}
+          onClose={() => setShowSoapModal(null)}
+          appointmentId={showSoapModal.appointmentId}
+          patientId={showSoapModal.patientId}
+          patientName={showSoapModal.name}
+        />
+      )}
+
+      {showReferralModal && (
+        <DoctorReferralModal
+          isOpen={true}
+          onClose={() => setShowReferralModal(null)}
+          appointmentId={showReferralModal.appointmentId}
+          patientId={showReferralModal.patientId}
+          patientName={showReferralModal.name}
+        />
+      )}
+
+      {showPrescriptionModal && (
+        <DoctorPrescriptionModal
+          isOpen={true}
+          onClose={() => setShowPrescriptionModal(null)}
+          appointmentId={showPrescriptionModal.appointmentId}
+          patientId={showPrescriptionModal.patientId}
+          patientName={showPrescriptionModal.name}
+        />
+      )}
+
+      {showLabModal && (
+        <DoctorLabOrderModal
+          isOpen={true}
+          onClose={() => setShowLabModal(null)}
+          appointmentId={showLabModal.appointmentId}
+          patientId={showLabModal.patientId}
+          patientName={showLabModal.name}
+        />
+      )}
+
+      {showImmunizationModal && (
+        <DoctorImmunizationModal
+          isOpen={true}
+          onClose={() => setShowImmunizationModal(null)}
+          appointmentId={showImmunizationModal.appointmentId}
+          patientId={showImmunizationModal.patientId}
+          patientName={showImmunizationModal.name}
+        />
+      )}
 
       {/* Reject Modal */}
       {showRejectModal && (

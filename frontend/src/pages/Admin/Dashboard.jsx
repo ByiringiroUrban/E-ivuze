@@ -30,13 +30,13 @@ const Dashboard = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <section className="bg-[#14324f] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
-        <div className="max-w-5xl space-y-3">
-          <p className="text-xs   tracking-widest text-white/70">{t('admin.dashboardTitle') || 'Admin dashboard'}</p>
-          <h1 className="text-3xl sm:text-4xl font-semibold">
-            {t('admin.dashboardHero') || 'Monitor the entire E-ivuzenetwork'}
+      <section className="bg-white border-b border-gray-100 px-4 sm:px-8 lg:px-12 py-8">
+        <div className="max-w-5xl space-y-1">
+          <p className="text-xs tracking-widest text-[#064e3b] font-semibold uppercase">{t('admin.dashboardTitle') || 'Admin Dashboard'}</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            {t('admin.dashboardHero') || 'Manage your healthcare platform'}
           </h1>
-          <p className="text-sm sm:text-base text-white/80 max-w-3xl">
+          <p className="text-sm text-gray-500 max-w-3xl pt-1">
             {t('admin.dashboardSubhero') || 'Review onboarding stats, upcoming appointments and outstanding approvals from a single workspace.'}
           </p>
         </div>

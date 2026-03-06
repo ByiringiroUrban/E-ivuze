@@ -1,4 +1,4 @@
-import { generateTextWithFallback } from '../services/aiService.js';
+import { generateTextWithFallback, formatAiError } from '../services/aiService.js';
 import { redactForLogs } from '../utils/redactForLogs.js';
 import { sanitizeForAiText } from '../utils/sanitizeForAi.js';
 
@@ -28,7 +28,7 @@ const detectLanguage = (text) => {
 
 export const getSuggestion = async (req, res) => {
   try {
-    const { context, fieldType = 'description', language = 'en' } = req.body;
+    const { context, fieldType = 'description', language = 'en', requestedModel } = req.body;
 
     if (!context || String(context).trim().length < 10) {
       return res.json({
@@ -74,7 +74,8 @@ Generate a professional ${fieldType} for this medical record:`,
       ],
       generationConfig: {
         temperature: 0.3,
-        maxOutputTokens: 300
+        maxOutputTokens: 300,
+        requestedModel: requestedModel || undefined
       }
     });
 
@@ -100,10 +101,20 @@ Generate a professional ${fieldType} for this medical record:`,
     });
 
   } catch (error) {
-    console.error('AI suggestion error:', redactForLogs(error));
-    return res.json({
+    console.error('AI suggestion error:', error);
+
+    let friendlyMessage = 'AI service is temporarily unavailable.';
+    try {
+      const lang = detectLanguage(req?.body?.context || '');
+      friendlyMessage = formatAiError(error, lang);
+    } catch (langError) {
+      console.error('Error during error formatting:', langError);
+    }
+
+    return res.status(error.status || 500).json({
       success: false,
-      message: error.message || 'Failed to generate suggestion'
+      message: friendlyMessage,
+      technicalInfo: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 };
